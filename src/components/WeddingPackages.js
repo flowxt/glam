@@ -8,6 +8,7 @@ import {
   IconX,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 
 // Context pour le carousel
 const CarouselContext = createContext({
@@ -52,112 +53,7 @@ const PackageImage = ({ src, alt, className, ...props }) => {
   );
 };
 
-// Composant Carousel
-const WeddingCarousel = ({ items, title }) => {
-  const carouselRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const checkScrollability = () => {
-    if (carouselRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
-    }
-  };
-
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
-    }
-  };
-
-  const handleCardClose = (index) => {
-    if (carouselRef.current) {
-      const cardWidth = window.innerWidth < 768 ? 230 : 384;
-      const gap = window.innerWidth < 768 ? 4 : 8;
-      const scrollPosition = (cardWidth + gap) * (index + 1);
-      carouselRef.current.scrollTo({
-        left: scrollPosition,
-        behavior: "smooth",
-      });
-      setCurrentIndex(index);
-    }
-  };
-
-  return (
-    <div className="mb-16">
-      <h3 className="text-2xl font-bold mb-8 text-center text-gray-300">
-        {title}
-      </h3>
-      <CarouselContext.Provider
-        value={{ onCardClose: handleCardClose, currentIndex }}
-      >
-        <div className="relative w-full">
-          <div
-            className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-6 [scrollbar-width:none]"
-            ref={carouselRef}
-            onScroll={checkScrollability}
-          >
-            <div
-              className={cn(
-                "flex flex-row justify-start gap-4 pl-4",
-                "mx-auto max-w-7xl"
-              )}
-            >
-              {items.map((item, index) => (
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 20,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.5,
-                      delay: 0.2 * index,
-                      ease: "easeOut",
-                    },
-                  }}
-                  key={"card" + index}
-                  className="rounded-3xl last:pr-[5%] md:last:pr-[20%]"
-                >
-                  {item}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          <div className="mr-10 flex justify-end gap-2 mt-4">
-            <button
-              className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 disabled:opacity-50 text-white"
-              onClick={scrollLeft}
-              disabled={!canScrollLeft}
-            >
-              <IconArrowNarrowLeft className="h-6 w-6 text-gray-300" />
-            </button>
-            <button
-              className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 disabled:opacity-50 text-white"
-              onClick={scrollRight}
-              disabled={!canScrollRight}
-            >
-              <IconArrowNarrowRight className="h-6 w-6 text-gray-300" />
-            </button>
-          </div>
-        </div>
-      </CarouselContext.Provider>
-    </div>
-  );
-};
-
-// Composant Card
+// Composant Card simplifié
 const PackageCard = ({ card, index }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef(null);
@@ -247,18 +143,22 @@ const PackageCard = ({ card, index }) => {
       </AnimatePresence>
       <motion.button
         onClick={handleOpen}
-        className={`relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl md:h-96 md:w-72 ${card.gradientClass}`}
+        className="relative z-10 flex h-80 w-56 flex-col items-start justify-between overflow-hidden rounded-3xl md:h-96 md:w-72 bg-gradient-to-b from-gray-800 to-black border border-gray-700 p-8 transition-all duration-300 hover:border-white"
       >
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
-        <div className="relative z-40 p-8">
-          <motion.p className="text-left font-sans text-sm font-medium text-white md:text-base">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/80" />
+        <div className="relative z-20">
+          <motion.p className="text-left font-sans text-sm font-medium text-gray-400 md:text-base">
             {card.category}
           </motion.p>
           <motion.p className="mt-2 max-w-xs text-left font-sans text-xl font-semibold text-white md:text-3xl">
             {card.title}
           </motion.p>
         </div>
-        <PackageImage src={card.src} alt={card.title} />
+        <div className="relative z-20 self-end">
+          <span className="inline-block px-4 py-2 bg-white text-black rounded-full text-sm font-medium">
+            Sur devis
+          </span>
+        </div>
       </motion.button>
     </>
   );
@@ -268,14 +168,69 @@ const PackageCard = ({ card, index }) => {
 import { useEffect } from "react";
 
 export default function WeddingPackages() {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  // Section hooks pour animations basées sur le scroll
+  const [titreRef, titreInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [marieesRef, marieesInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [invitesRef, invitesInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [essaisRef, essaisInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [notesRef, notesInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   // Forfaits pour les invitées
   const guestPackages = [
     {
       category: "Forfait Invitées",
       title: "PACK SAPHIR",
-      src: "/images/forfait.jpg",
-      gradientClass:
-        "bg-gradient-to-b from-gray-700/30 to-black border border-gray-700/50 hover:border-white transition-all duration-300",
       items: [
         { name: "Maquillage & coiffure", price: "100€" },
         { name: "Maquillage", price: "60€" },
@@ -290,9 +245,6 @@ export default function WeddingPackages() {
     {
       category: "Forfait Mariées",
       title: "PACK ARGENT",
-      src: "/images/forfait.jpg",
-      gradientClass:
-        "bg-gradient-to-b from-gray-700/30 to-black border border-gray-700/50 hover:border-white transition-all duration-300",
       items: [
         { name: "Essai coiffure", price: "Sur devis" },
         { name: "Coiffure Jour J", price: "Sur devis" },
@@ -302,9 +254,6 @@ export default function WeddingPackages() {
     {
       category: "Forfait Mariées",
       title: "PACK GOLD",
-      src: "/images/forfait.jpg",
-      gradientClass:
-        "bg-gradient-to-b from-gray-600/30 to-black border border-gray-600/50 hover:border-white transition-all duration-300",
       items: [
         { name: "Essai maquillage", price: "Sur devis" },
         { name: "Maquillage Jour J", price: "Sur devis" },
@@ -314,9 +263,6 @@ export default function WeddingPackages() {
     {
       category: "Forfait Mariées",
       title: "PACK DIAMANT",
-      src: "/images/forfait.jpg",
-      gradientClass:
-        "bg-gradient-to-b from-gray-500/30 to-black border border-gray-500/50 hover:border-white transition-all duration-300",
       items: [
         { name: "Essai maquillage & coiffure", price: "Sur devis" },
         { name: "Maquillage & coiffure Jour J", price: "Sur devis" },
@@ -326,9 +272,6 @@ export default function WeddingPackages() {
     {
       category: "Forfait Mariées",
       title: "PACK PLATINE",
-      src: "/images/forfait.jpg",
-      gradientClass:
-        "bg-gradient-to-b from-white/30 to-black border border-white/50 hover:border-white transition-all duration-300",
       items: [
         { name: "Essai maquillage & coiffure", price: "Sur devis" },
         { name: "Maquillage & coiffure Jour J", price: "Sur devis" },
@@ -348,24 +291,217 @@ export default function WeddingPackages() {
   ));
 
   return (
-    <section className="py-16 bg-black">
-      <div className="container mx-auto px-6 md:px-10">
-        <h2 className="text-3xl font-bold mb-12 text-center">
-          FORFAITS MARIAGES
-        </h2>
+    <section className="relative py-24 bg-black overflow-hidden">
+      {/* Arrière-plan stylisé */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 bg-[url('/photo/preparation-mariage8.jpeg')] bg-cover bg-center grayscale"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black"></div>
+      </div>
 
-        {/* Carousel pour invitées */}
-        <WeddingCarousel items={guestCards} title="Invitées" />
+      {/* Effet de particules dorées (optionnel) */}
+      <div className="absolute top-[25%] right-[15%] w-64 h-64 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-[35%] left-[10%] w-40 h-40 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-full blur-3xl"></div>
 
-        {/* Carousel pour mariées */}
-        <WeddingCarousel items={brideCards} title="Futures Mariées" />
+      <div className="container mx-auto px-6 md:px-10 relative z-10">
+        {/* Titre principal */}
+        <motion.div
+          ref={titreRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={titreInView ? "visible" : "hidden"}
+          className="text-center mb-20"
+        >
+          <motion.h2
+            variants={titleVariants}
+            className="text-5xl md:text-7xl font-light mb-2"
+          >
+            PRESTATIONS
+          </motion.h2>
+          <motion.h3
+            variants={titleVariants}
+            className="text-2xl md:text-3xl font-light text-white/80"
+          >
+            Mariage
+          </motion.h3>
+        </motion.div>
 
-        <div className="mt-8 text-center">
-          <p className="text-gray-400 text-sm">
-            POSSIBILITÉ DE LOCATION D&apos;EXTENSION À PARTIR DE 50€. UN CHÈQUE
-            DE CAUTION DE 100€ SERA DEMANDÉ
-          </p>
-        </div>
+        {/* Section MARIÉES */}
+        <motion.div
+          ref={marieesRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={marieesInView ? "visible" : "hidden"}
+          className="mb-20"
+        >
+          <motion.h3
+            variants={titleVariants}
+            className="text-3xl md:text-5xl font-light mb-8 md:mb-12"
+          >
+            MARIÉES
+          </motion.h3>
+
+          <motion.div
+            variants={sectionVariants}
+            className="border border-white/30 rounded-lg p-8 backdrop-blur-sm bg-black/30"
+          >
+            <div className="space-y-6">
+              <div className="flex flex-col md:flex-row md:items-center">
+                <div className="flex items-center gap-3 md:w-1/2">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-xl font-light">Formule argent</span>
+                </div>
+                <div className="text-white/80 ml-5 md:ml-0">
+                  Essai coiffure et jour-j
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row md:items-center">
+                <div className="flex items-center gap-3 md:w-1/2">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-xl font-light">Formule gold</span>
+                </div>
+                <div className="text-white/80 ml-5 md:ml-0">
+                  Essai maquillage et jour-j
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row md:items-center">
+                <div className="flex items-center gap-3 md:w-1/2">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-xl font-light">Formule diamant</span>
+                </div>
+                <div className="text-white/80 ml-5 md:ml-0">
+                  Essai maquillage + coiffure et jour-j
+                </div>
+              </div>
+
+              <div className="text-sm text-white/60 text-right pt-2">
+                (Possibilité de rajouter une prestation onglerie)
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Section INVITÉS */}
+        <motion.div
+          ref={invitesRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={invitesInView ? "visible" : "hidden"}
+          className="mb-20"
+        >
+          <motion.h3
+            variants={titleVariants}
+            className="text-3xl md:text-5xl font-light mb-8 md:mb-12"
+          >
+            INVITÉS
+          </motion.h3>
+
+          <motion.div
+            variants={sectionVariants}
+            className="border border-white/30 rounded-lg p-8 backdrop-blur-sm bg-black/30"
+          >
+            <div className="space-y-6">
+              <div className="flex flex-col md:flex-row md:items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-xl font-light">Formule Saphir</span>
+                </div>
+                <div className="text-white/80 ml-5 md:ml-0">
+                  Maquillage + coiffure
+                </div>
+                <div className="text-xl md:text-2xl font-light ml-auto">
+                  110€
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row md:items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-xl font-light">Maquillage</span>
+                </div>
+                <div className="text-xl md:text-2xl font-light ml-auto">
+                  60€
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row md:items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-xl font-light">Coiffure</span>
+                </div>
+                <div className="text-xl md:text-2xl font-light ml-auto">
+                  60€
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Section ESSAIS */}
+        <motion.div
+          ref={essaisRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={essaisInView ? "visible" : "hidden"}
+          className="mb-20"
+        >
+          <motion.h3
+            variants={titleVariants}
+            className="text-3xl md:text-5xl font-light mb-8 md:mb-12"
+          >
+            ESSAIS
+          </motion.h3>
+
+          <motion.div
+            variants={sectionVariants}
+            className="border border-white/30 rounded-lg p-8 backdrop-blur-sm bg-black/30"
+          >
+            <div className="space-y-6">
+              <div className="flex flex-col md:flex-row md:items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-xl font-light">Coiffure</span>
+                </div>
+                <div className="text-xl md:text-2xl font-light ml-auto">
+                  70€
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row md:items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <span className="text-xl font-light">Maquillage</span>
+                </div>
+                <div className="text-xl md:text-2xl font-light ml-auto">
+                  80€
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Notes */}
+        <motion.div
+          ref={notesRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={notesInView ? "visible" : "hidden"}
+          className="text-center max-w-3xl mx-auto"
+        >
+          <motion.p variants={sectionVariants} className="text-white/80 mb-3">
+            Location d&apos;extension de cheveux possible
+          </motion.p>
+          <motion.p variants={sectionVariants} className="text-white/80 mb-3">
+            Les faux cils sont inclus pour chaque prestation
+          </motion.p>
+          <motion.p variants={sectionVariants} className="text-white/80">
+            Les indispensables mariée sont offerts pour les packs gold/diamant
+          </motion.p>
+        </motion.div>
+
+        {/* Élément décoratif en bas */}
+        <div className="mt-24 border-t border-white/20 w-full h-1"></div>
       </div>
     </section>
   );

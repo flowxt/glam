@@ -30,7 +30,7 @@ export default function Hero() {
               GLAM BEAUTY
               <motion.div
                 initial={{ width: 0 }}
-                animate={{ width: "75%" }}
+                animate={{ width: "50%" }}
                 transition={{ delay: 0.5, duration: 1.2, ease: "easeInOut" }}
                 className="h-1 bg-white mx-auto mt-10"
                 style={{ originX: 0.5 }}

@@ -8,7 +8,7 @@ export default function Testimonials() {
     {
       name: "Aude Paris",
       date: "il y a 3 mois",
-      text: "Jennifer est une super professionnelle, elle a su me conseiller et me rassurer avant et pendant mon mariage. La coiffure et le maquillage était splendide et sophistiqué. Je la recommande à 100% les yeux fermés !!! Merci encore pour ta gentillesse et ton sourire qui fait du bien 😊",
+      text: "Jennifer est une super professionnelle, elle a su me conseiller et me rassurer avant et pendant mon mariage. La coiffure et le maquillage était splendide et sophistiqué. Je la recommande à 100% les yeux fermés !!! Merci encore pour ta gentillesse et ton sourire qui fait du bien",
       services: "Coiffure pour mariage, Maquillage occasions spéciales",
       rating: 5,
     },
@@ -52,7 +52,7 @@ export default function Testimonials() {
     {
       name: "Sofie 974",
       date: "il y a 5 mois",
-      text: "Jennifer m'a coiffé et maquillée pour mon mariage. Prestations parfaite aussi bien le jour j que l'essai. Je n'ai peut être pas était une cliente facile dans le choix de ma coiffure mais j'ai été ravie du résultat. C'est une vraie pro. Petite mention car elle a redonné le sourire à ma maman pour sa coiffure 😉❤️ elle était heureuse et celà grâce à toi. Je recommande les yeux fermés.",
+      text: "Jennifer m'a coiffé et maquillée pour mon mariage. Prestations parfaite aussi bien le jour j que l'essai. Je n'ai peut être pas était une cliente facile dans le choix de ma coiffure mais j'ai été ravie du résultat. C'est une vraie pro. Petite mention car elle a redonné le sourire à ma maman pour sa coiffure elle était heureuse et celà grâce à toi. Je recommande les yeux fermés.",
       services: "",
       rating: 5,
     },
@@ -170,7 +170,7 @@ export default function Testimonials() {
         {[...Array(rating)].map((_, i) => (
           <svg
             key={i}
-            className="w-5 h-5 text-yellow-400"
+            className="w-5 h-5 text-white"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -182,7 +182,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-900 to-black overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-black to-black overflow-hidden">
       <div className="container mx-auto px-6 md:px-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -196,7 +196,7 @@ export default function Testimonials() {
               className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
             >
               <span className="text-lg font-medium">
-                <span className="text-yellow-400">54</span> avis 5 étoiles sur
+                <span className="text-gray-200">54</span> avis 5 étoiles sur
                 Google
               </span>
               <svg
@@ -223,7 +223,7 @@ export default function Testimonials() {
           onMouseLeave={handleMouseLeave}
         >
           {/* Fond décoratif */}
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-3xl blur-3xl -z-10 transform -rotate-1"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/20 to-white/10 rounded-3xl blur-3xl -z-10 transform -rotate-1"></div>
 
           {/* Container pour le carousel */}
           <div className="relative overflow-hidden rounded-3xl h-[500px] md:h-[400px] perspective">
@@ -244,7 +244,7 @@ export default function Testimonials() {
                         <div className="flex items-center gap-2 mb-1">
                           {renderStars(testimonials[currentIndex].rating)}
                           {testimonials[currentIndex].isNew && (
-                            <span className="bg-pink-600 text-xs text-white px-2 py-0.5 rounded-full">
+                            <span className="bg-white text-xs text-black px-2 py-0.5 rounded-full">
                               NOUVEAU
                             </span>
                           )}
@@ -257,7 +257,7 @@ export default function Testimonials() {
                         </p>
                       </div>
                       <div className="flex-shrink-0">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-500 to-white/50 flex items-center justify-center">
                           <span className="text-white font-bold">
                             {testimonials[currentIndex].name.substring(0, 1)}
                           </span>
@@ -274,7 +274,7 @@ export default function Testimonials() {
                     {testimonials[currentIndex].services && (
                       <div className="mt-4 pt-4 border-t border-gray-800">
                         <p className="text-sm text-gray-400">
-                          <span className="text-pink-400 font-medium">
+                          <span className="text-white font-medium">
                             Services :{" "}
                           </span>
                           {testimonials[currentIndex].services}
@@ -340,7 +340,7 @@ export default function Testimonials() {
                 }}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-pink-500 w-6"
+                    ? "bg-white w-6"
                     : "bg-gray-600 hover:bg-gray-500"
                 }`}
                 aria-label={`Voir l'avis ${index + 1}`}
@@ -354,7 +354,7 @@ export default function Testimonials() {
             href="https://g.co/kgs/HkoUeFV"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-pink-500/10 to-purple-500/10 text-white font-medium px-8 py-3 rounded-full hover:from-pink-500/20 hover:to-purple-500/20 transition-all duration-300 border border-purple-500/30"
+            className="inline-block bg-gradient-to-r from-gray-500/10 to-white/10 text-white font-medium px-8 py-3 rounded-full hover:from-gray-500/20 hover:to-white/20 transition-all duration-300 border border-gray-500/30"
           >
             Voir tous les avis Google
           </Link>

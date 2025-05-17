@@ -1,16 +1,11 @@
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
+import "../styles/fonts.css"; // Import du fichier de polices personnalisées
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
   display: "swap",
 });
@@ -25,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body
-        className={`${montserrat.variable} ${playfairDisplay.variable} antialiased bg-black text-white min-h-screen flex flex-col`}
+        className={`${raleway.variable} antialiased bg-black text-white min-h-screen flex flex-col`}
       >
         <Navbar />
         <main className="flex-grow">{children}</main>

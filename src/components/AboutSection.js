@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="py-16 bg-gradient-to-b from-black to-gray-95j0">
+    <section className="py-16 bg-gradient-to-b from-black to-black">
       <div className="container mx-auto px-6 md:px-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -13,7 +13,7 @@ export default function AboutSection() {
           viewport={{ once: true }}
           className="max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center font-heading tracking-wider">
             À PROPOS
           </h2>
 
@@ -45,7 +45,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
             >
               <div className="bg-gray-900/50 p-6 md:p-8 rounded-lg shadow-lg border border-gray-800 space-y-4">
-                <p className="text-gray-300">
+                <p className="text-gray-300 font-sans">
                   Coiffeuse et maquilleuse professionnelle diplômée depuis 2010,
                   je propose un service de qualité et des prestations
                   personnalisées. J&apos;utilise mes compétences, ma passion et
@@ -53,31 +53,31 @@ export default function AboutSection() {
                   naturelle.
                 </p>
 
-                <p className="text-gray-300">
+                <p className="text-gray-300 font-sans">
                   Vous pouvez compter sur mon expérience pour une mise en beauté
                   glamour, bohème ou sophistiquée selon vos préférences. Je suis
                   capable de réaliser des coiffures élégantes et raffinées,
                   offrant un résultat remarquable.
                 </p>
 
-                <p className="text-gray-300">
+                <p className="text-gray-300 font-sans">
                   En matière de maquillage, j&apos;écoute vos souhaits tout en
                   vous conseillant pour une mise en beauté parfaite, en harmonie
                   avec votre morphologie, la couleur de votre peau et votre
                   tenue.
                 </p>
 
-                <p className="text-gray-300">
+                <p className="text-gray-300 font-sans">
                   Je mets un point d&apos;honneur à magnifier les mariées et les
                   invitées avec soin et précision, en accord avec leurs goûts.
                 </p>
 
-                <p className="text-gray-300">
+                <p className="text-gray-300 font-sans">
                   N&apos;hésitez pas à me contacter pour plus
                   d&apos;informations ou demandes particulières.
                 </p>
 
-                <p className="text-xl text-white font-medium text-right italic">
+                <p className="text-xl text-white font-heading italic tracking-wide">
                   Jennifer
                 </p>
               </div>

@@ -78,21 +78,21 @@ export default function CallToAction() {
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Arrière-plan décoratif avec effet de profondeur */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/20 to-black"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/20 to-black"></div>
 
       {/* Blob interactif qui suit la souris */}
       <motion.div
-        className="hidden md:block absolute -z-10 top-0 left-0 w-[500px] h-[500px] rounded-full bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-transparent blur-[100px]"
+        className="hidden md:block absolute -z-10 top-0 left-0 w-[500px] h-[500px] rounded-full bg-gradient-to-r from-white/10 via-gray-500/10 to-transparent blur-[100px]"
         variants={variants}
         animate="default"
       />
 
       {/* Lignes décoratives */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500/20 to-transparent absolute top-[20%]"></div>
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-purple-500/20 to-transparent absolute top-[60%]"></div>
-        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-pink-500/20 to-transparent absolute left-[20%]"></div>
-        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-purple-500/20 to-transparent absolute left-[80%]"></div>
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/20 to-transparent absolute top-[20%]"></div>
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-gray-500/20 to-transparent absolute top-[60%]"></div>
+        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent absolute left-[20%]"></div>
+        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-gray-500/20 to-transparent absolute left-[80%]"></div>
       </div>
 
       <div className="container mx-auto px-6 md:px-10 relative z-10">
@@ -103,12 +103,12 @@ export default function CallToAction() {
           variants={containerVariants}
           className="max-w-5xl mx-auto"
         >
-          <div className="bg-gradient-to-r from-gray-900/60 via-purple-950/40 to-gray-900/60 backdrop-blur-xl p-8 md:p-12 lg:p-16 rounded-3xl border border-purple-500/20 shadow-[0_0_40px_rgba(168,85,247,0.15)]">
+          <div className="bg-gradient-to-r from-gray-900/60 via-black/40 to-gray-900/60 backdrop-blur-xl p-8 md:p-12 lg:p-16 rounded-3xl border border-gray-500/20 shadow-[0_0_40px_rgba(255,255,255,0.15)]">
             <motion.div className="text-center" variants={itemVariants}>
-              <span className="inline-block px-4 py-1 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full text-sm font-medium text-pink-300 mb-4 backdrop-blur-md border border-pink-500/20">
+              <span className="inline-block px-4 py-1 bg-gradient-to-r from-gray-500/20 to-white/20 rounded-full text-sm font-medium text-gray-300 mb-4 backdrop-blur-md border border-gray-500/20">
                 Prête pour un moment de beauté ?
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-pink-200 to-white">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-white">
                 Sublimez votre beauté
               </h2>
               <motion.p
@@ -122,12 +122,12 @@ export default function CallToAction() {
 
               <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6 mb-8">
                 <motion.div
-                  className="flex items-center p-3 gap-3 bg-gradient-to-r from-pink-900/10 to-purple-900/10 rounded-xl backdrop-blur-sm"
+                  className="flex items-center p-3 gap-3 bg-gradient-to-r from-gray-900/10 to-black/10 rounded-xl backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:text-white group"
                   variants={itemVariants}
                 >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500/30 to-purple-500/30 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-500/30 to-white/30 flex items-center justify-center transition-all duration-300 group-hover:bg-white/30">
                     <svg
-                      className="w-5 h-5 text-pink-300"
+                      className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -141,16 +141,18 @@ export default function CallToAction() {
                       />
                     </svg>
                   </div>
-                  <span className="text-gray-300">Rendez-vous rapides</span>
+                  <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                    Rendez-vous rapides
+                  </span>
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center p-3 gap-3 bg-gradient-to-r from-pink-900/10 to-purple-900/10 rounded-xl backdrop-blur-sm"
+                  className="flex items-center p-3 gap-3 bg-gradient-to-r from-gray-900/10 to-black/10 rounded-xl backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:text-white group"
                   variants={itemVariants}
                 >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500/30 to-purple-500/30 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-500/30 to-white/30 flex items-center justify-center transition-all duration-300 group-hover:bg-white/30">
                     <svg
-                      className="w-5 h-5 text-pink-300"
+                      className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -164,16 +166,18 @@ export default function CallToAction() {
                       />
                     </svg>
                   </div>
-                  <span className="text-gray-300">Satisfaction garantie</span>
+                  <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                    Satisfaction garantie
+                  </span>
                 </motion.div>
 
                 <motion.div
-                  className="flex items-center p-3 gap-3 bg-gradient-to-r from-pink-900/10 to-purple-900/10 rounded-xl backdrop-blur-sm"
+                  className="flex items-center p-3 gap-3 bg-gradient-to-r from-gray-900/10 to-black/10 rounded-xl backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:text-white group"
                   variants={itemVariants}
                 >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500/30 to-purple-500/30 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-500/30 to-white/30 flex items-center justify-center transition-all duration-300 group-hover:bg-white/30">
                     <svg
-                      className="w-5 h-5 text-pink-300"
+                      className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -187,7 +191,9 @@ export default function CallToAction() {
                       />
                     </svg>
                   </div>
-                  <span className="text-gray-300">Tarifs adaptés</span>
+                  <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                    Tarifs adaptés
+                  </span>
                 </motion.div>
               </div>
 
@@ -204,9 +210,9 @@ export default function CallToAction() {
                 >
                   <Link
                     href="/contact"
-                    className="relative inline-flex items-center px-12 py-5 bg-gradient-to-r from-pink-500 to-purple-600 text-lg md:text-xl font-semibold text-white rounded-full shadow-lg overflow-hidden group"
+                    className="relative inline-flex items-center px-12 py-5 bg-white hover:bg-gray-200 text-lg md:text-xl font-semibold text-black rounded-full shadow-lg overflow-hidden group"
                   >
-                    <span className="absolute inset-0 bg-gradient-to-r from-pink-600/80 to-purple-700/80 opacity-0 group-hover:opacity-100 duration-300 z-10"></span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-gray-200/80 to-gray-300/80 opacity-0 group-hover:opacity-100 duration-300 z-10"></span>
                     <span className="relative z-20">Prendre rendez-vous</span>
                     <svg
                       className="w-6 h-6 ml-2 relative z-20"
