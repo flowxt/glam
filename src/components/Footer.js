@@ -22,12 +22,12 @@ export default function Footer() {
     <footer className="relative bg-black text-gray-300 border-t border-gray-800">
       {/* Effet de fond décoratif */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-pink-600/30 to-purple-600/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-gradient-to-tr from-purple-600/30 to-pink-600/20 rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-white/20 rounded-full blur-3xl" />
       </div>
 
       {/* Séparateur décoratif */}
-      <div className="h-1 w-full bg-gradient-to-r from-transparent via-pink-500/50 to-transparent" />
+      <div className="h-1 w-full bg-gradient-to-r from-transparent via-white/50 to-transparent" />
 
       <div className="container mx-auto py-12 px-6 md:px-10 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -40,14 +40,15 @@ export default function Footer() {
               viewport={{ once: true }}
               className="mb-6"
             >
-              <h3 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-pink-400 via-pink-300 to-purple-400 bg-clip-text text-transparent">
-                GlamBeauty
-              </h3>
-              <div className="relative h-20 w-20 mb-4 overflow-hidden rounded-full border-2 border-pink-500/30">
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-600/30 to-purple-600/30 animate-pulse" />
-                <p className="absolute inset-0 flex items-center justify-center text-white font-semibold">
-                  Logo
-                </p>
+              <div className="relative h-40 w-60 mb-4 overflow-hidden">
+                <Image
+                  src="/logos/logo-text-fond-noir.png"
+                  alt="GlamBeauty Logo"
+                  width={240}
+                  height={120}
+                  className="object-contain"
+                  priority
+                />
               </div>
               <p className="text-sm text-gray-400 mb-4 max-w-xs">
                 Expertise en mise en beauté pour mariages et événements
@@ -72,9 +73,9 @@ export default function Footer() {
                   className="group"
                   aria-label="Facebook"
                 >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center border border-gray-700 hover:border-pink-500 transition-all duration-300">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center border border-gray-700 hover:border-white transition-all duration-300">
                     <svg
-                      className="w-5 h-5 text-gray-400 group-hover:text-pink-400 transition-colors"
+                      className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                       aria-hidden="true"
@@ -94,9 +95,9 @@ export default function Footer() {
                   className="group"
                   aria-label="Instagram"
                 >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center border border-gray-700 hover:border-pink-500 transition-all duration-300">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center border border-gray-700 hover:border-white transition-all duration-300">
                     <svg
-                      className="w-5 h-5 text-gray-400 group-hover:text-pink-400 transition-colors"
+                      className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                       aria-hidden="true"
@@ -116,9 +117,9 @@ export default function Footer() {
                   className="group"
                   aria-label="TikTok"
                 >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center border border-gray-700 hover:border-pink-500 transition-all duration-300">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center border border-gray-700 hover:border-white transition-all duration-300">
                     <svg
-                      className="w-5 h-5 text-gray-400 group-hover:text-pink-400 transition-colors"
+                      className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                       aria-hidden="true"
@@ -134,7 +135,7 @@ export default function Footer() {
                 href="https://www.planity.com/glambeauty-prothesiste-ongulaire-maquilleuse-38120-saint-egreve"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 rounded-lg text-white text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="inline-flex items-center px-4 py-2 bg-white hover:bg-gray-200 rounded-lg text-black text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <svg
                   className="w-5 h-5 mr-2"
@@ -166,31 +167,31 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li className="relative pl-6">
-                <span className="absolute left-0 top-1 w-2 h-2 rounded-full bg-pink-500"></span>
+                <span className="absolute left-0 top-1 w-2 h-2 rounded-full bg-white"></span>
                 <p className="text-sm text-gray-400 hover:text-white transition-colors">
                   Maquillage mariage
                 </p>
               </li>
               <li className="relative pl-6">
-                <span className="absolute left-0 top-1 w-2 h-2 rounded-full bg-purple-500"></span>
+                <span className="absolute left-0 top-1 w-2 h-2 rounded-full bg-gray-400"></span>
                 <p className="text-sm text-gray-400 hover:text-white transition-colors">
                   Coiffure événementielle
                 </p>
               </li>
               <li className="relative pl-6">
-                <span className="absolute left-0 top-1 w-2 h-2 rounded-full bg-pink-500"></span>
+                <span className="absolute left-0 top-1 w-2 h-2 rounded-full bg-white"></span>
                 <p className="text-sm text-gray-400 hover:text-white transition-colors">
                   Onglerie professionnelle
                 </p>
               </li>
               <li className="relative pl-6">
-                <span className="absolute left-0 top-1 w-2 h-2 rounded-full bg-purple-500"></span>
+                <span className="absolute left-0 top-1 w-2 h-2 rounded-full bg-gray-400"></span>
                 <p className="text-sm text-gray-400 hover:text-white transition-colors">
                   Extensions de cils
                 </p>
               </li>
               <li className="relative pl-6">
-                <span className="absolute left-0 top-1 w-2 h-2 rounded-full bg-pink-500"></span>
+                <span className="absolute left-0 top-1 w-2 h-2 rounded-full bg-white"></span>
                 <p className="text-sm text-gray-400 hover:text-white transition-colors">
                   Forfaits mariées
                 </p>
@@ -214,7 +215,7 @@ export default function Footer() {
                   href="/"
                   className="relative text-sm text-gray-400 hover:text-white transition-colors group flex items-center"
                 >
-                  <span className="absolute left-0 bottom-0 w-0 h-px bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute left-0 bottom-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300"></span>
                   Accueil
                 </Link>
               </li>
@@ -223,7 +224,7 @@ export default function Footer() {
                   href="/galerie"
                   className="relative text-sm text-gray-400 hover:text-white transition-colors group flex items-center"
                 >
-                  <span className="absolute left-0 bottom-0 w-0 h-px bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute left-0 bottom-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300"></span>
                   Galerie
                 </Link>
               </li>
@@ -232,7 +233,7 @@ export default function Footer() {
                   href="/onglerie"
                   className="relative text-sm text-gray-400 hover:text-white transition-colors group flex items-center"
                 >
-                  <span className="absolute left-0 bottom-0 w-0 h-px bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute left-0 bottom-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300"></span>
                   Onglerie
                 </Link>
               </li>
@@ -241,7 +242,7 @@ export default function Footer() {
                   href="/contact"
                   className="relative text-sm text-gray-400 hover:text-white transition-colors group flex items-center"
                 >
-                  <span className="absolute left-0 bottom-0 w-0 h-px bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute left-0 bottom-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300"></span>
                   Contact
                 </Link>
               </li>
@@ -250,7 +251,7 @@ export default function Footer() {
                   href="/mentions-legales"
                   className="relative text-sm text-gray-400 hover:text-white transition-colors group flex items-center"
                 >
-                  <span className="absolute left-0 bottom-0 w-0 h-px bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute left-0 bottom-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300"></span>
                   Mentions légales
                 </Link>
               </li>
@@ -268,9 +269,9 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
                   <svg
-                    className="w-4 h-4 text-pink-400"
+                    className="w-4 h-4 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -291,9 +292,9 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
                   <svg
-                    className="w-4 h-4 text-pink-400"
+                    className="w-4 h-4 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -312,9 +313,9 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
                   <svg
-                    className="w-4 h-4 text-pink-400"
+                    className="w-4 h-4 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -341,9 +342,9 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
                   <svg
-                    className="w-4 h-4 text-pink-400"
+                    className="w-4 h-4 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -374,9 +375,9 @@ export default function Footer() {
           className="flex flex-wrap justify-center gap-6 mt-12 pt-8 border-t border-gray-800"
         >
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/20 to-green-300/10 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
               <svg
-                className="w-6 h-6 text-green-400"
+                className="w-6 h-6 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -392,9 +393,9 @@ export default function Footer() {
             <span className="text-sm text-gray-300">Produits de qualité</span>
           </div>
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-300/10 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
               <svg
-                className="w-6 h-6 text-blue-400"
+                className="w-6 h-6 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -410,9 +411,9 @@ export default function Footer() {
             <span className="text-sm text-gray-300">Paiements sécurisés</span>
           </div>
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-500/20 to-yellow-300/10 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
               <svg
-                className="w-6 h-6 text-yellow-400"
+                className="w-6 h-6 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

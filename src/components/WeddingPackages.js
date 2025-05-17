@@ -275,7 +275,7 @@ export default function WeddingPackages() {
       title: "PACK SAPHIR",
       src: "/images/forfait.jpg",
       gradientClass:
-        "bg-gradient-to-b from-blue-900/30 to-black border border-blue-800/50 hover:border-blue-600 transition-all duration-300",
+        "bg-gradient-to-b from-gray-700/30 to-black border border-gray-700/50 hover:border-white transition-all duration-300",
       items: [
         { name: "Maquillage & coiffure", price: "100€" },
         { name: "Maquillage", price: "60€" },
@@ -292,7 +292,7 @@ export default function WeddingPackages() {
       title: "PACK ARGENT",
       src: "/images/forfait.jpg",
       gradientClass:
-        "bg-gradient-to-b from-gray-800/30 to-black border border-gray-700/50 hover:border-gray-500 transition-all duration-300",
+        "bg-gradient-to-b from-gray-700/30 to-black border border-gray-700/50 hover:border-white transition-all duration-300",
       items: [
         { name: "Essai coiffure", price: "Sur devis" },
         { name: "Coiffure Jour J", price: "Sur devis" },
@@ -304,7 +304,7 @@ export default function WeddingPackages() {
       title: "PACK GOLD",
       src: "/images/forfait.jpg",
       gradientClass:
-        "bg-gradient-to-b from-yellow-900/30 to-black border border-yellow-800/50 hover:border-yellow-600 transition-all duration-300",
+        "bg-gradient-to-b from-gray-600/30 to-black border border-gray-600/50 hover:border-white transition-all duration-300",
       items: [
         { name: "Essai maquillage", price: "Sur devis" },
         { name: "Maquillage Jour J", price: "Sur devis" },
@@ -316,7 +316,7 @@ export default function WeddingPackages() {
       title: "PACK DIAMANT",
       src: "/images/forfait.jpg",
       gradientClass:
-        "bg-gradient-to-b from-purple-900/30 to-black border border-purple-800/50 hover:border-purple-600 transition-all duration-300",
+        "bg-gradient-to-b from-gray-500/30 to-black border border-gray-500/50 hover:border-white transition-all duration-300",
       items: [
         { name: "Essai maquillage & coiffure", price: "Sur devis" },
         { name: "Maquillage & coiffure Jour J", price: "Sur devis" },
@@ -328,7 +328,7 @@ export default function WeddingPackages() {
       title: "PACK PLATINE",
       src: "/images/forfait.jpg",
       gradientClass:
-        "bg-gradient-to-b from-pink-900/30 to-black border border-pink-800/50 hover:border-pink-600 transition-all duration-300",
+        "bg-gradient-to-b from-white/30 to-black border border-white/50 hover:border-white transition-all duration-300",
       items: [
         { name: "Essai maquillage & coiffure", price: "Sur devis" },
         { name: "Maquillage & coiffure Jour J", price: "Sur devis" },

@@ -1,17 +1,18 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center py-24 md:py-0">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 to-black"></div>
-      <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-30"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/90"></div>
+      <div className="absolute inset-0 bg-[url('/photo/preparation-mariage8.jpeg')] bg-cover bg-top md:bg-center opacity-40"></div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="container mx-auto px-6 md:px-10 text-center relative z-10"
+        className="container mx-auto px-6 md:px-10 text-center relative z-10 pt-16 md:pt-20"
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -20,12 +21,15 @@ export default function Hero() {
           className="max-w-5xl mx-auto"
         >
           <h1 className="mb-8 md:mb-12">
-            <div className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-                GlamBeauty
-              </span>
-            </div>
-            <div className="text-2xl md:text-3xl lg:text-4xl text-gray-300 font-light">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 tracking-wider"
+            >
+              GLAM BEAUTY
+            </motion.div>
+            <div className="text-3xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-wider mt-6 leading-relaxed">
               Maquilleuse & Coiffeuse Professionnelle
             </div>
           </h1>
@@ -40,7 +44,7 @@ export default function Hero() {
             >
               <Link
                 href="/contact"
-                className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg"
+                className="bg-white hover:bg-gray-200 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg"
               >
                 Réserver maintenant
               </Link>
@@ -67,25 +71,19 @@ export default function Hero() {
           className="mt-16 md:mt-24 flex justify-center gap-8 md:gap-16"
         >
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">
-              3+
-            </p>
+            <p className="text-3xl md:text-4xl font-bold text-white">10+</p>
             <p className="text-gray-300 text-sm md:text-base">
               Années d&apos;expérience
             </p>
           </div>
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">
-              100%
-            </p>
+            <p className="text-3xl md:text-4xl font-bold text-white">100%</p>
             <p className="text-gray-300 text-sm md:text-base">
               Satisfaction client
             </p>
           </div>
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">
-              500+
-            </p>
+            <p className="text-3xl md:text-4xl font-bold text-white">500+</p>
             <p className="text-gray-300 text-sm md:text-base">
               Clientes satisfaites
             </p>
