@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="py-16 bg-gradient-to-b from-black to-gray-900">
+    <section className="py-16 bg-gradient-to-b from-black to-gray-95j0">
       <div className="container mx-auto px-6 md:px-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -30,7 +30,7 @@ export default function AboutSection() {
                   src="/photo/jennifer1.jpeg"
                   alt="Jennifer - Maquilleuse et Coiffeuse professionnelle"
                   fill
-                  className="object-cover"
+                  className="object-cover grayscale"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />

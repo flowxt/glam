@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center py-24 md:py-0">
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/90"></div>
-      <div className="absolute inset-0 bg-[url('/photo/preparation-mariage8.jpeg')] bg-cover bg-top md:bg-center opacity-40"></div>
+      <div className="absolute inset-0 bg-[url('/photo/preparation-mariage8.jpeg')] bg-cover bg-top md:bg-center opacity-40 grayscale"></div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -28,8 +28,15 @@ export default function Hero() {
               className="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 tracking-wider"
             >
               GLAM BEAUTY
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "75%" }}
+                transition={{ delay: 0.5, duration: 1.2, ease: "easeInOut" }}
+                className="h-1 bg-white mx-auto mt-10"
+                style={{ originX: 0.5 }}
+              ></motion.div>
             </motion.div>
-            <div className="text-3xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-wider mt-6 leading-relaxed">
+            <div className="text-3xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-wider mt-8 leading-relaxed">
               Maquilleuse & Coiffeuse Professionnelle
             </div>
           </h1>
