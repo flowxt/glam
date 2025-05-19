@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
 
 export default function Testimonials() {
   const testimonials = [
@@ -84,13 +85,19 @@ export default function Testimonials() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const autoPlayRef = useRef(null);
 
+  // Animation avec useInView pour le titre
+  const [titleRef, titleInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   // Gestion du défilement automatique
   useEffect(() => {
     const startAutoPlay = () => {
       autoPlayRef.current = setInterval(() => {
         setDirection(1);
         setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-      }, 5000); // Change de témoignage toutes les 5 secondes
+      }, 6000); // Change de témoignage toutes les 6 secondes
     };
 
     if (isAutoPlaying) {
@@ -132,32 +139,27 @@ export default function Testimonials() {
   // Variants d'animation pour les témoignages
   const variants = {
     enter: (direction) => ({
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? 500 : -500,
       opacity: 0,
-      rotateY: direction > 0 ? -15 : 15,
       scale: 0.9,
     }),
     center: {
       x: 0,
       opacity: 1,
-      rotateY: 0,
       scale: 1,
       transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
+        x: { type: "spring", stiffness: 200, damping: 25 },
         opacity: { duration: 0.5 },
-        rotateY: { duration: 0.5 },
         scale: { duration: 0.5 },
       },
     },
     exit: (direction) => ({
-      x: direction < 0 ? 1000 : -1000,
+      x: direction < 0 ? 500 : -500,
       opacity: 0,
-      rotateY: direction < 0 ? -15 : 15,
       scale: 0.9,
       transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
+        x: { type: "spring", stiffness: 200, damping: 25 },
         opacity: { duration: 0.5 },
-        rotateY: { duration: 0.5 },
         scale: { duration: 0.5 },
       },
     }),
@@ -182,22 +184,41 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-black to-black overflow-hidden">
+    <section className="py-24 bg-black text-white overflow-hidden">
       <div className="container mx-auto px-6 md:px-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-6xl font-light mb-4 tracking-wider">
+        {/* Titre avec trait animé */}
+        <div ref={titleRef} className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={
+              titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
+            }
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl font-light tracking-wider mb-6"
+          >
             CE QUE DISENT NOS CLIENTES
-          </h2>
-          <div className="flex items-center justify-center gap-2">
+          </motion.h2>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={titleInView ? { width: "120px" } : { width: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="h-[1px] bg-white/40 mx-auto mb-6"
+          ></motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={titleInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex items-center justify-center gap-2"
+          >
             <Link
               href="https://g.co/kgs/HkoUeFV"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
             >
-              <span className="text-lg font-medium">
-                <span className="text-gray-200">54</span> avis 5 étoiles sur
-                Google
+              <span className="text-lg font-light">
+                <span className="text-white font-normal">54</span> avis 5
+                étoiles sur Google
               </span>
               <svg
                 className="w-5 h-5"
@@ -209,24 +230,21 @@ export default function Testimonials() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
+                  strokeWidth={1.5}
                   d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                 />
               </svg>
             </Link>
-          </div>
+          </motion.div>
         </div>
 
         <div
-          className="relative max-w-5xl mx-auto perspective-1000"
+          className="relative max-w-4xl mx-auto"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {/* Fond décoratif */}
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/20 to-white/10 rounded-3xl blur-3xl -z-10 transform -rotate-1"></div>
-
           {/* Container pour le carousel */}
-          <div className="relative overflow-hidden rounded-3xl h-[500px] md:h-[400px] perspective">
+          <div className="relative overflow-hidden h-[600px] md:h-[450px]">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
@@ -238,43 +256,38 @@ export default function Testimonials() {
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <div className="w-full h-full p-4 md:p-8">
-                  <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-6 md:p-8 shadow-xl transform-style-3d h-full flex flex-col">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          {renderStars(testimonials[currentIndex].rating)}
-                          {testimonials[currentIndex].isNew && (
-                            <span className="bg-white text-xs text-black px-2 py-0.5 rounded-full">
-                              NOUVEAU
-                            </span>
-                          )}
-                        </div>
-                        <h3 className="text-xl font-bold text-white">
+                  <div className="border border-white/10 rounded-sm p-6 md:p-8 bg-black/80 h-full flex flex-col">
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex flex-col">
+                        <h3 className="text-xl font-light text-white mb-1">
                           {testimonials[currentIndex].name}
                         </h3>
-                        <p className="text-sm text-gray-400">
+                        <p className="text-xs text-white/60">
                           {testimonials[currentIndex].date}
                         </p>
-                      </div>
-                      <div className="flex-shrink-0">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-500 to-white/50 flex items-center justify-center">
-                          <span className="text-white font-bold">
-                            {testimonials[currentIndex].name.substring(0, 1)}
+
+                        {testimonials[currentIndex].isNew && (
+                          <span className="bg-white text-xs text-black px-2 py-0.5 rounded-sm mt-2 inline-block w-fit">
+                            NOUVEAU
                           </span>
-                        </div>
+                        )}
+                      </div>
+
+                      <div className="flex items-center">
+                        {renderStars(testimonials[currentIndex].rating)}
                       </div>
                     </div>
 
-                    <div className="flex-grow overflow-y-auto text-sm md:text-base scrollbar-thin">
-                      <p className="italic text-gray-300">
+                    <div className="flex-grow text-white/80 leading-relaxed">
+                      <p className="italic">
                         &quot;{testimonials[currentIndex].text}&quot;
                       </p>
                     </div>
 
                     {testimonials[currentIndex].services && (
-                      <div className="mt-4 pt-4 border-t border-gray-800">
-                        <p className="text-sm text-gray-400">
-                          <span className="text-white font-medium">
+                      <div className="mt-6 pt-4 border-t border-white/10">
+                        <p className="text-sm text-white/60">
+                          <span className="text-white/90 font-light">
                             Services :{" "}
                           </span>
                           {testimonials[currentIndex].services}
@@ -287,77 +300,79 @@ export default function Testimonials() {
             </AnimatePresence>
 
             {/* Contrôles du carousel */}
-            <div className="absolute bottom-4 right-4 flex items-center gap-4 z-50">
-              <button
-                onClick={handlePrev}
-                className="w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white border border-gray-700 hover:bg-black/70 transition-colors"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+            <div className="absolute -bottom-12 left-0 right-0 flex items-center justify-between z-50 px-4">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={handlePrev}
+                  className="w-10 h-10 flex items-center justify-center text-white/80 hover:text-white transition-colors focus:outline-none"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-              <button
-                onClick={handleNext}
-                className="w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white border border-gray-700 hover:bg-black/70 transition-colors"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="w-10 h-10 flex items-center justify-center text-white/80 hover:text-white transition-colors focus:outline-none"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Indicateur de pagination */}
+              <div className="flex justify-center gap-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setDirection(index > currentIndex ? 1 : -1);
+                      setCurrentIndex(index);
+                    }}
+                    className={`h-[2px] transition-all duration-300 ${
+                      index === currentIndex
+                        ? "bg-white w-6"
+                        : "bg-white/30 w-3 hover:bg-white/50"
+                    }`}
+                    aria-label={`Voir l'avis ${index + 1}`}
                   />
-                </svg>
-              </button>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Indicateur de pagination */}
-          <div className="flex justify-center mt-6 gap-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setDirection(index > currentIndex ? 1 : -1);
-                  setCurrentIndex(index);
-                }}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-white w-6"
-                    : "bg-gray-600 hover:bg-gray-500"
-                }`}
-                aria-label={`Voir l'avis ${index + 1}`}
-              />
-            ))}
+          <div className="mt-24 text-center">
+            <Link
+              href="https://g.co/kgs/HkoUeFV"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-all duration-300"
+            >
+              Voir tous les avis Google
+            </Link>
           </div>
-        </div>
-
-        <div className="mt-16 text-center">
-          <Link
-            href="https://g.co/kgs/HkoUeFV"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-gray-500/10 to-white/10 text-white font-medium px-8 py-3 rounded-full hover:from-gray-500/20 hover:to-white/20 transition-all duration-300 border border-gray-500/30"
-          >
-            Voir tous les avis Google
-          </Link>
         </div>
       </div>
     </section>

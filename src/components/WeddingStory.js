@@ -53,7 +53,7 @@ export default function WeddingStory() {
   };
 
   return (
-    <section className="py-20 bg-black text-white overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-black via-black/90 to-white/5 text-white overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
         {/* En-tête de la section */}
         <div className="text-center mb-20">
@@ -69,7 +69,7 @@ export default function WeddingStory() {
             initial={{ width: 0 }}
             animate={{ width: "100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-[1px] bg-white/40 mx-auto"
+            className="h-[1px] bg-white mx-auto"
           ></motion.div>
         </div>
 
@@ -81,23 +81,23 @@ export default function WeddingStory() {
           variants={fadeIn}
           className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center mb-32"
         >
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:order-1 bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm">
             <div className="mb-8">
               <h3 className="text-3xl font-light tracking-wide mb-3 flex items-center gap-3">
-                <IconRings className="w-6 h-6 text-white/80" stroke={1.5} />
+                <IconRings className="w-6 h-6 text-white" stroke={1.5} />
                 Tout commence par une belle histoire
               </h3>
               <motion.div
                 initial={{ width: 0 }}
                 animate={section1InView ? { width: "120px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-[1px] bg-white/40 mb-6"
+                className="h-[1px] bg-white mb-6"
               ></motion.div>
             </div>
-            <div className="space-y-4 text-white/80 leading-relaxed">
+            <div className="space-y-4 text-white/90 leading-relaxed">
               <p className="flex items-start gap-2">
                 <IconWand
-                  className="w-5 h-5 text-white/60 mt-1 flex-shrink-0"
+                  className="w-5 h-5 text-white mt-1 flex-shrink-0"
                   stroke={1.5}
                 />
                 <span>
@@ -111,7 +111,7 @@ export default function WeddingStory() {
               </p>
               <p className="flex items-start gap-2">
                 <IconBrush
-                  className="w-5 h-5 text-white/60 mt-1 flex-shrink-0"
+                  className="w-5 h-5 text-white mt-1 flex-shrink-0"
                   stroke={1.5}
                 />
                 <span>
@@ -141,7 +141,7 @@ export default function WeddingStory() {
               </p>
               <p className="flex items-start gap-2">
                 <IconMoodSmile
-                  className="w-5 h-5 text-white/60 mt-1 flex-shrink-0"
+                  className="w-5 h-5 text-white mt-1 flex-shrink-0"
                   stroke={1.5}
                 />
                 <span>
@@ -152,14 +152,14 @@ export default function WeddingStory() {
             </div>
           </div>
           <motion.div
-            className="relative h-[500px] md:h-[600px] overflow-hidden rounded-sm order-1 md:order-2"
+            className="relative h-[500px] md:h-[600px] overflow-hidden rounded-sm order-1 md:order-2 border border-white/20"
             variants={imageVariant}
           >
             <Image
               src="/photo/mariés2.jpeg"
               alt="Maquillage de mariée"
               fill
-              className="object-cover grayscale"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
@@ -174,18 +174,18 @@ export default function WeddingStory() {
           className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center mb-32"
         >
           <motion.div
-            className="relative h-[500px] md:h-[600px] overflow-hidden rounded-sm"
+            className="relative h-[500px] md:h-[600px] overflow-hidden rounded-sm border border-white/20"
             variants={imageVariant}
           >
             <Image
               src="/photo/maquillage-en-cours.jpeg"
               alt="Essai maquillage mariée"
               fill
-              className="object-cover grayscale"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
-          <div>
+          <div className="bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm">
             <div className="mb-8">
               <h3 className="text-3xl font-light tracking-wide mb-3">
                 Avant le grand jour
@@ -194,13 +194,13 @@ export default function WeddingStory() {
                 initial={{ width: 0 }}
                 animate={section2InView ? { width: "120px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-[1px] bg-white/40 mb-6"
+                className="h-[1px] bg-white mb-6"
               ></motion.div>
             </div>
-            <div className="space-y-4 text-white/80 leading-relaxed">
+            <div className="space-y-4 text-white/90 leading-relaxed">
               <div className="mb-8">
                 <h4 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
-                  <IconPhone className="w-5 h-5 text-white/80" stroke={1.5} />
+                  <IconPhone className="w-5 h-5 text-white" stroke={1.5} />
                   Un moment d&apos;échange avant tout
                 </h4>
                 <p>
@@ -218,7 +218,7 @@ export default function WeddingStory() {
               </div>
               <div>
                 <h4 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
-                  <IconHeart className="w-5 h-5 text-white/80" stroke={1.5} />
+                  <IconHeart className="w-5 h-5 text-white" stroke={1.5} />
                   Le jour de l&apos;essai
                 </h4>
                 <p>
@@ -255,7 +255,7 @@ export default function WeddingStory() {
           variants={fadeIn}
           className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center"
         >
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:order-1 bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm">
             <div className="mb-8">
               <h3 className="text-3xl font-light tracking-wide mb-3">
                 Le grand jour
@@ -264,13 +264,13 @@ export default function WeddingStory() {
                 initial={{ width: 0 }}
                 animate={section3InView ? { width: "120px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-[1px] bg-white/40 mb-6"
+                className="h-[1px] bg-white mb-6"
               ></motion.div>
             </div>
-            <div className="space-y-4 text-white/80 leading-relaxed">
+            <div className="space-y-4 text-white/90 leading-relaxed">
               <div>
                 <h4 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
-                  <IconDiamond className="w-5 h-5 text-white/80" stroke={1.5} />
+                  <IconDiamond className="w-5 h-5 text-white" stroke={1.5} />
                   Le jour J
                 </h4>
                 <p>
@@ -301,14 +301,14 @@ export default function WeddingStory() {
             </div>
           </div>
           <motion.div
-            className="relative h-[500px] md:h-[600px] overflow-hidden rounded-sm order-1 md:order-2"
+            className="relative h-[500px] md:h-[600px] overflow-hidden rounded-sm order-1 md:order-2 border border-white/20"
             variants={imageVariant}
           >
             <Image
               src="/photo/preparation-mariage2.jpeg"
               alt="Mariée prête pour le grand jour"
               fill
-              className="object-cover grayscale"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
