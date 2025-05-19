@@ -21,45 +21,37 @@ export default function Footer() {
       <div className="container mx-auto py-16 px-6 md:px-10 relative">
         <div className="flex flex-col lg:flex-row justify-between gap-12">
           {/* Logo et information */}
-          <div className="lg:w-1/3">
-            <div className="relative h-32 w-full max-w-xs mb-6">
-              <Image
-                src="/logos/logo-sans-fond.png"
-                alt="GlamBeauty Logo"
-                width={240}
-                height={120}
-                className="object-contain object-left"
-                priority
-              />
-            </div>
-            <p className="text-sm text-gray-400 mb-8 max-w-md leading-relaxed">
+          <div className="lg:w-1/3 flex flex-col">
+            <p className="text-sm text-gray-400 mb-6 max-w-md leading-relaxed">
               Expertise en mise en beauté pour mariages et événements spéciaux.
               Maquilleuse, coiffeuse et prothésiste ongulaire professionnelle à
               votre service pour sublimer votre beauté.
             </p>
 
             {/* Bouton Planity */}
-            <Link
-              href="https://www.planity.com/glambeauty-prothesiste-ongulaire-maquilleuse-38120-saint-egreve"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 bg-white hover:bg-gray-200 rounded-lg text-black text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
-              <svg
-                className="w-5 h-5 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+            <div>
+              <Link
+                href="https://www.planity.com/glambeauty-prothesiste-ongulaire-maquilleuse-38120-saint-egreve"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 bg-white hover:bg-gray-200 rounded-lg text-black text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              Réserver sur Planity
-            </Link>
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                Réserver sur Planity
+              </Link>
+            </div>
           </div>
 
           {/* Navigation et Services */}

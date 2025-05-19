@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body
         className={`${raleway.variable} antialiased bg-black text-white min-h-screen flex flex-col`}
+        suppressHydrationWarning
       >
         <Navbar />
         <main className="flex-grow">{children}</main>

@@ -43,7 +43,7 @@ export default function Hero() {
           <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-14 text-gray-300">
             Sublimez votre beauté pour vos moments les plus précieux
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
+          <div className="flex flex-row gap-4 md:gap-6 justify-center">
             <motion.div
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
@@ -51,7 +51,7 @@ export default function Hero() {
             >
               <Link
                 href="/contact"
-                className="bg-white hover:bg-gray-200 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg"
+                className="bg-white hover:bg-gray-200 text-black font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 shadow-lg text-sm md:text-base inline-block"
               >
                 Réserver maintenant
               </Link>
@@ -63,7 +63,7 @@ export default function Hero() {
             >
               <Link
                 href="/galerie"
-                className="bg-transparent border border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300"
+                className="bg-transparent border border-white text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-white/10 transition-all duration-300 text-sm md:text-base inline-block"
               >
                 Voir la galerie
               </Link>

@@ -108,7 +108,7 @@ export default function CallToAction() {
               <span className="inline-block px-4 py-1 bg-gradient-to-r from-gray-500/20 to-white/20 rounded-full text-sm font-medium text-gray-300 mb-4 backdrop-blur-md border border-gray-500/20">
                 Prête pour un moment de beauté ?
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-white">
+              <h2 className="text-3xl md:text-6xl mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-white tracking-wider font-heading">
                 Sublimez votre beauté
               </h2>
               <motion.p

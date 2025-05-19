@@ -13,7 +13,7 @@ export default function AboutSection() {
           viewport={{ once: true }}
           className="max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center font-heading tracking-wider">
+          <h2 className="text-3xl md:text-6xl mb-8 text-center font-heading tracking-wider">
             À PROPOS
           </h2>
 
@@ -30,7 +30,7 @@ export default function AboutSection() {
                   src="/photo/jennifer1.jpeg"
                   alt="Jennifer - Maquilleuse et Coiffeuse professionnelle"
                   fill
-                  className="object-cover grayscale"
+                  className="object-cover "
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
@@ -77,7 +77,7 @@ export default function AboutSection() {
                   d&apos;informations ou demandes particulières.
                 </p>
 
-                <p className="text-xl text-white font-heading italic tracking-wide">
+                <p className="text-2xl text-white font-heading italic tracking-wide">
                   Jennifer
                 </p>
               </div>

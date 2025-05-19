@@ -6,6 +6,8 @@ import {
   IconArrowNarrowLeft,
   IconArrowNarrowRight,
   IconX,
+  IconPhone,
+  IconMail,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
@@ -168,43 +170,7 @@ const PackageCard = ({ card, index }) => {
 import { useEffect } from "react";
 
 export default function WeddingPackages() {
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  // Section hooks pour animations basées sur le scroll
+  // Animation hooks (optionnel, tu peux retirer si tu veux du statique)
   const [titreRef, titreInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -291,217 +257,146 @@ export default function WeddingPackages() {
   ));
 
   return (
-    <section className="relative py-24 bg-black overflow-hidden">
-      {/* Arrière-plan stylisé */}
-      <div className="absolute inset-0 opacity-30">
+    <section className="relative py-24 bg-black overflow-hidden font-serif">
+      {/* Arrière-plan flou et sombre */}
+      <div className="absolute inset-0 opacity-40">
         <div className="absolute inset-0 bg-[url('/photo/preparation-mariage8.jpeg')] bg-cover bg-center grayscale"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/80"></div>
       </div>
 
-      {/* Effet de particules dorées (optionnel) */}
-      <div className="absolute top-[25%] right-[15%] w-64 h-64 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-[35%] left-[10%] w-40 h-40 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-full blur-3xl"></div>
+      {/* Effet de particules dorées */}
+      <div className="absolute top-[20%] right-[10%] w-64 h-64 bg-yellow-200/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-[30%] left-[10%] w-40 h-40 bg-yellow-200/10 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-6 md:px-10 relative z-10">
         {/* Titre principal */}
-        <motion.div
-          ref={titreRef}
-          variants={containerVariants}
-          initial="hidden"
-          animate={titreInView ? "visible" : "hidden"}
-          className="text-center mb-20"
-        >
-          <motion.h2
-            variants={titleVariants}
-            className="text-5xl md:text-7xl font-light mb-2"
-          >
+        <div ref={titreRef} className="text-center mb-20">
+          <h2 className="text-5xl md:text-7xl font-light mb-2 tracking-widest text-white font-[Cormorant_Garamond,serif]">
             PRESTATIONS
-          </motion.h2>
-          <motion.h3
-            variants={titleVariants}
-            className="text-2xl md:text-3xl font-light text-white/80"
-          >
+          </h2>
+          <h3 className="text-2xl md:text-4xl font-light text-white/80 tracking-widest font-[Cormorant_Garamond,serif]">
             Mariage
-          </motion.h3>
-        </motion.div>
+          </h3>
+        </div>
 
         {/* Section MARIÉES */}
-        <motion.div
-          ref={marieesRef}
-          variants={containerVariants}
-          initial="hidden"
-          animate={marieesInView ? "visible" : "hidden"}
-          className="mb-20"
-        >
-          <motion.h3
-            variants={titleVariants}
-            className="text-3xl md:text-5xl font-light mb-8 md:mb-12"
-          >
+        <div ref={marieesRef} className="mb-20">
+          <h3 className="text-3xl md:text-5xl font-light mb-8 md:mb-12 tracking-widest text-white font-[Cormorant_Garamond,serif]">
             MARIÉES
-          </motion.h3>
-
-          <motion.div
-            variants={sectionVariants}
-            className="border border-white/30 rounded-lg p-8 backdrop-blur-sm bg-black/30"
-          >
-            <div className="space-y-6">
-              <div className="flex flex-col md:flex-row md:items-center">
-                <div className="flex items-center gap-3 md:w-1/2">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-xl font-light">Formule argent</span>
-                </div>
-                <div className="text-white/80 ml-5 md:ml-0">
+          </h3>
+          <div className="border border-white/30 rounded-xl p-8 backdrop-blur-sm bg-black/40">
+            <ul className="space-y-6">
+              <li className="flex flex-col md:flex-row md:items-center justify-between">
+                <span className="font-semibold text-white text-lg md:text-xl">
+                  Formule argent
+                </span>
+                <span className="text-white/80 md:ml-8">
                   Essai coiffure et jour-j
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:items-center">
-                <div className="flex items-center gap-3 md:w-1/2">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-xl font-light">Formule gold</span>
-                </div>
-                <div className="text-white/80 ml-5 md:ml-0">
+                </span>
+              </li>
+              <li className="flex flex-col md:flex-row md:items-center justify-between">
+                <span className="font-semibold text-white text-lg md:text-xl">
+                  Formule gold
+                </span>
+                <span className="text-white/80 md:ml-8">
                   Essai maquillage et jour-j
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:items-center">
-                <div className="flex items-center gap-3 md:w-1/2">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-xl font-light">Formule diamant</span>
-                </div>
-                <div className="text-white/80 ml-5 md:ml-0">
+                </span>
+              </li>
+              <li className="flex flex-col md:flex-row md:items-center justify-between">
+                <span className="font-semibold text-white text-lg md:text-xl">
+                  Formule diamant
+                </span>
+                <span className="text-white/80 md:ml-8">
                   Essai maquillage + coiffure et jour-j
-                </div>
-              </div>
-
-              <div className="text-sm text-white/60 text-right pt-2">
-                (Possibilité de rajouter une prestation onglerie)
-              </div>
+                </span>
+              </li>
+            </ul>
+            <div className="text-sm text-white/60 text-right pt-4 italic">
+              (Possibilité de rajouter une prestation onglerie)
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Section INVITÉS */}
-        <motion.div
-          ref={invitesRef}
-          variants={containerVariants}
-          initial="hidden"
-          animate={invitesInView ? "visible" : "hidden"}
-          className="mb-20"
-        >
-          <motion.h3
-            variants={titleVariants}
-            className="text-3xl md:text-5xl font-light mb-8 md:mb-12"
-          >
+        <div ref={invitesRef} className="mb-20">
+          <h3 className="text-3xl md:text-5xl font-light mb-8 md:mb-12 tracking-widest text-white font-[Cormorant_Garamond,serif]">
             INVITÉS
-          </motion.h3>
-
-          <motion.div
-            variants={sectionVariants}
-            className="border border-white/30 rounded-lg p-8 backdrop-blur-sm bg-black/30"
-          >
-            <div className="space-y-6">
-              <div className="flex flex-col md:flex-row md:items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-xl font-light">Formule Saphir</span>
-                </div>
-                <div className="text-white/80 ml-5 md:ml-0">
+          </h3>
+          <div className="border border-white/30 rounded-xl p-8 backdrop-blur-sm bg-black/40">
+            <ul className="space-y-6">
+              <li className="flex flex-col md:flex-row md:items-center justify-between">
+                <span className="font-semibold text-white text-lg md:text-xl">
+                  Formule Saphir
+                </span>
+                <span className="text-white/80 md:ml-8">
                   Maquillage + coiffure
-                </div>
-                <div className="text-xl md:text-2xl font-light ml-auto">
+                </span>
+                <span className="font-bold text-white/80 text-xl md:text-2xl ml-auto">
                   110€
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-xl font-light">Maquillage</span>
-                </div>
-                <div className="text-xl md:text-2xl font-light ml-auto">
+                </span>
+              </li>
+              <li className="flex flex-col md:flex-row md:items-center justify-between">
+                <span className="font-semibold text-white text-lg md:text-xl">
+                  Maquillage
+                </span>
+                <span className="font-bold text-white/80 text-xl md:text-2xl ml-auto">
                   60€
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-xl font-light">Coiffure</span>
-                </div>
-                <div className="text-xl md:text-2xl font-light ml-auto">
+                </span>
+              </li>
+              <li className="flex flex-col md:flex-row md:items-center justify-between">
+                <span className="font-semibold text-white text-lg md:text-xl">
+                  Coiffure
+                </span>
+                <span className="font-bold text-white/80 text-xl md:text-2xl ml-auto">
                   60€
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
         {/* Section ESSAIS */}
-        <motion.div
-          ref={essaisRef}
-          variants={containerVariants}
-          initial="hidden"
-          animate={essaisInView ? "visible" : "hidden"}
-          className="mb-20"
-        >
-          <motion.h3
-            variants={titleVariants}
-            className="text-3xl md:text-5xl font-light mb-8 md:mb-12"
-          >
+        <div ref={essaisRef} className="mb-20">
+          <h3 className="text-3xl md:text-5xl font-light mb-8 md:mb-12 tracking-widest text-white font-[Cormorant_Garamond,serif]">
             ESSAIS
-          </motion.h3>
-
-          <motion.div
-            variants={sectionVariants}
-            className="border border-white/30 rounded-lg p-8 backdrop-blur-sm bg-black/30"
-          >
-            <div className="space-y-6">
-              <div className="flex flex-col md:flex-row md:items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-xl font-light">Coiffure</span>
-                </div>
-                <div className="text-xl md:text-2xl font-light ml-auto">
+          </h3>
+          <div className="border border-white/30 rounded-xl p-8 backdrop-blur-sm bg-black/40">
+            <ul className="space-y-6">
+              <li className="flex flex-col md:flex-row md:items-center justify-between">
+                <span className="font-semibold text-white text-lg md:text-xl">
+                  Coiffure
+                </span>
+                <span className="font-bold text-white/80 text-xl md:text-2xl ml-auto">
                   70€
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-xl font-light">Maquillage</span>
-                </div>
-                <div className="text-xl md:text-2xl font-light ml-auto">
+                </span>
+              </li>
+              <li className="flex flex-col md:flex-row md:items-center justify-between">
+                <span className="font-semibold text-white text-lg md:text-xl">
+                  Maquillage
+                </span>
+                <span className="font-bold text-white/80 text-xl md:text-2xl ml-auto">
                   80€
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
         {/* Notes */}
-        <motion.div
-          ref={notesRef}
-          variants={containerVariants}
-          initial="hidden"
-          animate={notesInView ? "visible" : "hidden"}
-          className="text-center max-w-3xl mx-auto"
-        >
-          <motion.p variants={sectionVariants} className="text-white/80 mb-3">
+        <div ref={notesRef} className="text-center max-w-3xl mx-auto mb-16">
+          <p className="text-white/80 mb-2 text-base">
             Location d&apos;extension de cheveux possible
-          </motion.p>
-          <motion.p variants={sectionVariants} className="text-white/80 mb-3">
+          </p>
+          <p className="text-white/80 mb-2 text-base">
             Les faux cils sont inclus pour chaque prestation
-          </motion.p>
-          <motion.p variants={sectionVariants} className="text-white/80">
+          </p>
+          <p className="text-white/80 text-base">
             Les indispensables mariée sont offerts pour les packs gold/diamant
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
-        {/* Élément décoratif en bas */}
-        <div className="mt-24 border-t border-white/20 w-full h-1"></div>
+        {/* Bande dorée et contacts en bas */}
+        <div className="w-full h-1 bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-200 rounded-full mb-8"></div>
       </div>
     </section>
   );
