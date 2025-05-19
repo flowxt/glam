@@ -2,7 +2,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
-import { IconPhone, IconHeart, IconDiamond } from "@tabler/icons-react";
+import {
+  IconPhone,
+  IconHeart,
+  IconDiamond,
+  IconRings,
+  IconWand,
+  IconBrush,
+  IconMoodSmile,
+} from "@tabler/icons-react";
 
 export default function WeddingStory() {
   // Animation hooks pour chaque section
@@ -74,25 +82,47 @@ export default function WeddingStory() {
           className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center mb-32"
         >
           <div className="order-2 md:order-1">
-            <h3 className="text-3xl font-light tracking-wide mb-6">
-              Tout commence par une belle histoire
-            </h3>
+            <div className="mb-8">
+              <h3 className="text-3xl font-light tracking-wide mb-3 flex items-center gap-3">
+                <IconRings className="w-6 h-6 text-white/80" stroke={1.5} />
+                Tout commence par une belle histoire
+              </h3>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={section1InView ? { width: "120px" } : { width: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="h-[1px] bg-white/40 mb-6"
+              ></motion.div>
+            </div>
             <div className="space-y-4 text-white/80 leading-relaxed">
-              <p>
-                Tout commence par une belle histoire… et un &apos;oui&apos; qui
-                change tout ! Vous êtes en train de préparer le grand jour :
-                votre mariage ! Félicitations ! Si vous êtes ici, c&apos;est
-                sûrement que vous cherchez quelqu&apos;un pour prendre soin de
-                vous ce jour-là — et je suis ravie que le hasard (ou pas !) vous
-                ait menées jusqu&apos;à moi.
+              <p className="flex items-start gap-2">
+                <IconWand
+                  className="w-5 h-5 text-white/60 mt-1 flex-shrink-0"
+                  stroke={1.5}
+                />
+                <span>
+                  Tout commence par une belle histoire… et un &apos;oui&apos;
+                  qui change tout ! Vous êtes en train de préparer le grand jour
+                  : votre mariage ! Félicitations ! Si vous êtes ici, c&apos;est
+                  sûrement que vous cherchez quelqu&apos;un pour prendre soin de
+                  vous ce jour-là — et je suis ravie que le hasard (ou pas !)
+                  vous ait menées jusqu&apos;à moi.
+                </span>
               </p>
-              <p>
-                Je suis maquilleuse professionnelle depuis 5 ans, passionnée, à
-                l&apos;écoute, un brin rigolote (oui, je dédramatise souvent les
-                petits stress du jour J !), mais surtout minutieuse, douce, et
-                toujours là pour vous mettre à l&apos;aise. Mon but : que vous
-                vous sentiez belle, sereine, et surtout vous-même, avec une mise
-                en beauté qui vous sublime tout en restant fidèle à votre style.
+              <p className="flex items-start gap-2">
+                <IconBrush
+                  className="w-5 h-5 text-white/60 mt-1 flex-shrink-0"
+                  stroke={1.5}
+                />
+                <span>
+                  Je suis maquilleuse professionnelle depuis 5 ans, passionnée,
+                  à l&apos;écoute, un brin rigolote (oui, je dédramatise souvent
+                  les petits stress du jour J !), mais surtout minutieuse,
+                  douce, et toujours là pour vous mettre à l&apos;aise. Mon but
+                  : que vous vous sentiez belle, sereine, et surtout vous-même,
+                  avec une mise en beauté qui vous sublime tout en restant
+                  fidèle à votre style.
+                </span>
               </p>
               <p>
                 Le moment de la préparation, c&apos;est plus qu&apos;un simple
@@ -109,9 +139,15 @@ export default function WeddingStory() {
                 bienveillance et je prends toujours le temps de comprendre ce
                 qui vous fera vous sentir bien dans votre peau, ce jour-là.
               </p>
-              <p>
-                Mon petit conseil : restez vous-même. Faites confiance à votre
-                feeling, et laissez-moi prendre soin de vous, tout simplement.
+              <p className="flex items-start gap-2">
+                <IconMoodSmile
+                  className="w-5 h-5 text-white/60 mt-1 flex-shrink-0"
+                  stroke={1.5}
+                />
+                <span>
+                  Mon petit conseil : restez vous-même. Faites confiance à votre
+                  feeling, et laissez-moi prendre soin de vous, tout simplement.
+                </span>
               </p>
             </div>
           </div>
@@ -150,9 +186,17 @@ export default function WeddingStory() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
           <div>
-            <h3 className="text-3xl font-light tracking-wide mb-6">
-              Avant le grand jour
-            </h3>
+            <div className="mb-8">
+              <h3 className="text-3xl font-light tracking-wide mb-3">
+                Avant le grand jour
+              </h3>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={section2InView ? { width: "120px" } : { width: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="h-[1px] bg-white/40 mb-6"
+              ></motion.div>
+            </div>
             <div className="space-y-4 text-white/80 leading-relaxed">
               <div className="mb-8">
                 <h4 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
@@ -212,9 +256,17 @@ export default function WeddingStory() {
           className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center"
         >
           <div className="order-2 md:order-1">
-            <h3 className="text-3xl font-light tracking-wide mb-6">
-              Le grand jour
-            </h3>
+            <div className="mb-8">
+              <h3 className="text-3xl font-light tracking-wide mb-3">
+                Le grand jour
+              </h3>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={section3InView ? { width: "120px" } : { width: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="h-[1px] bg-white/40 mb-6"
+              ></motion.div>
+            </div>
             <div className="space-y-4 text-white/80 leading-relaxed">
               <div>
                 <h4 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
