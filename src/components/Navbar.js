@@ -62,135 +62,148 @@ export default function Navbar() {
   };
 
   return (
-    <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 50, damping: 15 }}
-        className={`fixed top-2 left-0 right-0 z-50 w-[95%] md:w-[90%] max-w-7xl mx-auto px-6 md:px-8 rounded-full ${
-          scrolled
-            ? "py-2 md:py-3 bg-black/50 backdrop-blur-xl shadow-lg shadow-black/20"
-            : "py-3 md:py-4 bg-black/30 backdrop-blur-md"
-        } transition-all duration-300 border border-gray-800/20`}
+    <div className="sticky top-0 z-50 w-full">
+      {/* Barre de navigation élégante */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className={`
+          w-full mx-auto 
+          ${
+            scrolled
+              ? "py-3 bg-black/60 backdrop-blur-md shadow-md shadow-black/10"
+              : "py-4 bg-black backdrop-blur-sm"
+          }
+          transition-all duration-300 border-b border-white/10
+        `}
       >
-        <div className="container mx-auto flex justify-between items-center">
-          <Link href="/" className="relative group">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="relative z-10"
-            >
-              <div className="flex items-center">
-                {/* Logo */}
-                <div className="relative w-20 h-9 md:w-28 md:h-9 flex items-center justify-center">
-                  <Image
-                    src="/logos/logo-sans-fond.png"
-                    alt="GlamBeauty Logo"
-                    width={180}
-                    height={40}
-                    className="object-contain"
-                    priority
-                  />
-                </div>
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="flex items-center justify-between">
+            {/* Logo avec effet de brillance */}
+            <Link href="/" className="group">
+              <div className="relative overflow-hidden">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  className="relative z-10 flex items-center"
+                >
+                  <div className="relative w-28 h-12 flex items-center py-1">
+                    <Image
+                      src="/logos/logo-sans-fond.png"
+                      alt="GlamBeauty Logo"
+                      width={180}
+                      height={40}
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
+                </motion.div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 group-hover:blur-sm bg-gradient-radial from-white/20 to-transparent transition-all duration-700 ease-out"></div>
               </div>
-            </motion.div>
-            <div className="absolute -inset-1 rounded-lg blur-md group-hover:blur-xl bg-white/10 opacity-0 group-hover:opacity-100 transition-all duration-500 hidden md:block"></div>
-          </Link>
+            </Link>
 
-          {/* Menu pour desktop */}
-          <div className="hidden md:flex space-x-1">
-            {menuItems.map((item, i) => (
+            {/* Menu desktop - élégant et minimaliste */}
+            <div className="hidden md:flex items-center space-x-1">
+              {menuItems.map((item, i) => (
+                <motion.div
+                  key={item.name}
+                  custom={i}
+                  initial="hidden"
+                  animate="visible"
+                  variants={navItemVariants}
+                >
+                  <Link
+                    href={item.href}
+                    className={`relative px-5 py-2 text-sm font-medium transition-all duration-300 overflow-hidden group`}
+                  >
+                    <span
+                      className={`relative z-10 ${
+                        activeItem === item.href
+                          ? "text-white"
+                          : "text-gray-300 group-hover:text-white"
+                      }`}
+                    >
+                      {item.name}
+                    </span>
+
+                    {/* Effet de surlignage élégant */}
+                    {activeItem === item.href && (
+                      <motion.span
+                        layoutId="activeNavIndicator"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-white/40 via-white/80 to-white/40"
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
+
+                    {/* Effet de survol subtil */}
+                    <span className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  </Link>
+                </motion.div>
+              ))}
+
+              {/* Bouton Réserver avec effet de brillance */}
               <motion.div
-                key={item.name}
-                custom={i}
-                initial="hidden"
-                animate="visible"
-                variants={navItemVariants}
-                className="relative"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="ml-3"
               >
                 <Link
-                  href={item.href}
-                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    activeItem === item.href
-                      ? "text-white"
-                      : "text-gray-300 hover:text-white"
-                  }`}
+                  href="/contact"
+                  className="relative px-6 py-2 bg-white text-black rounded-sm text-sm font-medium overflow-hidden group"
                 >
-                  {item.name}
-                  {activeItem === item.href && (
-                    <motion.span
-                      layoutId="activeNavIndicator"
-                      className="absolute inset-0 rounded-full bg-white/10"
-                      transition={{ duration: 0.3 }}
-                    />
-                  )}
+                  <span className="relative z-10">Réserver</span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-white via-gray-100 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </Link>
               </motion.div>
-            ))}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-            >
-              <Link
-                href="/contact"
-                className="ml-2 px-5 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-200 shadow-lg shadow-white/10 transition-all duration-300"
-              >
-                Réserver
-              </Link>
-            </motion.div>
-          </div>
-
-          {/* Bouton menu mobile */}
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="md:hidden relative z-20 focus:outline-none"
-            onClick={toggleMenu}
-          >
-            <div className="w-7 h-7 flex items-center justify-center rounded-full bg-white/10">
-              <svg
-                className="w-4 h-4 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
             </div>
-          </motion.button>
-        </div>
-      </motion.nav>
 
-      {/* Menu mobile - Séparé de la navbar pour éviter l'effet de blur */}
+            {/* Bouton menu mobile - élégant et minimal */}
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="md:hidden relative focus:outline-none group"
+              onClick={toggleMenu}
+            >
+              <div className="w-9 h-9 flex items-center justify-center">
+                <div className="relative w-6 flex flex-col items-center justify-center gap-1.5">
+                  <span
+                    className={`block h-[1.5px] bg-white transition-all duration-300 ease-out ${
+                      isOpen ? "w-5 translate-y-[3px] rotate-45" : "w-6"
+                    }`}
+                  ></span>
+                  <span
+                    className={`block h-[1.5px] bg-white transition-all duration-300 ease-out ${
+                      isOpen ? "opacity-0" : "w-4 opacity-100"
+                    }`}
+                  ></span>
+                  <span
+                    className={`block h-[1.5px] bg-white transition-all duration-300 ease-out ${
+                      isOpen ? "w-5 -translate-y-[3px] -rotate-45" : "w-5"
+                    }`}
+                  ></span>
+                </div>
+              </div>
+            </motion.button>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Menu mobile avec animation fluide */}
       <AnimatePresence>
         {isOpen && (
-          <div className="fixed top-[calc(2rem+3rem)] left-0 right-0 z-40 w-[95%] md:w-[90%] max-w-7xl mx-auto px-0">
-            <motion.div
-              initial={{ opacity: 0, height: 0, y: -10 }}
-              animate={{ opacity: 1, height: "auto", y: 0 }}
-              exit={{ opacity: 0, height: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden bg-black/95 backdrop-blur-md rounded-xl overflow-hidden shadow-xl border border-gray-800/30"
-            >
-              <div className="flex flex-col space-y-1 py-4 px-4">
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-black/90 backdrop-blur-lg border-b border-white/10 overflow-hidden"
+          >
+            <div className="container mx-auto px-4">
+              <div className="py-4 space-y-0.5">
                 {menuItems.map((item, i) => (
                   <motion.div
                     key={item.name}
@@ -200,10 +213,10 @@ export default function Navbar() {
                   >
                     <Link
                       href={item.href}
-                      className={`block py-3 px-4 rounded-lg ${
+                      className={`block py-3 px-4 ${
                         activeItem === item.href
-                          ? "bg-white/10 text-white"
-                          : "text-gray-300 hover:bg-white/5"
+                          ? "text-white bg-white/5 border-l-2 border-white/80"
+                          : "text-gray-300 hover:text-white hover:bg-white/5"
                       } transition-colors duration-300`}
                       onClick={() => setIsOpen(false)}
                     >
@@ -215,21 +228,21 @@ export default function Navbar() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4, duration: 0.3 }}
-                  className="pt-3"
+                  className="pt-4 pb-2 px-4"
                 >
                   <Link
                     href="/contact"
                     onClick={() => setIsOpen(false)}
-                    className="block text-center py-3 bg-white text-black rounded-lg font-medium shadow-lg hover:bg-gray-200 transition-all duration-300"
+                    className="block text-center py-3 bg-white text-black font-medium hover:bg-gray-100 transition-colors duration-300"
                   >
                     Réserver maintenant
                   </Link>
                 </motion.div>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }

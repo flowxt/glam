@@ -260,7 +260,7 @@ export default function WeddingPackages() {
     <section className="relative py-24 bg-black overflow-hidden font-serif">
       {/* Arrière-plan flou et sombre */}
       <div className="absolute inset-0 opacity-40">
-        <div className="absolute inset-0 bg-[url('/photo/preparation-mariage8.jpeg')] bg-cover bg-center grayscale"></div>
+        <div className="absolute inset-0 bg-[url('/photo/maquillage-pro4.jpeg')] bg-cover bg-[center_top_40%] grayscale"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/80"></div>
       </div>
 
