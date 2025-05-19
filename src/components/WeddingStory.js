@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import { IconPhone, IconHeart, IconDiamond } from "@tabler/icons-react";
 
 export default function WeddingStory() {
   // Animation hooks pour chaque section
@@ -154,8 +155,9 @@ export default function WeddingStory() {
             </h3>
             <div className="space-y-4 text-white/80 leading-relaxed">
               <div className="mb-8">
-                <h4 className="text-xl font-medium text-white mb-2">
-                  📞 Un moment d&apos;échange avant tout
+                <h4 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
+                  <IconPhone className="w-5 h-5 text-white/80" stroke={1.5} />
+                  Un moment d&apos;échange avant tout
                 </h4>
                 <p>
                   Avant notre première rencontre, j&apos;aime prendre le temps
@@ -171,8 +173,9 @@ export default function WeddingStory() {
                 </p>
               </div>
               <div>
-                <h4 className="text-xl font-medium text-white mb-2">
-                  💋 Le jour de l&apos;essai
+                <h4 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
+                  <IconHeart className="w-5 h-5 text-white/80" stroke={1.5} />
+                  Le jour de l&apos;essai
                 </h4>
                 <p>
                   C&apos;est lors de l&apos;essai qu&apos;on se rencontre
@@ -214,8 +217,9 @@ export default function WeddingStory() {
             </h3>
             <div className="space-y-4 text-white/80 leading-relaxed">
               <div>
-                <h4 className="text-xl font-medium text-white mb-2">
-                  💎 Le jour J
+                <h4 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
+                  <IconDiamond className="w-5 h-5 text-white/80" stroke={1.5} />
+                  Le jour J
                 </h4>
                 <p>
                   Le grand jour est enfin là, et je suis tellement heureuse de
