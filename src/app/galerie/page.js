@@ -731,16 +731,39 @@ export default function Galerie() {
           viewport={{ once: true }}
           className="mt-24 text-center"
         >
-          <div className="max-w-xl mx-auto">
-            <p className="text-xl text-white/80 mb-6">
-              Vous aimez mon travail ?
+          <div className="max-w-2xl mx-auto bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-12 rounded-sm">
+            <h3 className="text-2xl md:text-3xl font-light text-white mb-4">
+              Sublimez votre beauté pour vos moments importants
+            </h3>
+            <div className="h-[1px] w-24 bg-white/40 mx-auto mb-6"></div>
+            <p className="text-white/80 mb-8 max-w-xl mx-auto">
+              Après avoir découvert mes réalisations, transformez votre vision
+              en réalité. Que ce soit pour votre mariage, un événement spécial
+              ou une séance photo, je m&apos;adapte à vos envies pour créer un
+              look qui vous ressemble.
             </p>
-            <a
-              href="/contact"
-              className="inline-block bg-white hover:bg-white/90 text-black font-light px-8 py-3 tracking-wide transition-all duration-300"
-            >
-              PRENDRE RENDEZ-VOUS
-            </a>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <a
+                href="/contact"
+                className="inline-flex items-center bg-white hover:bg-gray-100 text-black font-medium px-8 py-3 tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+              >
+                <span>PRENDRE RENDEZ-VOUS</span>
+                <svg
+                  className="w-5 h-5 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </a>
+            </motion.div>
           </div>
         </motion.div>
       </div>
