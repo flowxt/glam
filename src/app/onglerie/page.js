@@ -380,7 +380,7 @@ export default function Onglerie() {
       />
 
       {/* Hero Section - Reprise du style du Hero principal */}
-      <section className="relative min-h-[80vh] flex items-center justify-center py-24">
+      <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center py-24 md:py-0">
         {/* Séparateur supérieur */}
         <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
 
