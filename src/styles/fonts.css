@@ -8,22 +8,4 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Fiona';
-  src: url('/fonts/Fiona-Medium.woff2') format('woff2'),
-       url('/fonts/Fiona-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Fiona';
-  src: url('/fonts/Fiona-Bold.woff2') format('woff2'),
-       url('/fonts/Fiona-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Note: Vous devrez ajouter les fichiers de police Fiona dans le dossier /public/fonts/ */ 
+/* Note: Vous n'avez actuellement que la version Regular de la police Fiona dans le dossier /public/fonts/ */ 

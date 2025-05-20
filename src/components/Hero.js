@@ -7,7 +7,16 @@ export default function Hero() {
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center py-24 md:py-0">
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/90"></div>
-      <div className="absolute inset-0 bg-[url('/photo/preparation-mariage8.jpeg')] bg-cover bg-top md:bg-center opacity-20 grayscale"></div>
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src="/photo/preparation-mariage8.jpeg"
+          alt="Fond beauté mariage"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-top md:object-center opacity-20 grayscale"
+        />
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

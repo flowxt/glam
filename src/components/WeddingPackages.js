@@ -263,7 +263,16 @@ export default function WeddingPackages() {
 
       {/* Arrière-plan flou et sombre */}
       <div className="absolute inset-0 opacity-40">
-        <div className="absolute inset-0 bg-[url('/photo/maquillage-pro4.jpeg')] bg-cover bg-[center_top_40%] grayscale"></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="/photo/maquillage-pro4.jpeg"
+            alt="Fond mariage"
+            fill
+            sizes="100vw"
+            className="object-cover grayscale"
+            style={{ objectPosition: "center top 40%" }}
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/80"></div>
       </div>
 
