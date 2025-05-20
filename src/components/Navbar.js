@@ -91,7 +91,7 @@ export default function Navbar() {
                 >
                   <div className="relative w-36 h-16 flex items-center py-1">
                     <Image
-                      src="/logos/logo-sans-fond.png"
+                      src="/logos/logo-texte-sans-fond.png"
                       alt="GlamBeauty Logo"
                       width={180}
                       height={80}
