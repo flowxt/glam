@@ -385,7 +385,16 @@ export default function Onglerie() {
         <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
 
         <div className="absolute inset-0 bg-gradient-to-br from-black/90 to-black/80"></div>
-        <div className="absolute inset-0 bg-[url('/photo/onglerie/ongles10.jpeg')] bg-cover bg-center opacity-20 grayscale"></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="/photo/onglerie/ongles10.jpeg"
+            alt="Fond onglerie"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-20 grayscale"
+          />
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

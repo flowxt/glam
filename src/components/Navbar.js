@@ -89,12 +89,12 @@ export default function Navbar() {
                   transition={{ duration: 0.6 }}
                   className="relative z-10 flex items-center"
                 >
-                  <div className="relative w-28 h-12 flex items-center py-1">
+                  <div className="relative w-36 h-16 flex items-center py-1">
                     <Image
                       src="/logos/logo-sans-fond.png"
                       alt="GlamBeauty Logo"
                       width={180}
-                      height={40}
+                      height={80}
                       className="object-contain"
                       priority
                     />
