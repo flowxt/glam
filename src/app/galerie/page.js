@@ -1,10 +1,204 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
+// Composant de galerie modale pour afficher les images en plein écran
+const ImageModal = ({
+  images,
+  currentIndex,
+  isOpen,
+  onClose,
+  onPrev,
+  onNext,
+}) => {
+  // Pour fermer la modale avec la touche Escape
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") onPrev();
+      if (e.key === "ArrowRight") onNext();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose, onPrev, onNext]);
+
+  // Empêcher le défilement du body quand la modale est ouverte
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={onClose}
+        >
+          {/* Conteneur de l'image avec les boutons de navigation */}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="relative max-w-5xl w-full h-[80vh] flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Bouton précédent */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="absolute left-4 z-20 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white transition-all hover:bg-white/20"
+              onClick={(e) => {
+                e.stopPropagation();
+                onPrev();
+              }}
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </motion.button>
+
+            {/* Image actuelle */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              <div className="relative w-full h-full">
+                <Image
+                  src={images[currentIndex].src}
+                  alt={images[currentIndex].alt}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 80vw"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Bouton suivant */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="absolute right-4 z-20 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white transition-all hover:bg-white/20"
+              onClick={(e) => {
+                e.stopPropagation();
+                onNext();
+              }}
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </motion.button>
+
+            {/* Bouton fermer */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="absolute top-4 right-4 z-20 w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white transition-all hover:bg-white/20"
+              onClick={onClose}
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </motion.button>
+
+            {/* Indicateur de position */}
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`w-2 h-2 rounded-full ${
+                    idx === currentIndex ? "bg-white" : "bg-white/30"
+                  }`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onNext(idx);
+                  }}
+                />
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 export default function Galerie() {
+  // State pour la galerie modale
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Gérer la navigation dans la modale
+  const handleOpenModal = (index) => {
+    setCurrentImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? filteredImages.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextImage = (index) => {
+    if (typeof index === "number") {
+      setCurrentImageIndex(index);
+      return;
+    }
+    setCurrentImageIndex((prev) =>
+      prev === filteredImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
   // Catégories pour le filtrage
   const categories = [
     "Tous",
@@ -419,6 +613,16 @@ export default function Galerie() {
 
   return (
     <div className="min-h-screen bg-black text-white py-16">
+      {/* Composant Modale pour afficher les images en plein écran */}
+      <ImageModal
+        images={filteredImages}
+        currentIndex={currentImageIndex}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onPrev={handlePrevImage}
+        onNext={handleNextImage}
+      />
+
       <div className="container mx-auto px-6 md:px-10">
         <div ref={titleRef} className="text-center mb-16">
           <motion.h1
@@ -484,11 +688,12 @@ export default function Galerie() {
             animate="visible"
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
           >
-            {filteredImages.map((image) => (
+            {filteredImages.map((image, index) => (
               <motion.div
                 key={image.id}
                 variants={itemVariants}
-                className="group relative aspect-square overflow-hidden"
+                className="group relative aspect-square overflow-hidden cursor-pointer"
+                onClick={() => handleOpenModal(index)}
               >
                 <div className="relative w-full h-full">
                   <Image
