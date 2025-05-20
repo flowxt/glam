@@ -1,11 +1,223 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { AppleCardsDemo } from "@/components/AppleCardsDemo";
 import { useInView } from "react-intersection-observer";
+import { useState, useEffect } from "react";
+
+// Composant de galerie modale pour afficher les images en plein écran
+const ImageModal = ({
+  images,
+  currentIndex,
+  isOpen,
+  onClose,
+  onPrev,
+  onNext,
+}) => {
+  // Pour fermer la modale avec la touche Escape
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") onPrev();
+      if (e.key === "ArrowRight") onNext();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose, onPrev, onNext]);
+
+  // Empêcher le défilement du body quand la modale est ouverte
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={onClose}
+        >
+          {/* Conteneur de l'image avec les boutons de navigation */}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="relative max-w-5xl w-full h-[80vh] flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Bouton précédent */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="absolute left-4 z-20 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white transition-all hover:bg-white/20"
+              onClick={(e) => {
+                e.stopPropagation();
+                onPrev();
+              }}
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </motion.button>
+
+            {/* Image actuelle */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              <div className="relative w-full h-full">
+                <Image
+                  src={`/photo/onglerie/${images[currentIndex]}`}
+                  alt={`Réalisation onglerie ${currentIndex + 1}`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 80vw"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Bouton suivant */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="absolute right-4 z-20 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white transition-all hover:bg-white/20"
+              onClick={(e) => {
+                e.stopPropagation();
+                onNext();
+              }}
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </motion.button>
+
+            {/* Bouton fermer */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="absolute top-4 right-4 z-20 w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white transition-all hover:bg-white/20"
+              onClick={onClose}
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </motion.button>
+
+            {/* Indicateur de position */}
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`w-2 h-2 rounded-full ${
+                    idx === currentIndex ? "bg-white" : "bg-white/30"
+                  }`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onNext(idx);
+                  }}
+                />
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
 
 export default function Onglerie() {
+  // State pour la galerie modale
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Images de la galerie
+  const galleryImages = [
+    "ongles5.jpeg",
+    "ongles6.jpeg",
+    "ongles7.jpeg",
+    "ongles8.jpeg",
+    "ongles9.jpeg",
+    "ongles10.jpeg",
+    "ongles12.jpeg",
+    "ongles13.jpeg",
+    "ongles14.jpeg",
+    "ongles15.jpeg",
+    "ongles16.jpeg",
+    "ongles17.jpeg",
+    "ongles18.jpeg",
+  ];
+
+  // Gérer la navigation dans la modale
+  const handleOpenModal = (index) => {
+    setCurrentImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? galleryImages.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextImage = (index) => {
+    if (typeof index === "number") {
+      setCurrentImageIndex(index);
+      return;
+    }
+    setCurrentImageIndex((prev) =>
+      prev === galleryImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
   // Animation hooks pour chaque section
   const [titleRef, titleInView] = useInView({
     triggerOnce: true,
@@ -157,6 +369,16 @@ export default function Onglerie() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Composant Modale pour afficher les images en plein écran */}
+      <ImageModal
+        images={galleryImages}
+        currentIndex={currentImageIndex}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onPrev={handlePrevImage}
+        onNext={handleNextImage}
+      />
+
       {/* Hero Section - Reprise du style du Hero principal */}
       <section className="relative min-h-[80vh] flex items-center justify-center py-24">
         {/* Séparateur supérieur */}
@@ -337,21 +559,12 @@ export default function Onglerie() {
               ></motion.div>
               <p className="max-w-3xl mx-auto text-white/80">
                 Découvrez un aperçu de mes réalisations, alliant technique et
-                créativité
+                créativité. Cliquez sur les images pour les voir en détail.
               </p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                "ongles5.jpeg",
-                "ongles6.jpeg",
-                "ongles7.jpeg",
-                "ongles8.jpeg",
-                "ongles9.jpeg",
-                "ongles10.jpeg",
-                "ongles12.jpeg",
-                "ongles13.jpeg",
-              ].map((img, index) => (
+              {galleryImages.slice(0, 8).map((img, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -361,14 +574,33 @@ export default function Onglerie() {
                       : { opacity: 0, y: 20 }
                   }
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="relative aspect-square overflow-hidden border border-white/20 rounded-sm"
+                  className="relative aspect-square overflow-hidden border border-white/20 rounded-sm cursor-pointer group"
+                  onClick={() => handleOpenModal(index)}
                 >
                   <Image
                     src={`/photo/onglerie/${img}`}
                     alt={`Réalisation onglerie ${index + 1}`}
                     fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <svg
+                        className="w-5 h-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
