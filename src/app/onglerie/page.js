@@ -435,6 +435,22 @@ export default function Onglerie() {
                     </motion.div>
                   ))}
                 </div>
+
+                {/* Note importante sur les ongles rongés */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={section3InView ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                  className="mt-8 pt-6 border-t border-white/20"
+                >
+                  <div className="bg-white/5 p-4 rounded-lg">
+                    <p className="text-white/90 text-center">
+                      <span className="text-white font-medium">Important</span>{" "}
+                      : Les prestations d&apos;onglerie ne sont pas disponibles
+                      pour les ongles rongés.
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </div>
 
@@ -509,8 +525,8 @@ export default function Onglerie() {
           </h3>
           <div className="h-[1px] w-20 bg-white/40 mx-auto mb-8"></div>
           <p className="text-white/80 mb-8">
-            Prenez rendez-vous dès aujourd'hui pour une prestation d'onglerie
-            sur-mesure qui mettra en valeur vos mains.
+            Prenez rendez-vous dès aujourd&apos;hui pour une prestation
+            d&apos;onglerie sur-mesure qui mettra en valeur vos mains.
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
