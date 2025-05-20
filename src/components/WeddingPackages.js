@@ -345,30 +345,45 @@ export default function WeddingPackages() {
           </h3>
           <div className="border border-white/30 rounded-xl p-8 backdrop-blur-sm bg-black/40">
             <ul className="space-y-6">
-              <li className="flex flex-col md:flex-row md:items-center justify-between">
-                <span className="font-semibold text-white text-lg md:text-xl">
-                  Formule Saphir
-                </span>
-                <span className="text-white/80 md:ml-8">
+              <li className="grid grid-cols-1 md:flex md:flex-row md:items-center md:justify-between">
+                <div className="flex justify-between md:justify-start md:flex-1">
+                  <span className="font-semibold text-white text-lg md:text-xl">
+                    Formule Saphir
+                  </span>
+                  <span className="font-bold text-white/80 text-xl md:hidden">
+                    110€
+                  </span>
+                </div>
+                <span className="text-white/80 md:ml-8 md:flex-1">
                   Maquillage + coiffure
                 </span>
-                <span className="font-bold text-white/80 text-xl md:text-2xl ml-auto">
+                <span className="hidden md:block font-bold text-white/80 text-xl md:text-2xl">
                   110€
                 </span>
               </li>
-              <li className="flex flex-col md:flex-row md:items-center justify-between">
-                <span className="font-semibold text-white text-lg md:text-xl">
-                  Maquillage
-                </span>
-                <span className="font-bold text-white/80 text-xl md:text-2xl ml-auto">
+              <li className="grid grid-cols-1 md:flex md:flex-row md:items-center md:justify-between">
+                <div className="flex justify-between md:justify-start md:flex-1">
+                  <span className="font-semibold text-white text-lg md:text-xl">
+                    Maquillage
+                  </span>
+                  <span className="font-bold text-white/80 text-xl md:hidden">
+                    60€
+                  </span>
+                </div>
+                <span className="hidden md:block font-bold text-white/80 text-xl md:text-2xl">
                   60€
                 </span>
               </li>
-              <li className="flex flex-col md:flex-row md:items-center justify-between">
-                <span className="font-semibold text-white text-lg md:text-xl">
-                  Coiffure
-                </span>
-                <span className="font-bold text-white/80 text-xl md:text-2xl ml-auto">
+              <li className="grid grid-cols-1 md:flex md:flex-row md:items-center md:justify-between">
+                <div className="flex justify-between md:justify-start md:flex-1">
+                  <span className="font-semibold text-white text-lg md:text-xl">
+                    Coiffure
+                  </span>
+                  <span className="font-bold text-white/80 text-xl md:hidden">
+                    60€
+                  </span>
+                </div>
+                <span className="hidden md:block font-bold text-white/80 text-xl md:text-2xl">
                   60€
                 </span>
               </li>
@@ -383,19 +398,29 @@ export default function WeddingPackages() {
           </h3>
           <div className="border border-white/30 rounded-xl p-8 backdrop-blur-sm bg-black/40">
             <ul className="space-y-6">
-              <li className="flex flex-col md:flex-row md:items-center justify-between">
-                <span className="font-semibold text-white text-lg md:text-xl">
-                  Coiffure
-                </span>
-                <span className="font-bold text-white/80 text-xl md:text-2xl ml-auto">
+              <li className="grid grid-cols-1 md:flex md:flex-row md:items-center md:justify-between">
+                <div className="flex justify-between md:justify-start md:flex-1">
+                  <span className="font-semibold text-white text-lg md:text-xl">
+                    Coiffure
+                  </span>
+                  <span className="font-bold text-white/80 text-xl md:hidden">
+                    70€
+                  </span>
+                </div>
+                <span className="hidden md:block font-bold text-white/80 text-xl md:text-2xl">
                   70€
                 </span>
               </li>
-              <li className="flex flex-col md:flex-row md:items-center justify-between">
-                <span className="font-semibold text-white text-lg md:text-xl">
-                  Maquillage
-                </span>
-                <span className="font-bold text-white/80 text-xl md:text-2xl ml-auto">
+              <li className="grid grid-cols-1 md:flex md:flex-row md:items-center md:justify-between">
+                <div className="flex justify-between md:justify-start md:flex-1">
+                  <span className="font-semibold text-white text-lg md:text-xl">
+                    Maquillage
+                  </span>
+                  <span className="font-bold text-white/80 text-xl md:hidden">
+                    80€
+                  </span>
+                </div>
+                <span className="hidden md:block font-bold text-white/80 text-xl md:text-2xl">
                   80€
                 </span>
               </li>
