@@ -3,8 +3,30 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { AppleCardsDemo } from "@/components/AppleCardsDemo";
+import { useInView } from "react-intersection-observer";
 
 export default function Onglerie() {
+  // Animation hooks pour chaque section
+  const [titleRef, titleInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [section1Ref, section1InView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [section2Ref, section2InView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [section3Ref, section3InView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   // Animation des éléments qui apparaissent
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -103,276 +125,428 @@ export default function Onglerie() {
     }
   };
 
+  const tarifsBase = [
+    { service: "Forfait mains + pieds + couleur", prix: "75€" },
+    { service: "Rallongement Poppit", prix: "65€" },
+    { service: "Gainage sur ongles naturels", prix: "45€" },
+    { service: "Remplissage", prix: "45€" },
+    { service: "Beauté des pieds russe + semi-permanent", prix: "40€" },
+    { service: "Manucure russe seule", prix: "30€" },
+    { service: "Dépose seule", prix: "25€" },
+  ];
+
+  const tarifsNailArt = [
+    {
+      niveau: "Décorations Niveau 1",
+      prix: "0,5€",
+      details:
+        "French, baby-boomer, lignes fines, feuilles d&apos;or, effet sucre, cat eyes",
+    },
+    {
+      niveau: "Décorations Niveau 2",
+      prix: "1€",
+      details:
+        "Superposition de deux motifs, foils, effet chrome, effet pull, stickers, cutiglitter, effet léopard, zèbres, camaïeu 4 ou 5 couleurs",
+    },
+    {
+      niveau: "Décorations Niveau 3",
+      prix: "1,50€",
+      details: "Bijoux, dessins 3D, superposition de 3 motifs",
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-black text-white py-16">
-      <div className="container mx-auto px-6 md:px-10">
-        {/* Hero Section amélioré */}
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section - Reprise du style du Hero principal */}
+      <section className="relative min-h-[80vh] flex items-center justify-center py-24">
+        {/* Séparateur supérieur */}
+        <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 to-black/80"></div>
+        <div className="absolute inset-0 bg-[url('/photo/onglerie/ongles10.jpeg')] bg-cover bg-center opacity-20 grayscale"></div>
+
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-3xl mb-24"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="container mx-auto px-6 md:px-10 text-center relative z-10 pt-16 md:pt-20"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-pink-900/80 z-10"></div>
-          <div className="absolute inset-0 bg-[url('/images/vernis.jpg')] bg-cover bg-center opacity-40"></div>
-
-          <div className="relative z-20 py-20 px-8 md:px-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="flex flex-col md:flex-row items-center justify-between">
-                <div className="md:w-2/3 text-left mb-10 md:mb-0">
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4, duration: 0.6 }}
-                  >
-                    <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-pink-200">
-                      Art d&apos;Onglerie
-                    </h1>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6, duration: 0.6 }}
-                  >
-                    <p className="text-xl md:text-2xl font-light text-gray-100 mb-8 max-w-xl">
-                      Prothésiste ongulaire depuis 2023, je sublime vos mains
-                      avec des prestations élégantes et durables.
-                    </p>
-
-                    <div className="flex flex-wrap gap-4">
-                      <Link
-                        href="#services"
-                        className="px-8 py-3 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full text-white font-medium hover:from-pink-500 hover:to-purple-500 transition-all duration-300 shadow-lg shadow-purple-900/30"
-                      >
-                        Découvrir nos prestations
-                      </Link>
-                      <Link
-                        href="/contact"
-                        className="px-8 py-3 bg-transparent border border-white/30 rounded-full text-white font-medium hover:bg-white/10 transition-all duration-300"
-                      >
-                        Prendre rendez-vous
-                      </Link>
-                    </div>
-                  </motion.div>
-                </div>
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5, duration: 0.6 }}
-                  className="md:w-1/3"
-                >
-                  <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600/40 to-pink-600/40 blur-xl"></div>
-                    <div className="relative h-full w-full rounded-full overflow-hidden border-4 border-white/20">
-                      <Image
-                        src="/images/vernis.jpg"
-                        alt="Onglerie professionnelle"
-                        fill
-                        className="object-cover"
-                        priority
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="max-w-5xl mx-auto"
+          >
+            <h1 className="mb-8 md:mb-12">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
-                className="mt-16 flex justify-center gap-8 md:gap-16"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 tracking-wider"
               >
-                <div className="text-center">
-                  <p className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">
-                    3+
-                  </p>
-                  <p className="text-gray-300 text-sm">
-                    Années d&apos;expérience
-                  </p>
-                </div>
-                <div className="text-center">
-                  <p className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">
-                    100%
-                  </p>
-                  <p className="text-gray-300 text-sm">Satisfaction client</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-400">
-                    10+
-                  </p>
-                  <p className="text-gray-300 text-sm">Designs uniques</p>
-                </div>
+                ONGLERIE
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: "50%" }}
+                  transition={{ delay: 0.5, duration: 1.2, ease: "easeInOut" }}
+                  className="h-1 bg-white mx-auto mt-10"
+                  style={{ originX: 0.5 }}
+                ></motion.div>
               </motion.div>
-            </motion.div>
-          </div>
+              <div className="text-3xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-wider mt-8 leading-relaxed">
+                Prothésiste ongulaire certifiée
+              </div>
+            </h1>
+            <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-14 text-gray-300">
+              Mettez en valeur vos mains avec des prestations sur-mesure et
+              durables
+            </p>
+            <div className="flex flex-row gap-4 md:gap-6 justify-center">
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+              >
+                <Link
+                  href="/contact"
+                  className="bg-white hover:bg-gray-200 text-black font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 shadow-lg text-sm md:text-base inline-block"
+                >
+                  Réserver maintenant
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8, duration: 0.5 }}
+              >
+                <a
+                  href="#tarifs"
+                  className="bg-transparent border border-white text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-white/10 transition-all duration-300 text-sm md:text-base inline-block"
+                >
+                  Voir les tarifs
+                </a>
+              </motion.div>
+            </div>
+          </motion.div>
         </motion.div>
 
-        {/* Section Apple Cards Carousel */}
-        <motion.section
-          id="services"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-24"
-        >
-          <AppleCardsDemo />
-        </motion.section>
+        {/* Séparateur inférieur */}
+        <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+      </section>
 
-        {/* Section présentation */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          variants={fadeInUp}
-          className="mb-20"
-        >
-          <div className="bg-gradient-to-b from-purple-900/30 to-black p-8 rounded-lg border border-purple-800/30">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center">
-                Un art au bout des doigts
-              </h2>
-              <p className="text-gray-300 mb-4">
-                Passionnée par l&apos;art de la beauté des mains, je mets mon
-                expertise à votre service pour vous offrir des prestations
-                d&apos;onglerie personnalisées et de qualité. Que ce soit pour
-                une occasion spéciale ou pour prendre soin de vous au quotidien,
-                je m&apos;adapte à vos envies.
-              </p>
-              <p className="text-gray-300">
-                Formée aux dernières techniques et utilisant des produits de
-                qualité professionnelle, je vous garantis un résultat impeccable
-                et durable. Chaque prestation est réalisée avec soin et
-                précision pour mettre en valeur vos mains.
-              </p>
-            </div>
+      {/* Présentation */}
+      <section className="py-24 bg-gradient-to-b from-black via-black/90 to-black text-white overflow-hidden relative">
+        <div className="container mx-auto px-6 md:px-10">
+          {/* En-tête de la section */}
+          <div ref={titleRef} className="text-center mb-20">
+            <motion.h2
+              initial={{ opacity: 0, y: -20 }}
+              animate={
+                titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
+              }
+              transition={{ duration: 0.8 }}
+              className="text-5xl md:text-7xl font-light tracking-wider mb-6"
+            >
+              L&apos;ART DE L&apos;ONGLERIE
+            </motion.h2>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={titleInView ? { width: "100px" } : { width: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="h-[1px] bg-white mx-auto"
+            ></motion.div>
           </div>
-        </motion.section>
 
-        {/* Section services détaillés */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Détails des prestations
-          </h2>
+          {/* Section 1 - Présentation */}
+          <motion.div
+            ref={section1Ref}
+            initial="hidden"
+            animate={section1InView ? "visible" : "hidden"}
+            variants={fadeInUp}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center mb-32"
+          >
+            <div className="order-2 md:order-1 bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm">
+              <div className="mb-8">
+                <h3 className="text-3xl font-light tracking-wide mb-3">
+                  Une passion pour vos mains
+                </h3>
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={section1InView ? { width: "120px" } : { width: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="h-[1px] bg-white mb-6"
+                ></motion.div>
+              </div>
+              <div className="space-y-4 text-white/90 leading-relaxed">
+                <p>
+                  Prothésiste ongulaire certifiée depuis 2023, je mets mon
+                  savoir-faire à votre service pour sublimer vos mains et vos
+                  pieds. Ma philosophie : allier esthétique et durabilité pour
+                  des ongles parfaits qui vous accompagnent au quotidien.
+                </p>
+                <p>
+                  Passionnée par l&apos;art et le design, je m&apos;inspire des
+                  dernières tendances tout en restant à l&apos;écoute de vos
+                  envies. Chaque prestation est personnalisée pour refléter
+                  votre style et votre personnalité.
+                </p>
+                <p>
+                  Précision, minutie et attention aux détails sont les
+                  maîtres-mots de mon travail. J&apos;utilise des produits de
+                  qualité professionnelle pour garantir un résultat impeccable
+                  et une tenue optimale.
+                </p>
+                <p>
+                  Du simple gainage à la pose la plus artistique, je vous
+                  accompagne dans le choix de la prestation idéale pour vos
+                  mains, adaptée à votre mode de vie et à vos besoins.
+                </p>
+              </div>
+            </div>
+            <motion.div
+              className="relative h-[500px] md:h-[600px] overflow-hidden rounded-sm order-1 md:order-2 border border-white/20"
+              variants={fadeInUp}
+            >
+              <Image
+                src="/photo/onglerie/jennifer-ongle.jpeg"
+                alt="Prothésiste ongulaire professionnelle"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </motion.div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
+          {/* Section 2 - Gallerie */}
+          <motion.div
+            ref={section2Ref}
+            initial="hidden"
+            animate={section2InView ? "visible" : "hidden"}
+            variants={fadeInUp}
+            className="mb-32"
+          >
+            <div className="mb-16 text-center">
+              <h3 className="text-3xl font-light tracking-wide mb-3">
+                Créations & Réalisations
+              </h3>
               <motion.div
-                key={service.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                variants={fadeInUp}
-                className="bg-gray-900/30 rounded-lg overflow-hidden border border-gray-800"
-              >
-                <div
-                  className={`h-3 bg-gradient-to-r ${getGradient(
-                    service.color
-                  )}`}
-                ></div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400 mb-5">{service.description}</p>
+                initial={{ width: 0 }}
+                animate={section2InView ? { width: "120px" } : { width: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="h-[1px] bg-white mx-auto mb-6"
+              ></motion.div>
+              <p className="max-w-3xl mx-auto text-white/80">
+                Découvrez un aperçu de mes réalisations, alliant technique et
+                créativité
+              </p>
+            </div>
 
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <span
-                          className={`inline-block w-2 h-2 mt-1.5 mr-2 rounded-full bg-gradient-to-r ${getGradient(
-                            service.color
-                          )}`}
-                        ></span>
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                "ongles5.jpeg",
+                "ongles6.jpeg",
+                "ongles7.jpeg",
+                "ongles8.jpeg",
+                "ongles9.jpeg",
+                "ongles10.jpeg",
+                "ongles12.jpeg",
+                "ongles13.jpeg",
+              ].map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={
+                    section2InView
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0, y: 20 }
+                  }
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="relative aspect-square overflow-hidden border border-white/20 rounded-sm"
+                >
+                  <Image
+                    src={`/photo/onglerie/${img}`}
+                    alt={`Réalisation onglerie ${index + 1}`}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-        {/* Section conseils d'entretien */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          variants={fadeInUp}
-          className="mb-20"
-        >
-          <div className="bg-gradient-to-b from-black to-gray-900/40 p-8 rounded-lg border border-gray-800">
-            <h2 className="text-2xl font-semibold mb-6 text-center">
-              Conseils d&apos;entretien
-            </h2>
+          {/* Section 3 - Tarifs */}
+          <motion.div
+            id="tarifs"
+            ref={section3Ref}
+            initial="hidden"
+            animate={section3InView ? "visible" : "hidden"}
+            variants={fadeInUp}
+            className="mb-20"
+          >
+            <div className="text-center mb-16">
+              <h3 className="text-3xl font-light tracking-wide mb-3">
+                PRESTATIONS
+              </h3>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={section3InView ? { width: "120px" } : { width: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="h-[1px] bg-white mx-auto mb-6"
+              ></motion.div>
+              <h4 className="text-2xl md:text-4xl font-light text-white/80 tracking-widest font-[Cormorant_Garamond,serif]">
+                Onglerie
+              </h4>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-medium mb-3 text-pink-400">
-                  Pour vos ongles en gel
-                </h3>
-                <ul className="space-y-2 text-gray-300">
-                  <li>• Évitez les chocs et les pressions excessives</li>
-                  <li>• Utilisez des gants pour les tâches ménagères</li>
-                  <li>• Hydratez vos cuticules régulièrement</li>
-                  <li>• Prévoyez un remplissage toutes les 3 semaines</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-medium mb-3 text-blue-400">
-                  Pour votre vernis semi-permanent
-                </h3>
-                <ul className="space-y-2 text-gray-300">
-                  <li>
-                    • Appliquez de l&apos;huile à cuticules quotidiennement
-                  </li>
-                  <li>
-                    • Évitez l&apos;exposition prolongée à l&apos;eau chaude
-                  </li>
-                  <li>• N&apos;utilisez pas vos ongles comme outils</li>
-                  <li>• Renouvelez votre pose toutes les 2-3 semaines</li>
-                </ul>
+            {/* Image de fond avec paillettes */}
+            <div className="relative mb-12">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[300px] opacity-50 z-0">
+                <Image
+                  src="/paillette-sans-fond.png"
+                  alt="Paillettes dorées"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </div>
-          </div>
-        </motion.section>
 
-        {/* Call to action */}
+            {/* Tarifs de base */}
+            <div className="bg-gradient-to-r from-gray-900/60 via-black/40 to-gray-900/60 backdrop-blur-xl p-6 md:p-8 rounded-xl border border-gray-500/20 shadow-[0_0_40px_rgba(255,255,255,0.05)] mb-16">
+              <div className="max-w-4xl mx-auto">
+                <div className="space-y-6">
+                  {tarifsBase.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={
+                        section3InView
+                          ? { opacity: 1, y: 0 }
+                          : { opacity: 0, y: 20 }
+                      }
+                      transition={{ delay: index * 0.1, duration: 0.5 }}
+                      className="flex justify-between items-center border-b border-white/10 pb-4"
+                    >
+                      <span className="text-xl font-light text-white">
+                        {item.service}
+                      </span>
+                      <span className="text-2xl font-light text-white">
+                        {item.prix}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Titre décorations */}
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-light tracking-wide mb-3">
+                DÉCORATIONS
+              </h3>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={section3InView ? { width: "80px" } : { width: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="h-[1px] bg-white mx-auto mb-6"
+              ></motion.div>
+            </div>
+
+            {/* Tarifs nail art */}
+            <div className="bg-gradient-to-r from-gray-900/60 via-black/40 to-gray-900/60 backdrop-blur-xl p-6 md:p-8 rounded-xl border border-gray-500/20 shadow-[0_0_40px_rgba(255,255,255,0.05)]">
+              <div className="max-w-4xl mx-auto">
+                <div className="space-y-10">
+                  {tarifsNailArt.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={
+                        section3InView
+                          ? { opacity: 1, y: 0 }
+                          : { opacity: 0, y: 20 }
+                      }
+                      transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
+                    >
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-xl font-light text-white">
+                          {item.niveau}
+                        </span>
+                        <span className="text-2xl font-light text-white">
+                          {item.prix}
+                        </span>
+                      </div>
+                      <p className="text-white/70 italic text-sm">
+                        {item.details}
+                      </p>
+                      {index < tarifsNailArt.length - 1 && (
+                        <div className="h-[1px] w-full bg-white/10 mt-8"></div>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="mt-10 pt-6 border-t border-white/20 text-center">
+                  <p className="text-white/80 italic">
+                    Toutes les prestations comprennent la manucure russe.
+                  </p>
+                  <p className="text-white/80 italic mt-2">
+                    Nail art, décorations à partir de 0,5€ à 2€
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Call to Action Button */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-24 text-center max-w-2xl mx-auto px-4"
         >
-          <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-xl p-8 md:p-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Prête à sublimer vos mains ?
-            </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Que ce soit pour une occasion spéciale ou pour vous faire plaisir,
-              prenez rendez-vous dès maintenant !
-            </p>
+          <h3 className="text-2xl md:text-4xl font-bold mb-6">
+            Prête à sublimer vos mains ?
+          </h3>
+          <div className="h-[1px] w-20 bg-white/40 mx-auto mb-8"></div>
+          <p className="text-white/80 mb-8">
+            Prenez rendez-vous dès aujourd'hui pour une prestation d'onglerie
+            sur-mesure qui mettra en valeur vos mains.
+          </p>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block"
+          >
             <Link
               href="/contact"
-              className="inline-block bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-lg"
+              className="relative inline-flex items-center px-12 py-4 overflow-hidden text-lg bg-gradient-to-r from-gray-100 to-white text-black font-medium rounded-full group hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300"
             >
-              Prendre rendez-vous
+              <span className="absolute left-0 w-full h-0 transition-all bg-gradient-to-r from-gray-200 to-white opacity-20 group-hover:h-full top-0 duration-300"></span>
+              <span className="relative flex items-center">
+                Réserver ma séance
+                <svg
+                  className="w-5 h-5 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </span>
             </Link>
-          </div>
+          </motion.div>
         </motion.div>
+      </section>
+
+      {/* Séparateur inférieur */}
+      <div className="relative">
+        <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
       </div>
     </div>
   );

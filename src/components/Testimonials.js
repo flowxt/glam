@@ -184,8 +184,22 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-24 bg-black text-white overflow-hidden">
-      <div className="container mx-auto px-6 md:px-10">
+    <section className="py-24 bg-black text-white overflow-hidden relative">
+      {/* Séparateur supérieur */}
+      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+
+      {/* Arrière-plan décoratif avec effet de profondeur */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/20 to-black"></div>
+
+      {/* Lignes décoratives */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/20 to-transparent absolute top-[20%]"></div>
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-gray-500/20 to-transparent absolute top-[60%]"></div>
+        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent absolute left-[20%]"></div>
+        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-gray-500/20 to-transparent absolute left-[80%]"></div>
+      </div>
+
+      <div className="container mx-auto px-6 md:px-10 relative z-10">
         {/* Titre avec trait animé */}
         <div ref={titleRef} className="text-center mb-16">
           <motion.h2
@@ -194,7 +208,7 @@ export default function Testimonials() {
               titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
             }
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-light tracking-wider mb-6"
+            className="text-5xl md:text-7xl font-light tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-white"
           >
             CE QUE DISENT NOS CLIENTES
           </motion.h2>
@@ -245,6 +259,52 @@ export default function Testimonials() {
         >
           {/* Container pour le carousel */}
           <div className="relative overflow-hidden h-[600px] md:h-[450px]">
+            {/* Bouton de navigation précédent amélioré - Maintenant en dehors de l'AnimatePresence */}
+            <motion.button
+              onClick={handlePrev}
+              className="absolute left-1 md:left-1 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-white/80 hover:text-white bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm rounded-full border border-white/20 transition-all duration-300 hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] z-[60]"
+              whileHover={{ scale: 1.1, x: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </motion.button>
+
+            {/* Bouton de navigation suivant amélioré - Maintenant en dehors de l'AnimatePresence */}
+            <motion.button
+              onClick={handleNext}
+              className="absolute right-1 md:right-1 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-white/80 hover:text-white bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm rounded-full border border-white/20 transition-all duration-300 hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] z-[60]"
+              whileHover={{ scale: 1.1, x: 2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </motion.button>
+
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
@@ -256,7 +316,7 @@ export default function Testimonials() {
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <div className="w-full h-full p-4 md:p-8">
-                  <div className="border border-white/10 rounded-sm p-6 md:p-8 bg-black/80 h-full flex flex-col">
+                  <div className="bg-gradient-to-r from-gray-900/60 via-black/40 to-gray-900/60 backdrop-blur-xl p-6 md:p-8 rounded-3xl border border-gray-500/20 shadow-[0_0_40px_rgba(255,255,255,0.05)] h-full flex flex-col">
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex flex-col">
                         <h3 className="text-xl font-light text-white mb-1">
@@ -267,7 +327,7 @@ export default function Testimonials() {
                         </p>
 
                         {testimonials[currentIndex].isNew && (
-                          <span className="bg-white text-xs text-black px-2 py-0.5 rounded-sm mt-2 inline-block w-fit">
+                          <span className="bg-gradient-to-r from-white to-gray-200 text-xs text-black px-2 py-0.5 rounded-full mt-2 inline-block w-fit">
                             NOUVEAU
                           </span>
                         )}
@@ -278,7 +338,7 @@ export default function Testimonials() {
                       </div>
                     </div>
 
-                    <div className="flex-grow text-white/80 leading-relaxed">
+                    <div className="flex-grow text-white/90 leading-relaxed bg-gradient-to-r from-gray-900/40 to-black/40 p-4 rounded-xl backdrop-blur-sm">
                       <p className="italic">
                         &quot;{testimonials[currentIndex].text}&quot;
                       </p>
@@ -286,12 +346,30 @@ export default function Testimonials() {
 
                     {testimonials[currentIndex].services && (
                       <div className="mt-6 pt-4 border-t border-white/10">
-                        <p className="text-sm text-white/60">
-                          <span className="text-white/90 font-light">
-                            Services :{" "}
-                          </span>
-                          {testimonials[currentIndex].services}
-                        </p>
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-full bg-gradient-to-r from-gray-500/30 to-white/30 flex items-center justify-center">
+                            <svg
+                              className="w-4 h-4 text-gray-300"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M13 10V3L4 14h7v7l9-11h-7z"
+                              />
+                            </svg>
+                          </div>
+                          <p className="text-sm text-white/80">
+                            <span className="text-white/90 font-light">
+                              Services :{" "}
+                            </span>
+                            {testimonials[currentIndex].services}
+                          </p>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -299,15 +377,16 @@ export default function Testimonials() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Contrôles du carousel */}
-            <div className="absolute -bottom-12 left-0 right-0 flex items-center justify-between z-50 px-4">
-              <div className="flex items-center gap-2">
+            {/* Indicateur de navigation avec texte */}
+            <div className="absolute -bottom-16 left-0 right-0 flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 z-50 px-4">
+              {/* Navigation textuelle */}
+              <div className="flex items-center gap-6 mt-4">
                 <button
                   onClick={handlePrev}
-                  className="w-10 h-10 flex items-center justify-center text-white/80 hover:text-white transition-colors focus:outline-none"
+                  className="group flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-300"
                 >
                   <svg
-                    className="w-6 h-6"
+                    className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -317,16 +396,18 @@ export default function Testimonials() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={1.5}
-                      d="M15 19l-7-7 7-7"
+                      d="M7 16l-4-4m0 0l4-4m-4 4h18"
                     />
                   </svg>
+                  <span>Avis précédent</span>
                 </button>
                 <button
                   onClick={handleNext}
-                  className="w-10 h-10 flex items-center justify-center text-white/80 hover:text-white transition-colors focus:outline-none"
+                  className="group flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-300"
                 >
+                  <span>Avis suivant</span>
                   <svg
-                    className="w-6 h-6"
+                    className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -336,14 +417,14 @@ export default function Testimonials() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={1.5}
-                      d="M9 5l7 7-7 7"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
                     />
                   </svg>
                 </button>
               </div>
 
               {/* Indicateur de pagination */}
-              <div className="flex justify-center gap-2">
+              <div className="flex justify-center gap-2 mt-4 md:mt-0">
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
@@ -351,10 +432,10 @@ export default function Testimonials() {
                       setDirection(index > currentIndex ? 1 : -1);
                       setCurrentIndex(index);
                     }}
-                    className={`h-[2px] transition-all duration-300 ${
+                    className={`h-[3px] rounded-full transition-all duration-300 ${
                       index === currentIndex
-                        ? "bg-white w-6"
-                        : "bg-white/30 w-3 hover:bg-white/50"
+                        ? "bg-white w-8"
+                        : "bg-white/30 w-4 hover:bg-white/50"
                     }`}
                     aria-label={`Voir l'avis ${index + 1}`}
                   />
@@ -363,18 +444,21 @@ export default function Testimonials() {
             </div>
           </div>
 
-          <div className="mt-24 text-center">
+          <div className="mt-32 text-center">
             <Link
               href="https://g.co/kgs/HkoUeFV"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-all duration-300"
+              className="inline-block px-8 py-3 bg-gradient-to-r from-gray-900/40 to-black/40 backdrop-blur-sm text-white/80 hover:text-white transition-all duration-300 border border-gray-500/20 hover:border-white/30 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.03)]"
             >
               Voir tous les avis Google
             </Link>
           </div>
         </div>
       </div>
+
+      {/* Séparateur inférieur */}
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
     </section>
   );
 }

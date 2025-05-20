@@ -29,7 +29,10 @@ export default function AboutSection() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-black via-black to-white/5 text-white overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-black via-black to-white/5 text-white overflow-hidden relative">
+      {/* Séparateur supérieur - délimitation avec Hero */}
+      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+
       <div className="container mx-auto px-6 md:px-10">
         <div className="max-w-5xl mx-auto">
           {/* Titre principal avec trait animé */}
@@ -113,6 +116,9 @@ export default function AboutSection() {
           </motion.div>
         </div>
       </div>
+
+      {/* Séparateur inférieur - délimitation avec WeddingStory */}
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
     </section>
   );
 }

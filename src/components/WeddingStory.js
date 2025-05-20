@@ -53,7 +53,10 @@ export default function WeddingStory() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black via-black/90 to-white/5 text-white overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-black via-black/90 to-white/5 text-white overflow-hidden relative">
+      {/* Séparateur supérieur - délimitation avec AboutSection */}
+      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+
       <div className="container mx-auto px-4 md:px-8">
         {/* En-tête de la section */}
         <div className="text-center mb-20">
@@ -159,7 +162,7 @@ export default function WeddingStory() {
               src="/photo/mariés2.jpeg"
               alt="Maquillage de mariée"
               fill
-              className="object-cover"
+              className="object-cover grayscale"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
@@ -181,7 +184,7 @@ export default function WeddingStory() {
               src="/photo/maquillage-en-cours.jpeg"
               alt="Essai maquillage mariée"
               fill
-              className="object-cover"
+              className="object-cover "
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
@@ -308,11 +311,62 @@ export default function WeddingStory() {
               src="/photo/preparation-mariage2.jpeg"
               alt="Mariée prête pour le grand jour"
               fill
-              className="object-cover"
+              className="object-cover grayscale"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
         </motion.div>
+      </div>
+
+      {/* Call to Action Button */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="mt-24 text-center max-w-2xl mx-auto px-4"
+      >
+        <h3 className="text-2xl md:text-4xl font-bold mb-6">
+          Prête à vivre votre plus belle journée ?
+        </h3>
+        <div className="h-[1px] w-20 bg-white/40 mx-auto mb-8"></div>
+        <p className="text-white/80 mb-8">
+          Discutons ensemble de votre vision et créons une mise en beauté qui
+          vous ressemble pour ce jour exceptionnel.
+        </p>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
+          className="inline-block"
+        >
+          <a
+            href="/contact"
+            className="relative inline-flex items-center px-12 py-4 overflow-hidden text-lg bg-gradient-to-r from-gray-100 to-white text-black font-medium rounded-full group hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300"
+          >
+            <span className="absolute left-0 w-full h-0 transition-all bg-gradient-to-r from-gray-200 to-white opacity-20 group-hover:h-full top-0 duration-300"></span>
+            <span className="relative flex items-center">
+              Réserver ma date
+              <svg
+                className="w-5 h-5 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </span>
+          </a>
+        </motion.div>
+      </motion.div>
+
+      {/* Séparateur de section avec dégradé */}
+      <div className="relative mt-24">
+        <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
       </div>
     </section>
   );

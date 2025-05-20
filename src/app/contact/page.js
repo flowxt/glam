@@ -278,7 +278,7 @@ export default function Contact() {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="border border-white/10 rounded-sm p-6 bg-black/80">
-              <h3 className="text-xl font-light mb-4 text-white tracking-wide">
+              <h3 className="text-2xl font-light mb-4 text-white tracking-wide">
                 Coordonnées
               </h3>
               <div className="space-y-4 text-white/80">
@@ -342,7 +342,7 @@ export default function Contact() {
             </div>
 
             <div className="border border-white/10 rounded-sm p-6 bg-black/80">
-              <h3 className="text-xl font-light mb-4 text-white tracking-wide">
+              <h3 className="text-2xl font-light mb-4 text-white tracking-wide">
                 Horaires
               </h3>
               <div className="space-y-3 text-white/80">
@@ -362,13 +362,12 @@ export default function Contact() {
             </div>
 
             <div className="border border-white/10 rounded-sm p-6 bg-black/80">
-              <h3 className="text-xl font-light mb-4 text-white tracking-wide">
+              <h3 className="text-2xl font-light  mb-4 text-white tracking-wide">
                 Zone d&apos;intervention
               </h3>
               <p className="text-white/80">
-                Je me déplace à domicile dans un rayon de 30 km autour de
-                Grenoble. Des frais de déplacement peuvent s&apos;appliquer
-                selon la distance.
+                Je me déplace à domicile dans tout le Rhônes Alpes. Des frais de
+                déplacement peuvent s&apos;appliquer selon la distance.
               </p>
               <p className="mt-4 text-white/60 text-sm italic">
                 &quot;La beauté commence au moment où vous décidez d&apos;être

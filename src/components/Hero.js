@@ -97,6 +97,9 @@ export default function Hero() {
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Séparateur de section avec dégradé */}
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
     </section>
   );
 }

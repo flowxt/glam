@@ -77,6 +77,9 @@ export default function CallToAction() {
 
   return (
     <section className="py-24 relative overflow-hidden">
+      {/* Séparateur supérieur pour délimiter de la section Testimonials */}
+      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+
       {/* Arrière-plan décoratif avec effet de profondeur */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/20 to-black"></div>
 
@@ -109,7 +112,7 @@ export default function CallToAction() {
                 Prête pour un moment de beauté ?
               </span>
               <h2 className="text-3xl md:text-6xl mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-white tracking-wider font-heading">
-                Sublimez votre beauté
+                SUBLIMEZ VOTRE BEAUTÉ
               </h2>
               <motion.p
                 className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed"

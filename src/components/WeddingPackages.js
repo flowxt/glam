@@ -258,6 +258,9 @@ export default function WeddingPackages() {
 
   return (
     <section className="relative py-24 bg-black overflow-hidden font-serif">
+      {/* Séparateur supérieur - délimitation avec WeddingStory */}
+      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+
       {/* Arrière-plan flou et sombre */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute inset-0 bg-[url('/photo/maquillage-pro4.jpeg')] bg-cover bg-[center_top_40%] grayscale"></div>
@@ -274,9 +277,18 @@ export default function WeddingPackages() {
           <h2 className="text-5xl md:text-7xl font-light mb-2 tracking-widest text-white font-[Cormorant_Garamond,serif]">
             PRESTATIONS
           </h2>
-          <h3 className="text-2xl md:text-4xl font-light text-white/80 tracking-widest font-[Cormorant_Garamond,serif]">
+          <h3 className="text-2xl md:text-4xl font-light text-white/80 tracking-widest font-[Cormorant_Garamond,serif] mb-4">
             Mariage
           </h3>
+          {/* Trait animé qui part du centre */}
+          <div className="flex justify-center">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={titreInView ? { width: "120px" } : { width: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="h-[1px] bg-gradient-to-r from-white/20 via-white/80 to-white/20"
+            ></motion.div>
+          </div>
         </div>
 
         {/* Section MARIÉES */}
@@ -396,8 +408,11 @@ export default function WeddingPackages() {
         </div>
 
         {/* Bande dorée et contacts en bas */}
-        <div className="w-full h-1 bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-200 rounded-full mb-8"></div>
+        {/* <div className="w-full h-1 bg-gradient-to-r from-white via-gray-50 to-white rounded-full mb-8"></div> */}
       </div>
+
+      {/* Séparateur inférieur pour la prochaine section */}
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
     </section>
   );
 }
