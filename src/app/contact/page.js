@@ -16,6 +16,7 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Animation hooks pour chaque section
   const [titleRef, titleInView] = useInView({
@@ -41,15 +42,29 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage("");
 
-    // Simulation d'envoi du formulaire
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.error || "Une erreur est survenue lors de l'envoi du message"
+        );
+      }
+
       setSubmitStatus("success");
-
       // Réinitialiser le formulaire
       setFormData({
         nom: "",
@@ -64,7 +79,13 @@ export default function Contact() {
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
-    }, 1500);
+    } catch (error) {
+      console.error("Erreur:", error);
+      setSubmitStatus("error");
+      setErrorMessage(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -134,9 +155,19 @@ export default function Contact() {
               </h2>
 
               {submitStatus === "success" && (
-                <div className="mb-8 p-4 border border-white/20 rounded-sm bg-white/5 text-white">
+                <div className="mb-8 p-4 border border-green-500/20 rounded-sm bg-green-500/5 text-white">
                   Votre message a été envoyé avec succès ! Je vous recontacterai
                   dans les plus brefs délais.
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="mb-8 p-4 border border-red-500/20 rounded-sm bg-red-500/5 text-white">
+                  <p>Une erreur est survenue : {errorMessage}</p>
+                  <p>
+                    Veuillez réessayer ou me contacter directement par
+                    téléphone.
+                  </p>
                 </div>
               )}
 
@@ -232,6 +263,23 @@ export default function Contact() {
                       </option>
                     </select>
                   </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="date"
+                    className="block text-white/80 mb-2 text-sm"
+                  >
+                    Date souhaitée (optionnel)
+                  </label>
+                  <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
+                  />
                 </div>
 
                 <div>
