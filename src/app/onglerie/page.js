@@ -640,16 +640,6 @@ export default function Onglerie() {
             </div>
 
             {/* Image de fond avec paillettes */}
-            <div className="relative mb-12">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[300px] opacity-50 z-0">
-                <Image
-                  src="/paillette-sans-fond.png"
-                  alt="Paillettes dorées"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
 
             {/* Tarifs de base */}
             <div className="bg-gradient-to-r from-gray-900/60 via-black/40 to-gray-900/60 backdrop-blur-xl p-6 md:p-8 rounded-xl border border-gray-500/20 shadow-[0_0_40px_rgba(255,255,255,0.05)] mb-16">
