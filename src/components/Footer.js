@@ -71,9 +71,7 @@ export default function Footer() {
                 <li className="text-sm text-gray-400 hover:text-white transition-colors">
                   Onglerie professionnelle
                 </li>
-                <li className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Extensions de cils
-                </li>
+
                 <li className="text-sm text-gray-400 hover:text-white transition-colors">
                   Forfaits mariées
                 </li>
