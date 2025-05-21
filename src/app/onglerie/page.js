@@ -770,7 +770,7 @@ export default function Onglerie() {
             >
               <span className="absolute left-0 w-full h-0 transition-all bg-gradient-to-r from-gray-200 to-white opacity-20 group-hover:h-full top-0 duration-300"></span>
               <span className="relative flex items-center">
-                Réserver ma séance
+                Rendez-vous pour les ongles
                 <svg
                   className="w-5 h-5 ml-2"
                   fill="none"

@@ -206,7 +206,7 @@ export default function Footer() {
                     />
                   </svg>
                   <span className="text-sm text-gray-300">
-                    Lun-Ven: 9h-17h30
+                    Lun-Ven: 9h-19h00
                   </span>
                 </div>
               </div>

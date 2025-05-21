@@ -78,6 +78,13 @@ export default function Testimonials() {
       services: "Coiffure pour mariage, Maquillage pour mariage, Manucure",
       rating: 5,
     },
+    {
+      name: "Charlene Coste",
+      date: "21 mai 2025",
+      text: "Premier essai maquillage et coiffure en lien avec mon mariage en Mars 2025 qui avait été validé avec brio !! S'en est suivi des échanges de messages avec plusieurs conseils afin de préparer ma peau et mes cheveux pour le jour J. Très disponible à J-2 du grand jour quand plusieurs questions me sont venues en tête... Que dire du jour J... Jennifer a été incroyable , elle a su me sublimer pour le plus beau jour de ma vie. Teint parfait comme je le voulais , yeux magnifiques, et coiffure impeccable comme je l'avais imaginer... tenue de la coiffure + de 24h ! ",
+      services: "Coiffure pour mariage, Maquillage pour mariage",
+      rating: 5,
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
