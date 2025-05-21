@@ -622,9 +622,28 @@ export default function Onglerie() {
             initial="hidden"
             animate={section3InView ? "visible" : "hidden"}
             variants={fadeInUp}
-            className="mb-20"
+            className="mb-20 relative"
           >
-            <div className="text-center mb-16">
+            {/* Arrière-plan flou et sombre */}
+            <div className="absolute inset-0 opacity-30">
+              <div className="absolute inset-0 overflow-hidden">
+                <Image
+                  src="/photo/maquillage-pro4.jpeg"
+                  alt="Fond tarifs onglerie"
+                  fill
+                  sizes="100vw"
+                  className="object-cover grayscale"
+                  style={{ objectPosition: "center 30%" }}
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-black/90"></div>
+            </div>
+
+            {/* Effet de particules subtiles */}
+            <div className="absolute top-[20%] right-[10%] w-64 h-64 bg-pink-200/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-[30%] left-[10%] w-40 h-40 bg-pink-100/10 rounded-full blur-3xl"></div>
+
+            <div className="text-center mb-16 relative z-10">
               <h3 className="text-3xl font-light tracking-wide mb-3">
                 PRESTATIONS
               </h3>
@@ -632,17 +651,15 @@ export default function Onglerie() {
                 initial={{ width: 0 }}
                 animate={section3InView ? { width: "120px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-[1px] bg-white mx-auto mb-6"
+                className="h-[1px] bg-gradient-to-r from-white/20 via-white/80 to-white/20 mx-auto mb-6"
               ></motion.div>
               <h4 className="text-2xl md:text-4xl font-light text-white/80 tracking-widest font-[Cormorant_Garamond,serif]">
                 Onglerie
               </h4>
             </div>
 
-            {/* Image de fond avec paillettes */}
-
             {/* Tarifs de base */}
-            <div className="bg-gradient-to-r from-gray-900/60 via-black/40 to-gray-900/60 backdrop-blur-xl p-6 md:p-8 rounded-xl border border-gray-500/20 shadow-[0_0_40px_rgba(255,255,255,0.05)] mb-16">
+            <div className="border border-white/30 rounded-xl p-8 backdrop-blur-sm bg-black/40 mb-16 relative z-10">
               <div className="max-w-4xl mx-auto">
                 <div className="space-y-6">
                   {tarifsBase.map((item, index) => (
@@ -686,7 +703,7 @@ export default function Onglerie() {
             </div>
 
             {/* Titre décorations */}
-            <div className="text-center mb-8">
+            <div className="text-center mb-8 relative z-10">
               <h3 className="text-3xl font-light tracking-wide mb-3">
                 DÉCORATIONS
               </h3>
@@ -694,12 +711,12 @@ export default function Onglerie() {
                 initial={{ width: 0 }}
                 animate={section3InView ? { width: "80px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="h-[1px] bg-white mx-auto mb-6"
+                className="h-[1px] bg-gradient-to-r from-white/20 via-white/80 to-white/20 mx-auto mb-6"
               ></motion.div>
             </div>
 
             {/* Tarifs nail art */}
-            <div className="bg-gradient-to-r from-gray-900/60 via-black/40 to-gray-900/60 backdrop-blur-xl p-6 md:p-8 rounded-xl border border-gray-500/20 shadow-[0_0_40px_rgba(255,255,255,0.05)]">
+            <div className="border border-white/30 rounded-xl p-8 backdrop-blur-sm bg-black/40 relative z-10">
               <div className="max-w-4xl mx-auto">
                 <div className="space-y-10">
                   {tarifsNailArt.map((item, index) => (

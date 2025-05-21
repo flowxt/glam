@@ -87,7 +87,7 @@ export default function Hero() {
           className="mt-16 md:mt-24 flex justify-center gap-8 md:gap-16"
         >
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold text-white">10+</p>
+            <p className="text-3xl md:text-4xl font-bold text-white">5+</p>
             <p className="text-gray-300 text-sm md:text-base">
               Années d&apos;expérience
             </p>
@@ -99,7 +99,7 @@ export default function Hero() {
             </p>
           </div>
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold text-white">500+</p>
+            <p className="text-3xl md:text-4xl font-bold text-white">250+</p>
             <p className="text-gray-300 text-sm md:text-base">
               Clientes satisfaites
             </p>

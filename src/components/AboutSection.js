@@ -60,9 +60,9 @@ export default function AboutSection() {
             initial="hidden"
             animate={contentInView ? "visible" : "hidden"}
             variants={fadeIn}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-stretch"
           >
-            <div className="relative h-[500px] md:h-[600px] overflow-hidden rounded-sm bg-white/5 border border-white/20">
+            <div className="relative h-full min-h-[500px] overflow-hidden rounded-sm bg-white/5 border border-white/20">
               <Image
                 src="/photo/jennifer1.jpeg"
                 alt="Jennifer - Maquilleuse et Coiffeuse professionnelle"
@@ -74,7 +74,7 @@ export default function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-sm border border-white/20">
+            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-sm border border-white/20 h-full flex flex-col justify-center">
               <div className="space-y-5 text-white/90 leading-relaxed">
                 <p>
                   Coiffeuse et maquilleuse professionnelle diplômée depuis 2010,
