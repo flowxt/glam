@@ -98,49 +98,38 @@ export default function WeddingStory() {
               ></motion.div>
             </div>
             <div className="space-y-4 text-white/90 leading-relaxed">
-              <p className="flex items-start gap-2">
-                <IconWand
-                  className="w-5 h-5 text-white mt-1 flex-shrink-0"
-                  stroke={1.5}
-                />
-                <span>
-                  Tout commence par une belle histoire… et un &apos;oui&apos;
-                  qui change tout ! Vous êtes en train de préparer le grand jour
-                  : votre mariage ! Félicitations ! Si vous êtes ici, c&apos;est
-                  sûrement que vous cherchez quelqu&apos;un pour prendre soin de
-                  vous ce jour-là — et je suis ravie que le hasard (ou pas !)
-                  vous ait menées jusqu&apos;à moi.
-                </span>
+              <p>Et parfois par un simple &quot;oui&quot; qui change tout.</p>
+              <p>
+                Vous préparez le grand jour : votre mariage. Félicitations ! Si
+                vous êtes ici, c&apos;est sûrement que vous cherchez
+                quelqu&apos;un pour prendre soin de vous ce jour-là — et je suis
+                ravie que nos chemins se croisent.
               </p>
-              <p className="flex items-start gap-2">
-                <IconBrush
-                  className="w-5 h-5 text-white mt-1 flex-shrink-0"
-                  stroke={1.5}
-                />
-                <span>
-                  Je suis maquilleuse professionnelle depuis 5 ans, passionnée,
-                  à l&apos;écoute, un brin rigolote (oui, je dédramatise souvent
-                  les petits stress du jour J !), mais surtout minutieuse,
-                  douce, et toujours là pour vous mettre à l&apos;aise. Mon but
-                  : que vous vous sentiez belle, sereine, et surtout vous-même,
-                  avec une mise en beauté qui vous sublime tout en restant
-                  fidèle à votre style.
-                </span>
+              <p>
+                Maquilleuse professionnelle depuis 5 ans, je suis passionnée,
+                attentive, douce, un peu rigolote (parfait pour apaiser les
+                petits stress du jour J !), mais surtout là pour vous mettre à
+                l&apos;aise. Mon but: que vous vous sentiez belle, sereine, et
+                surtout vous-même, avec une mise en beauté qui vous sublime tout
+                en restant fidèle à votre style.
               </p>
               <p>
                 Le moment de la préparation, c&apos;est plus qu&apos;un simple
                 maquillage ou une coiffure. C&apos;est un instant suspendu,
                 souvent rempli d&apos;émotions, où je vous aide à vous détendre,
-                à souffler… et à vous sentir bien entourée. On échange, on
-                rigole, je vous glisse mes meilleurs conseils pour que tout se
-                passe au mieux — et je m&apos;occupe de créer, avec vous, le
-                look qui vous mettra en valeur, tout en finesse et en naturel.
+                à souffler... et à vous sentir bien entourée.
+              </p>
+              <p>
+                On échange, on rigole, je vous glisse mes meilleurs conseils
+                pour que tout se passe au mieux — et je m&apos;occupe de créer,
+                avec vous, le look qui vous mettra en valeur, tout en finesse et
+                en naturel.
               </p>
               <p>
                 Mon approche : un maquillage élégant, soigné, avec une touche de
                 glamour, sans jamais en faire trop. Je vous accompagne avec
-                bienveillance et je prends toujours le temps de comprendre ce
-                qui vous fera vous sentir bien dans votre peau, ce jour-là.
+                bienveillance en prenant toujours le temps de comprendre ce qui
+                vous fait vous sentir belle et confiante.
               </p>
               <p className="flex items-start gap-2">
                 <IconMoodSmile
@@ -149,7 +138,8 @@ export default function WeddingStory() {
                 />
                 <span>
                   Mon petit conseil : restez vous-même. Faites confiance à votre
-                  feeling, et laissez-moi prendre soin de vous, tout simplement.
+                  instinct — et laissez-moi prendre soin de vous, tout
+                  simplement.
                 </span>
               </p>
             </div>
