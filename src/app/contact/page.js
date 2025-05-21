@@ -404,8 +404,14 @@ export default function Contact() {
                 </p>
                 <p className="flex justify-between">
                   <span>Dimanche</span>
-                  <span>Fermé</span>
+                  <span>Événements uniquement</span>
                 </p>
+                <div className="pt-3 mt-3 border-t border-white/10">
+                  <p className="text-sm text-white/60 italic">
+                    Les prestations d&apos;onglerie ne sont pas disponibles le
+                    dimanche.
+                  </p>
+                </div>
               </div>
             </div>
 
