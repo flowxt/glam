@@ -209,6 +209,29 @@ export default function Footer() {
                     Lun-Ven: 9h-19h00
                   </span>
                 </div>
+                <div className="flex items-start">
+                  <svg
+                    className="w-5 h-5 text-gray-500 mr-3 mt-0.5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                    />
+                  </svg>
+                  <a
+                    href="https://www.instagram.com/glam_beauty_38?igsh=NzJvNXVqZGpuczgy&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-gray-300 hover:text-white transition-colors"
+                  >
+                    @glam_beauty_38
+                  </a>
+                </div>
               </div>
             </div>
           </div>

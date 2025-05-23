@@ -72,8 +72,8 @@ export default function Navbar() {
           w-full mx-auto 
           ${
             scrolled
-              ? "py-3 bg-black/60 backdrop-blur-md shadow-md shadow-black/10"
-              : "py-4 bg-black backdrop-blur-sm"
+              ? "py-3 bg-black shadow-md shadow-black/10"
+              : "py-4 bg-black"
           }
           transition-all duration-300 border-b border-white/10
         `}
@@ -200,7 +200,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-black/90 backdrop-blur-lg border-b border-white/10 overflow-hidden"
+            className="md:hidden bg-black border-b border-white/10 overflow-hidden"
           >
             <div className="container mx-auto px-4">
               <div className="py-4 space-y-0.5">

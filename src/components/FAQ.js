@@ -17,7 +17,7 @@ export default function FAQ() {
     {
       question: "Le déplacement est-il compris dans la prestation ?",
       answer:
-        "Le déplacement est inclus dans un rayon de 30km autour de Grenoble. Au-delà, des frais kilométriques peuvent s'appliquer selon la distance. Je me déplace avec plaisir dans toute la région Rhône-Alpes pour vous accompagner dans vos moments précieux.",
+        "Le déplacement est inclus dans un rayon de 30km autour de Grenoble. Au-delà, des frais kilométriques peuvent s'appliquer selon la distance. Je me déplace avec plaisir dans toute la région Rhône-Alpes pour vous accompagner dans vos moments précieux. Des frais de déplacement sont à prévoir en dehors de St-Égrève.",
     },
     {
       question: "Vous déplacez-vous le jour J ?",
@@ -27,7 +27,12 @@ export default function FAQ() {
     {
       question: "Où se déroulent les essais ?",
       answer:
-        "Les essais se déroulent à votre domicile pour plus de confort et d'intimité. Cette approche vous permet de vous préparer dans votre environnement familier, d'éviter les déplacements et de profiter pleinement de ce moment d'échange et de création de votre mise en beauté idéale.",
+        "Les essais se déroulent au salon à St-Égrève au 42 rue Saint Robert. Je peux me déplacer à domicile si besoin mais des frais de déplacement sont à rajouter. Cela vous permet de profiter pleinement de ce moment d'échange et de création de votre mise en beauté idéale.",
+    },
+    {
+      question: "À quel moment réalisons-nous l'essai ?",
+      answer:
+        "L'essai est généralement réalisé environ 2 mois avant le mariage. Cette période est idéale car elle permet d'ajuster votre mise en beauté tout en étant suffisamment proche de l'événement pour tenir compte des changements saisonniers et de votre style actuel.",
     },
     {
       question: "Quelles sont vos qualifications ?",

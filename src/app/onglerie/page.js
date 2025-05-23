@@ -177,12 +177,18 @@ export default function Onglerie() {
 
   // Images de la galerie
   const galleryImages = [
+    "ongles.jpeg",
+    "ongle2.jpeg",
+    "ongle3.jpeg",
+    "ongle4.jpeg",
+    "ongle5.jpeg",
     "ongles5.jpeg",
     "ongles6.jpeg",
     "ongles7.jpeg",
     "ongles8.jpeg",
     "ongles9.jpeg",
     "ongles10.jpeg",
+    "ongles11.jpeg",
     "ongles12.jpeg",
     "ongles13.jpeg",
     "ongles14.jpeg",
@@ -439,7 +445,9 @@ export default function Onglerie() {
                 transition={{ delay: 0.6, duration: 0.5 }}
               >
                 <Link
-                  href="/contact"
+                  href="https://www.planity.com/glambeauty-prothesiste-ongulaire-maquilleuse-38120-saint-egreve"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-white hover:bg-gray-200 text-black font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 shadow-lg text-sm md:text-base inline-block"
                 >
                   Réserver maintenant
@@ -573,7 +581,7 @@ export default function Onglerie() {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {galleryImages.slice(0, 8).map((img, index) => (
+              {galleryImages.map((img, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -782,7 +790,9 @@ export default function Onglerie() {
             className="inline-block"
           >
             <Link
-              href="/contact"
+              href="https://www.planity.com/glambeauty-prothesiste-ongulaire-maquilleuse-38120-saint-egreve"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative inline-flex items-center px-12 py-4 overflow-hidden text-lg bg-gradient-to-r from-gray-100 to-white text-black font-medium rounded-full group hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300"
             >
               <span className="absolute left-0 w-full h-0 transition-all bg-gradient-to-r from-gray-200 to-white opacity-20 group-hover:h-full top-0 duration-300"></span>

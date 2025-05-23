@@ -134,7 +134,7 @@ export default function Contact() {
             ref={formRef}
           >
             <Image
-              src="/photo/maquillage-pro.jpeg"
+              src="/photo/jennifer.jpeg"
               alt="Maquillage professionnel à Saint-Égrève et Grenoble - Jennifer, maquilleuse et coiffeuse"
               fill
               className="object-cover grayscale"
@@ -255,9 +255,7 @@ export default function Contact() {
                       <option value="coiffure" className="bg-black">
                         Coiffure
                       </option>
-                      <option value="onglerie" className="bg-black">
-                        Onglerie
-                      </option>
+
                       <option value="autre" className="bg-black">
                         Autre
                       </option>
@@ -400,7 +398,7 @@ export default function Contact() {
                 </p>
                 <p className="flex justify-between">
                   <span>Samedi</span>
-                  <span>Sur rendez-vous</span>
+                  <span>Événement uniquement</span>
                 </p>
                 <p className="flex justify-between">
                   <span>Dimanche</span>
