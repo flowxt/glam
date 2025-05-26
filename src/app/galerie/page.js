@@ -254,7 +254,7 @@ export default function Galerie() {
     },
     {
       id: 6,
-      src: "/photo/mariée1.jpeg",
+      src: "/photo/mariée1test.png",
       alt: "Mariée élégante",
       category: "Mariages",
     },
@@ -266,10 +266,11 @@ export default function Galerie() {
     },
     {
       id: 8,
-      src: "/photo/mariés.jpeg",
-      alt: "Couple de mariés heureux",
-      category: "Mariages",
+      src: "/photo/coiffure.jpeg",
+      alt: "Coiffure professionnelle",
+      category: "mariages",
     },
+
     {
       id: 9,
       src: "/photo/mariés1.jpeg",
@@ -308,7 +309,7 @@ export default function Galerie() {
     },
     {
       id: 15,
-      src: "/photo/preparation-mariage7.jpeg",
+      src: "/photo/preparation-mariage7test.png",
       alt: "Maquillage de mariée",
       category: "Mariages",
     },
@@ -320,13 +321,13 @@ export default function Galerie() {
     },
     {
       id: 17,
-      src: "/photo/mariée-maquillage.jpeg",
+      src: "/photo/mariée-maquillage-test.png",
       alt: "Maquillage de mariée",
       category: "Mariages",
     },
     {
       id: 18,
-      src: "/photo/mariée-shooting.jpeg",
+      src: "/photo/mariée-shooting-test.png",
       alt: "Shooting photo mariée",
       category: "Mariages",
     },
@@ -370,10 +371,11 @@ export default function Galerie() {
     },
     {
       id: 25,
-      src: "/photo/coiffure.jpeg",
-      alt: "Coiffure professionnelle",
-      category: "mariages",
+      src: "/photo/mariés.jpeg",
+      alt: "Couple de mariés heureux",
+      category: "Mariages",
     },
+
     {
       id: 26,
       src: "/photo/coiffure2.jpeg",
