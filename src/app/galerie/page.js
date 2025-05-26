@@ -94,6 +94,11 @@ const ImageModal = ({
                   sizes="(max-width: 768px) 100vw, 80vw"
                   priority
                 />
+
+                {/* Filigrane pour la modale */}
+                <div className="absolute bottom-4 right-4 bg-black/30 backdrop-blur-sm px-3 py-2 rounded text-sm text-white/70 font-light tracking-wide pointer-events-none">
+                  © GlamBeauty
+                </div>
               </div>
             </div>
 
@@ -662,6 +667,12 @@ export default function Galerie() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+
+                  {/* Filigrane subtil */}
+                  <div className="absolute bottom-2 right-2 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
+                    © GlamBeauty
+                  </div>
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-4 w-full">
                       <h3 className="text-white font-light">{image.alt}</h3>

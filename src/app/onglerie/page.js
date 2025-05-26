@@ -96,6 +96,11 @@ const ImageModal = ({
                   sizes="(max-width: 768px) 100vw, 80vw"
                   priority
                 />
+
+                {/* Filigrane pour la modale */}
+                <div className="absolute bottom-4 right-4 bg-black/30 backdrop-blur-sm px-3 py-2 rounded text-sm text-white/70 font-light tracking-wide pointer-events-none">
+                  © GlamBeauty
+                </div>
               </div>
             </div>
 
@@ -600,6 +605,12 @@ export default function Onglerie() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+
+                  {/* Filigrane subtil */}
+                  <div className="absolute bottom-2 right-2 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
+                    © GlamBeauty
+                  </div>
+
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                       <svg

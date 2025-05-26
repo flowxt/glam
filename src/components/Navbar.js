@@ -3,11 +3,12 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeItem, setActiveItem] = useState("/");
+  const pathname = usePathname();
 
   // Détecter le scroll pour changer l'apparence de la navbar
   useEffect(() => {
@@ -18,21 +19,10 @@ export default function Navbar() {
       }
     };
 
-    // Identifier la page active
-    const setActivePath = () => {
-      const path = window.location.pathname;
-      setActiveItem(path);
-    };
-
-    setActivePath();
     window.addEventListener("scroll", handleScroll);
-
-    // Mettre à jour la page active lors des changements de route
-    window.addEventListener("popstate", setActivePath);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("popstate", setActivePath);
     };
   }, [scrolled]);
 
@@ -120,7 +110,7 @@ export default function Navbar() {
                   >
                     <span
                       className={`relative z-10 ${
-                        activeItem === item.href
+                        pathname === item.href
                           ? "text-white"
                           : "text-gray-300 group-hover:text-white"
                       }`}
@@ -129,7 +119,7 @@ export default function Navbar() {
                     </span>
 
                     {/* Effet de surlignage élégant */}
-                    {activeItem === item.href && (
+                    {pathname === item.href && (
                       <motion.span
                         layoutId="activeNavIndicator"
                         className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-white/40 via-white/80 to-white/40"
@@ -214,7 +204,7 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       className={`block py-3 px-4 ${
-                        activeItem === item.href
+                        pathname === item.href
                           ? "text-white bg-white/5 border-l-2 border-white/80"
                           : "text-gray-300 hover:text-white hover:bg-white/5"
                       } transition-colors duration-300`}

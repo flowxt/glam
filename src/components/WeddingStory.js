@@ -176,6 +176,12 @@ export default function WeddingStory() {
               fill
               className="object-cover "
             />
+
+            {/* Filigrane subtil */}
+            <div className="absolute bottom-3 right-3 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
+              © GlamBeauty
+            </div>
+
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
           <div className="bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm">
@@ -303,6 +309,12 @@ export default function WeddingStory() {
               fill
               className="object-cover grayscale"
             />
+
+            {/* Filigrane subtil */}
+            <div className="absolute bottom-3 right-3 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
+              © GlamBeauty
+            </div>
+
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
         </motion.div>

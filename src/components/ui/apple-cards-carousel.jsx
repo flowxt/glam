@@ -245,6 +245,11 @@ export const Card = ({
           fill
           className="absolute inset-0 z-10 object-cover"
         />
+        
+        {/* Filigrane subtil */}
+        <div className="absolute bottom-3 right-3 z-20 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
+          © GlamBeauty
+        </div>
       </motion.button>
     </>
   );

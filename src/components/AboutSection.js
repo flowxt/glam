@@ -71,6 +71,12 @@ export default function AboutSection() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
+
+              {/* Filigrane subtil */}
+              <div className="absolute bottom-3 right-3 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
+                © GlamBeauty
+              </div>
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
 
