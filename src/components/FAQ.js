@@ -17,7 +17,7 @@ export default function FAQ() {
     {
       question: "Le déplacement est-il compris dans la prestation ?",
       answer:
-        "Le déplacement est inclus dans un rayon de 30km autour de Grenoble. Au-delà, des frais kilométriques peuvent s'appliquer selon la distance. Je me déplace avec plaisir dans toute la région Rhône-Alpes pour vous accompagner dans vos moments précieux. Des frais de déplacement sont à prévoir en dehors de St-Égrève.",
+        "Le déplacement est offert gracieusement sur les communes de Saint-Égrève, Fontanil et Saint-Martin-le-Vinoux. Pour toute prestation en dehors de ces zones, un supplément déplacement sera appliqué selon la distance. Je me déplace avec plaisir dans toute la région Rhône-Alpes pour vous accompagner dans vos moments précieux.",
     },
     {
       question: "Vous déplacez-vous le jour J ?",

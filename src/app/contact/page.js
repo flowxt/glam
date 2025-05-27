@@ -417,9 +417,15 @@ export default function Contact() {
               <h3 className="text-2xl font-light  mb-4 text-white tracking-wide">
                 Zone d&apos;intervention
               </h3>
+              <p className="text-white/80 mb-3">
+                <span className="font-medium text-white">
+                  Déplacement offert
+                </span>{" "}
+                sur Saint-Égrève, Fontanil et Saint-Martin-le-Vinoux.
+              </p>
               <p className="text-white/80">
-                Je me déplace à domicile dans tout le Rhônes Alpes. Des frais de
-                déplacement peuvent s&apos;appliquer selon la distance.
+                Je me déplace également dans toute la région Rhône-Alpes avec un
+                supplément selon la distance.
               </p>
               <p className="mt-4 text-white/60 text-sm italic">
                 &quot;La beauté commence au moment où vous décidez d&apos;être

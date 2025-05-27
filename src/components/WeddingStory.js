@@ -152,7 +152,7 @@ export default function WeddingStory() {
               src="/photo/mariés2.jpeg"
               alt="Maquillage de mariée"
               fill
-              className="object-cover grayscale"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
@@ -307,7 +307,7 @@ export default function WeddingStory() {
               src="/photo/preparation-mariage2.jpeg"
               alt="Mariée prête pour le grand jour"
               fill
-              className="object-cover grayscale"
+              className="object-cover "
             />
 
             {/* Filigrane subtil */}
