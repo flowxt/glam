@@ -234,18 +234,18 @@ export default function Galerie() {
       alt: "Préparation mariage",
       category: "Mariages",
     },
-    {
-      id: 3,
-      src: "/photo/mariage-BW.jpeg",
-      alt: "Mariage en noir et blanc",
-      category: "Mariages",
-    },
-    {
-      id: 4,
-      src: "/photo/mariage-avec-homme.jpeg",
-      alt: "Couple de mariés",
-      category: "Mariages",
-    },
+    // {
+    //   id: 3,
+    //   src: "/photo/mariage-BW.jpeg",
+    //   alt: "Mariage en noir et blanc",
+    //   category: "Mariages",
+    // },
+    // {
+    //   id: 4,
+    //   src: "/photo/mariage-avec-homme.jpeg",
+    //   alt: "Couple de mariés",
+    //   category: "Mariages",
+    // },
     {
       id: 5,
       src: "/photo/mariée.jpeg",
@@ -301,12 +301,12 @@ export default function Galerie() {
       alt: "Mariée en préparation",
       category: "Mariages",
     },
-    {
-      id: 14,
-      src: "/photo/preparation-mariage6.jpeg",
-      alt: "Préparation de la mariée",
-      category: "Mariages",
-    },
+    // {
+    //   id: 14,
+    //   src: "/photo/preparation-mariage6.jpeg",
+    //   alt: "Préparation de la mariée",
+    //   category: "Mariages",
+    // },
     {
       id: 15,
       src: "/photo/preparation-mariage7test.png",
@@ -343,7 +343,7 @@ export default function Galerie() {
       id: 20,
       src: "/photo/pose-shooting.jpeg",
       alt: "Pose professionnelle",
-      category: "Shooting - corporate",
+      category: "Mariages",
     },
     {
       id: 21,
