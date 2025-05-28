@@ -145,7 +145,7 @@ export default function CallToAction() {
                     </svg>
                   </div>
                   <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                    Rendez-vous rapides
+                    Accompagnement
                   </span>
                 </motion.div>
 
@@ -170,7 +170,7 @@ export default function CallToAction() {
                     </svg>
                   </div>
                   <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                    Satisfaction garantie
+                    Professionnalisme
                   </span>
                 </motion.div>
 
@@ -195,7 +195,7 @@ export default function CallToAction() {
                     </svg>
                   </div>
                   <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                    Excellence au prix juste
+                    Sens du détail
                   </span>
                 </motion.div>
               </div>
