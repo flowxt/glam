@@ -363,7 +363,7 @@ export default function Onglerie() {
       niveau: "Décorations Niveau 1",
       prix: "0,5€",
       details:
-        "French, baby-boomer, lignes fines, feuilles d&apos;or, effet sucre, cat eyes",
+        "French, baby-boomer, lignes fines, feuilles d'or, effet sucre, cat eyes",
     },
     {
       niveau: "Décorations Niveau 2",
