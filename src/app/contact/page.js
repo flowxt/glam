@@ -137,7 +137,7 @@ export default function Contact() {
               src="/photo/jennifer.jpeg"
               alt="Maquillage professionnel à Saint-Égrève et Grenoble - Jennifer, maquilleuse et coiffeuse"
               fill
-              className="object-cover grayscale"
+              className="object-cover "
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
