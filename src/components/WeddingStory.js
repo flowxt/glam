@@ -82,9 +82,9 @@ export default function WeddingStory() {
           initial="hidden"
           animate={section1InView ? "visible" : "hidden"}
           variants={fadeIn}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-32"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-32"
         >
-          <div className="order-2 lg:order-1 bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm">
+          <div className="order-2 lg:order-1 bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm h-full flex flex-col justify-center">
             <div className="mb-8">
               <h3 className="text-3xl font-light tracking-wide mb-3 flex items-center gap-3">
                 <IconRings className="w-6 h-6 text-white" stroke={1.5} />
@@ -145,7 +145,7 @@ export default function WeddingStory() {
             </div>
           </div>
           <motion.div
-            className="relative h-[500px] lg:h-[600px] overflow-hidden rounded-sm order-1 lg:order-2 border border-white/20"
+            className="relative h-full min-h-[500px] lg:min-h-[600px] overflow-hidden rounded-sm order-1 lg:order-2 border border-white/20"
             variants={imageVariant}
           >
             <Image
@@ -164,10 +164,10 @@ export default function WeddingStory() {
           initial="hidden"
           animate={section2InView ? "visible" : "hidden"}
           variants={fadeIn}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-32"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-32"
         >
           <motion.div
-            className="relative h-[500px] lg:h-[600px] overflow-hidden rounded-sm border border-white/20"
+            className="relative h-full min-h-[500px] lg:min-h-[600px] overflow-hidden rounded-sm border border-white/20"
             variants={imageVariant}
           >
             <Image
@@ -184,7 +184,7 @@ export default function WeddingStory() {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
-          <div className="bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm">
+          <div className="bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm h-full flex flex-col justify-center">
             <div className="mb-8">
               <h3 className="text-3xl font-light tracking-wide mb-3">
                 Avant le grand jour
@@ -252,9 +252,9 @@ export default function WeddingStory() {
           initial="hidden"
           animate={section3InView ? "visible" : "hidden"}
           variants={fadeIn}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch"
         >
-          <div className="order-2 lg:order-1 bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm">
+          <div className="order-2 lg:order-1 bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm h-full flex flex-col justify-center">
             <div className="mb-8">
               <h3 className="text-3xl font-light tracking-wide mb-3">
                 Le grand jour
@@ -300,7 +300,7 @@ export default function WeddingStory() {
             </div>
           </div>
           <motion.div
-            className="relative h-[500px] lg:h-[600px] overflow-hidden rounded-sm order-1 lg:order-2 border border-white/20"
+            className="relative h-full min-h-[500px] lg:min-h-[600px] overflow-hidden rounded-sm order-1 lg:order-2 border border-white/20"
             variants={imageVariant}
           >
             <Image
