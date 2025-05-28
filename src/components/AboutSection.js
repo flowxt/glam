@@ -60,7 +60,7 @@ export default function AboutSection() {
             initial="hidden"
             animate={contentInView ? "visible" : "hidden"}
             variants={fadeIn}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-stretch"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch"
           >
             <div className="relative h-full min-h-[500px] overflow-hidden rounded-sm bg-white/5 border border-white/20">
               <Image
