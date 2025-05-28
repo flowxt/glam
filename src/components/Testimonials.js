@@ -38,7 +38,7 @@ export default function Testimonials() {
     {
       name: "Ariane PUENTE-GARCIA",
       date: "il y a 7 mois",
-      text: "Jennifer a su me mettre en confiance, à écouté mes demandes et a su me sublimer pour mon mariage, manucure impeccable et maquillage incroyable. On a changé de coiffure au dernier moment d'un commun accord et tout était absolument parfait ! Elle est gentille, professionnelle et d'une grande simplicité, sans chichi ce qui nous a beaucoup plu, en quelques minutes avec mes invités à la maison elle s'est complètement intégrée. Je la recommande + +",
+      text: "Jennifer a su me mettre en confiance, à écouté mes demandes et a su me sublimer pour mon mariage, manucure impeccable et maquillage incroyable. On a changé de coiffure au dernier moment d'un commun accord et tout était absolument parfait ! Elle est gentille, professionnelle et d'une grande simplicité, sans chichi ce qui nous a beaucoup plu. Je la recommande + +",
       services:
         "Coiffure pour mariage, Maquillage pour mariage, Manucures au gel",
       rating: 5,
