@@ -39,12 +39,6 @@ export default function FAQ() {
       answer:
         "Je suis titulaire d'un diplôme de maquilleuse professionnelle, d'un diplôme de coiffure et d'une certification de prothésiste ongulaire. Je me forme régulièrement aux nouvelles techniques et tendances pour vous offrir un service d'excellence et personnalisé, adapté à chaque occasion et à votre style unique.",
     },
-    {
-      question:
-        "Pourquoi n'y a-t-il pas de prix fixes pour les packs mariées ?",
-      answer:
-        "Chaque mariage est unique, tout comme chaque mariée. Je propose des devis personnalisés pour m'adapter précisément à vos besoins spécifiques. Cela me permet de prendre en compte la complexité des prestations souhaitées, le nombre de personnes à maquiller/coiffer, vos attentes esthétiques particulières et les éventuels déplacements. Cette approche sur-mesure garantit une tarification juste et transparente.",
-    },
   ];
 
   // Gestion de l'ouverture/fermeture des questions

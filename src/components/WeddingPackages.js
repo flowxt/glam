@@ -198,9 +198,9 @@ export default function WeddingPackages() {
       category: "Forfait Invitées",
       title: "PACK SAPHIR",
       items: [
-        { name: "Maquillage & coiffure", price: "100€" },
-        { name: "Maquillage", price: "60€" },
-        { name: "Coiffure", price: "50€" },
+        { name: "Maquillage & coiffure", price: "Tarif sur demande" },
+        { name: "Maquillage", price: "Tarif sur demande" },
+        { name: "Coiffure", price: "Tarif sur demande" },
       ],
       note: "*FAUX CILS INCLUS POUR CHAQUE PRESTATION",
     },
@@ -350,15 +350,15 @@ export default function WeddingPackages() {
                   <span className="font-semibold text-white text-lg md:text-xl">
                     Formule Saphir
                   </span>
-                  <span className="font-bold text-white/80 text-xl md:hidden">
-                    110€
+                  <span className=" text-white/80 text-xl md:hidden">
+                    Tarif sur demande
                   </span>
                 </div>
                 <span className="text-white/80 md:ml-8 md:flex-1">
                   Maquillage + coiffure
                 </span>
-                <span className="hidden md:block font-bold text-white/80 text-xl md:text-2xl">
-                  110€
+                <span className="hidden md:block text-white/80 ">
+                  Tarif sur demande
                 </span>
               </li>
               <li className="grid grid-cols-1 md:flex md:flex-row md:items-center md:justify-between">
@@ -366,12 +366,12 @@ export default function WeddingPackages() {
                   <span className="font-semibold text-white text-lg md:text-xl">
                     Maquillage
                   </span>
-                  <span className="font-bold text-white/80 text-xl md:hidden">
-                    60€
+                  <span className=" text-white/80 text-xl md:hidden">
+                    Tarif sur demande
                   </span>
                 </div>
-                <span className="hidden md:block font-bold text-white/80 text-xl md:text-2xl">
-                  60€
+                <span className="hidden md:block  text-white/80 ">
+                  Tarif sur demande
                 </span>
               </li>
               <li className="grid grid-cols-1 md:flex md:flex-row md:items-center md:justify-between">
@@ -379,12 +379,12 @@ export default function WeddingPackages() {
                   <span className="font-semibold text-white text-lg md:text-xl">
                     Coiffure
                   </span>
-                  <span className="font-bold text-white/80 text-xl md:hidden">
-                    60€
+                  <span className=" text-white/80  md:hidden">
+                    Tarif sur demande
                   </span>
                 </div>
-                <span className="hidden md:block font-bold text-white/80 text-xl md:text-2xl">
-                  60€
+                <span className="hidden md:block  text-white/80 ">
+                  Tarif sur demande
                 </span>
               </li>
             </ul>
@@ -403,12 +403,12 @@ export default function WeddingPackages() {
                   <span className="font-semibold text-white text-lg md:text-xl">
                     Coiffure
                   </span>
-                  <span className="font-bold text-white/80 text-xl md:hidden">
-                    70€
+                  <span className=" text-white/80  md:hidden">
+                    Tarif sur demande
                   </span>
                 </div>
-                <span className="hidden md:block font-bold text-white/80 text-xl md:text-2xl">
-                  70€
+                <span className="hidden md:block  text-white/80 ">
+                  Tarif sur demande
                 </span>
               </li>
               <li className="grid grid-cols-1 md:flex md:flex-row md:items-center md:justify-between">
@@ -416,12 +416,12 @@ export default function WeddingPackages() {
                   <span className="font-semibold text-white text-lg md:text-xl">
                     Maquillage
                   </span>
-                  <span className="font-bold text-white/80 text-xl md:hidden">
-                    80€
+                  <span className=" text-white/80  md:hidden">
+                    Tarif sur demande
                   </span>
                 </div>
-                <span className="hidden md:block font-bold text-white/80 text-xl md:text-2xl">
-                  80€
+                <span className="hidden md:block  text-white/80 ">
+                  Tarif sur demande
                 </span>
               </li>
             </ul>
