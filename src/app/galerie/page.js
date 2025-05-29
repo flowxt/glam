@@ -436,7 +436,7 @@ export default function Galerie() {
     },
     {
       id: 29,
-      src: "/photo/maquillage-enceinte1.jpeg",
+      src: "/photo/maquillage-enceinte1.png",
       alt: "Maquillage artistique grossesse",
       category: "Shooting - corporate",
     },
@@ -458,16 +458,22 @@ export default function Galerie() {
       alt: "Coiffure pour mariage",
       category: "Mariages",
     },
-    {
-      id: 32,
-      src: "/photo/maquillage-pro.jpeg",
-      alt: "Maquillage professionnel artistique",
-      category: "Shooting - corporate",
-    },
+    // {
+    //   id: 32,
+    //   src: "/photo/maquillage-pro.jpeg",
+    //   alt: "Maquillage professionnel artistique",
+    //   category: "Shooting - corporate",
+    // },
 
     {
       id: 34,
       src: "/photo/maquillage-pro2.jpeg",
+      alt: "Artiste maquillage créations",
+      category: "Shooting - corporate",
+    },
+    {
+      id: 70,
+      src: "/photo/shooting-1.png",
       alt: "Artiste maquillage créations",
       category: "Shooting - corporate",
     },
@@ -482,6 +488,84 @@ export default function Galerie() {
       id: 39,
       src: "/photo/maquillage-visage.jpeg",
       alt: "Maquillage artistique du visage",
+      category: "Shooting - corporate",
+    },
+    {
+      id: 71,
+      src: "/photo/shooting-2.jpg",
+      alt: "Artiste maquillage créations",
+      category: "Shooting - corporate",
+    },
+    {
+      id: 72,
+      src: "/photo/shooting-3.png",
+      alt: "Artiste maquillage créations",
+      category: "Shooting - corporate",
+    },
+    {
+      id: 73,
+      src: "/photo/shooting-4.png",
+      alt: "Artiste maquillage créations",
+      category: "Shooting - corporate",
+    },
+    {
+      id: 74,
+      src: "/photo/shooting-5.png",
+      alt: "Artiste maquillage créations",
+      category: "Shooting - corporate",
+    },
+    {
+      id: 75,
+      src: "/photo/shooting-6.png",
+      alt: "Artiste maquillage créations",
+      category: "Shooting - corporate",
+    },
+    {
+      id: 76,
+      src: "/photo/shooting-7.jpg",
+      alt: "Artiste maquillage créations",
+      category: "Shooting - corporate",
+    },
+    {
+      id: 77,
+      src: "/photo/shooting-8.jpeg",
+      alt: "Artiste maquillage créations",
+      category: "Shooting - corporate",
+    },
+    // {
+    //   id: 78,
+    //   src: "/photo/shooting-9.jpeg",
+    //   alt: "Artiste maquillage créations",
+    //   category: "Shooting - corporate",
+    // },
+    // {
+    //   id: 79,
+    //   src: "/photo/shooting-10.jpeg",
+    //   alt: "Artiste maquillage créations",
+    //   category: "Shooting - corporate",
+    // },
+    {
+      id: 78,
+      src: "/photo/shooting-11.jpeg",
+      alt: "Artiste maquillage créations",
+      category: "Shooting - corporate",
+    },
+    {
+      id: 79,
+      src: "/photo/shooting-12.jpeg",
+      alt: "Artiste maquillage créations",
+      category: "Shooting - corporate",
+    },
+    {
+      id: 80,
+      src: "/photo/shooting-13.jpeg",
+      alt: "Artiste maquillage créations",
+      category: "Shooting - corporate",
+    },
+    {
+      id: 81,
+      src: "/photo/shooting-14.jpeg",
+      alt: "Artiste maquillage créations",
       category: "Shooting - corporate",
     },
     {
@@ -564,6 +648,7 @@ export default function Galerie() {
       alt: "Halloween makeup gore",
       category: "Maquillage artistique",
     },
+
     {
       id: 55,
       src: "/photo/maquillage-halloween12.jpeg",
@@ -580,6 +665,24 @@ export default function Galerie() {
       id: 57,
       src: "/photo/maquillage-halloween-14.jpeg",
       alt: "Maquillage Halloween professionnel",
+      category: "Maquillage artistique",
+    },
+    {
+      id: 85,
+      src: "/photo/artistique-1.png",
+      alt: "Maquillage Halloween professionnel",
+      category: "Maquillage artistique",
+    },
+    {
+      id: 86,
+      src: "/photo/artistique-2.png",
+      alt: "Maquillage Halloween professionnel",
+      category: "Maquillage artistique",
+    },
+    {
+      id: 86,
+      src: "/photo/artistique-3.png",
+      alt: "Maquillage Halloween",
       category: "Maquillage artistique",
     },
   ];
