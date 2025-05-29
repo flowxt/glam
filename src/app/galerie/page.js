@@ -234,6 +234,12 @@ export default function Galerie() {
       alt: "Préparation mariage",
       category: "Mariages",
     },
+    {
+      id: 59,
+      src: "/photo/pack-mariage-2.jpeg",
+      alt: "Coiffure pour mariage",
+      category: "Mariages",
+    },
     // {
     //   id: 3,
     //   src: "/photo/mariage-BW.jpeg",
@@ -253,6 +259,12 @@ export default function Galerie() {
       category: "Mariages",
     },
     {
+      id: 63,
+      src: "/photo/pack-mariage-5.png",
+      alt: "Coiffure pour mariage",
+      category: "Mariages",
+    },
+    {
       id: 6,
       src: "/photo/mariée1test.png",
       alt: "Mariée élégante",
@@ -264,6 +276,7 @@ export default function Galerie() {
       alt: "Mariée en robe blanche",
       category: "Mariages",
     },
+
     {
       id: 8,
       src: "/photo/coiffure.jpeg",
@@ -275,6 +288,12 @@ export default function Galerie() {
       id: 9,
       src: "/photo/mariés1.jpeg",
       alt: "Couple après cérémonie",
+      category: "Mariages",
+    },
+    {
+      id: 60,
+      src: "/photo/pack-mariage-3.jpeg",
+      alt: "Coiffure pour mariage",
       category: "Mariages",
     },
     {
@@ -295,6 +314,7 @@ export default function Galerie() {
       alt: "Préparatifs de mariage",
       category: "Mariages",
     },
+
     {
       id: 13,
       src: "/photo/preparation-mariage2.jpeg",
@@ -317,6 +337,12 @@ export default function Galerie() {
       id: 16,
       src: "/photo/preparation-mariage8.jpeg",
       alt: "Préparation beauté mariage",
+      category: "Mariages",
+    },
+    {
+      id: 61,
+      src: "/photo/pack-mariage-4.jpeg",
+      alt: "Coiffure pour mariage",
       category: "Mariages",
     },
     {
@@ -349,25 +375,37 @@ export default function Galerie() {
       id: 21,
       src: "/photo/shooting.jpeg",
       alt: "Shooting photo professionnel",
-      category: "mariages",
+      category: "Mariages",
+    },
+    {
+      id: 58,
+      src: "/photo/pack-mariage-1.jpeg",
+      alt: "Coiffure pour shooting",
+      category: "Mariages",
     },
     {
       id: 22,
       src: "/photo/maquillage.jpeg",
       alt: "Maquillage professionnel shooting",
-      category: "mariages",
+      category: "Mariages",
     },
     {
       id: 23,
       src: "/photo/maquillage-2.jpeg",
       alt: "Maquillage élégant pour shooting",
-      category: "mariages",
+      category: "Mariages",
     },
     {
       id: 24,
-      src: "/photo/maquillage-3.jpeg",
+      src: "/photo/pack-1.png",
       alt: "Maquillage shooting corporate",
-      category: "mariages",
+      category: "Mariages",
+    },
+    {
+      id: 62,
+      src: "/photo/pack-mariage-4.jpeg",
+      alt: "Coiffure pour mariage",
+      category: "Mariages",
     },
     {
       id: 25,
@@ -380,7 +418,7 @@ export default function Galerie() {
       id: 26,
       src: "/photo/coiffure2.jpeg",
       alt: "Coiffure pour shooting",
-      category: "mariages",
+      category: "Mariages",
     },
 
     // Maquillage artistique (incluant Halloween et autres maquillages créatifs)
@@ -412,6 +450,12 @@ export default function Galerie() {
       id: 31,
       src: "/photo/maquillage-mariage1.jpeg",
       alt: "Maquillage artistique mariée",
+      category: "Mariages",
+    },
+    {
+      id: 64,
+      src: "/photo/pack-mariage-6.jpeg",
+      alt: "Coiffure pour mariage",
       category: "Mariages",
     },
     {
