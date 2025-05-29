@@ -195,8 +195,6 @@ export default function Onglerie() {
     "ongles10.jpeg",
     "ongles11.jpeg",
     "ongles12.jpeg",
-    "ongles13.jpeg",
-    "ongles14.jpeg",
     "ongles15.jpeg",
     "ongles16.jpeg",
     "ongles17.jpeg",
