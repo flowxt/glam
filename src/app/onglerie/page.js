@@ -642,6 +642,402 @@ export default function Onglerie() {
             </div>
           </motion.div>
 
+          {/* Section Techniques et Explications */}
+
+          {/* Section Remplissage */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-32"
+          >
+            <motion.div
+              className="relative h-full min-h-[500px] lg:min-h-[600px] overflow-hidden rounded-sm border border-white/20"
+              variants={fadeInUp}
+            >
+              <Image
+                src="/photo/onglerie/ongles12.jpeg"
+                alt="Remplissage ongles gel"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-3 right-3 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
+                © GlamBeauty
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </motion.div>
+
+            <div className="bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm h-full flex flex-col justify-center">
+              <div className="mb-8">
+                <h3 className="text-3xl font-light tracking-wide mb-3 text-center">
+                  REMPLISSAGE
+                </h3>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "120px" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="h-[1px] bg-white mx-auto mb-6"
+                ></motion.div>
+                <h4 className="text-xl font-light text-white/80 mb-6 text-center">
+                  Quelle fréquence ?
+                </h4>
+              </div>
+              <div className="space-y-4 text-white/90 leading-relaxed">
+                <p>
+                  Les délais de remplissage pour une pose de vernis gel sont
+                  généralement de{" "}
+                  <span className="text-white font-medium">2 à 3 semaines</span>
+                  .
+                </p>
+                <p>
+                  Cela permet de corriger la repousse naturelle de l&apos;ongle
+                  et de maintenir un résultat net, solide et esthétique.
+                </p>
+                <p>
+                  Au-delà, le gel peut se décoller ou fragiliser l&apos;ongle.
+                </p>
+                <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
+                  <p className="text-white/80 text-sm italic text-center">
+                    Un entretien régulier garantit la beauté et la santé de vos
+                    ongles
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Section Manucure Russe */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-32"
+          >
+            <div className="order-2 lg:order-1 bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm h-full flex flex-col justify-center">
+              <div className="mb-8">
+                <h3 className="text-3xl font-light tracking-wide mb-3 text-center">
+                  LA MANUCURE RUSSE
+                </h3>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "120px" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="h-[1px] bg-white mx-auto mb-6"
+                ></motion.div>
+                <h4 className="text-xl font-light text-white/80 mb-6 text-center">
+                  Pourquoi l&apos;adopter ?
+                </h4>
+              </div>
+              <div className="space-y-4 text-white/90 leading-relaxed">
+                <p>
+                  La manucure russe est une{" "}
+                  <span className="text-white font-medium">
+                    technique de soin des ongles
+                  </span>{" "}
+                  qui permet un rendu très propre et soigné.
+                </p>
+                <p>
+                  Elle consiste à travailler le contour de l&apos;ongle en
+                  profondeur avec une ponceuse, pour un résultat ultra net et
+                  précis.
+                </p>
+                <p>
+                  Les cuticules sont parfaitement nettoyées, ce qui permet une
+                  pose de vernis ou de gel très proche de la peau, donnant un{" "}
+                  <span className="text-white font-medium">
+                    effet impeccable et longue durée
+                  </span>
+                  .
+                </p>
+                <p>
+                  Idéale pour celles qui recherchent une finition élégante et
+                  durable !
+                </p>
+              </div>
+            </div>
+
+            <motion.div
+              className="relative h-full min-h-[500px] lg:min-h-[600px] overflow-hidden rounded-sm order-1 lg:order-2 border border-white/20"
+              variants={fadeInUp}
+            >
+              <Image
+                src="/photo/onglerie/ongles15.jpeg"
+                alt="Manucure russe professionnelle"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-3 right-3 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
+                © GlamBeauty
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </motion.div>
+          </motion.div>
+
+          {/* Section Gainage */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-32"
+          >
+            <motion.div
+              className="relative h-full min-h-[500px] lg:min-h-[600px] overflow-hidden rounded-sm border border-white/20"
+              variants={fadeInUp}
+            >
+              <Image
+                src="/photo/onglerie/ongles8.jpeg"
+                alt="Gainage renfort des ongles"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-3 right-3 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
+                © GlamBeauty
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </motion.div>
+
+            <div className="bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm h-full flex flex-col justify-center">
+              <div className="mb-8">
+                <h3 className="text-3xl font-light tracking-wide mb-3 text-center">
+                  GAINAGE / RENFORT DES ONGLES
+                </h3>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "120px" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="h-[1px] bg-white mx-auto mb-6"
+                ></motion.div>
+                <h4 className="text-xl font-light text-white/80 mb-6 text-center">
+                  Qu&apos;est ce que c&apos;est ?
+                </h4>
+              </div>
+              <div className="space-y-4 text-white/90 leading-relaxed">
+                <p>
+                  Le gainage, aussi appelé renfort, est une{" "}
+                  <span className="text-white font-medium">
+                    technique qui consiste à appliquer une fine couche de gel
+                    sur l&apos;ongle naturel
+                  </span>
+                  , sans ajout de longueur.
+                </p>
+                <p>
+                  Il renforce la plaque de l&apos;ongle, la protège des chocs,
+                  et limite la casse ou le dédoublement.
+                </p>
+                <p>
+                  Avec un fini lisse et naturel, qui peut rester nude ou être
+                  accompagné d&apos;un vernis semi-permanent.
+                </p>
+                <p>
+                  Il améliore la tenue de la manucure et accompagne la pousse
+                  des ongles en toute sécurité.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Section Russian Feet Spa */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-32"
+          >
+            <div className="order-2 lg:order-1 bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm h-full flex flex-col justify-center">
+              <div className="mb-8">
+                <h3 className="text-3xl font-light tracking-wide mb-3 text-center">
+                  RUSSIAN FEET SPA PÉDILUXE
+                </h3>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "120px" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="h-[1px] bg-white mx-auto mb-6"
+                ></motion.div>
+                <h4 className="text-xl font-light text-white/80 mb-6 text-center">
+                  Des pieds impeccables et doux
+                </h4>
+              </div>
+              <div className="space-y-4 text-white/90 leading-relaxed">
+                <p>
+                  Le Russian Feet Spa, aussi appelé{" "}
+                  <span className="text-white font-medium">Pedi Luxe</span>, est
+                  un soin pédicure haut de gamme qui combine un travail précis
+                  sur les cuticules, un gommage en profondeur et une hydratation
+                  intense.
+                </p>
+                <p>
+                  Grâce à des techniques professionnelles, il laisse les pieds
+                  parfaitement lisses, doux et prêts à être sublimés par une
+                  pose de vernis ou simplement pour un confort durable.
+                </p>
+                <div className="mt-6 p-4 bg-red-500/10 rounded-lg border border-red-500/20">
+                  <p className="text-red-200 text-sm font-medium mb-2">
+                    Ce soin est déconseillé, voire interdit, dans les cas
+                    suivants :
+                  </p>
+                  <ul className="text-red-200/80 text-sm space-y-1">
+                    <li>
+                      • <span className="font-medium">Infections cutanées</span>{" "}
+                      : mycoses, verrues, plaies ouvertes, eczéma ou autres
+                      lésions cutanées
+                    </li>
+                    <li>
+                      •{" "}
+                      <span className="font-medium">
+                        Troubles circulatoires
+                      </span>
+                    </li>
+                    <li>
+                      • <span className="font-medium">Diabète</span>
+                    </li>
+                    <li>
+                      • <span className="font-medium">Grossesse</span>
+                    </li>
+                    <li>
+                      •{" "}
+                      <span className="font-medium">
+                        Pathologies cardiaques ou rénales graves
+                      </span>
+                    </li>
+                    <li>
+                      •{" "}
+                      <span className="font-medium">
+                        Plaies ou blessures récentes
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <motion.div
+              className="relative h-full min-h-[500px] lg:min-h-[600px] overflow-hidden rounded-sm order-1 lg:order-2 border border-white/20"
+              variants={fadeInUp}
+            >
+              <Image
+                src="/photo/onglerie/ongles17.jpeg"
+                alt="Russian Feet Spa pédicure"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-3 right-3 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
+                © GlamBeauty
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </motion.div>
+          </motion.div>
+
+          {/* Section Nouveautés */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="mb-32 relative"
+          >
+            {/* Arrière-plan avec image */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute inset-0 overflow-hidden">
+                <Image
+                  src="/photo/onglerie/ongles14.jpeg"
+                  alt="Fond nouveautés pédicure"
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/90"></div>
+            </div>
+
+            <div className="relative z-10 text-center mb-16">
+              <h3 className="text-4xl font-light tracking-wide mb-3">
+                NOUVEAUTÉS
+              </h3>
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: "120px" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="h-[1px] bg-white mx-auto mb-6"
+              ></motion.div>
+              <h4 className="text-2xl font-light text-white/80 mb-8">
+                Pédicure - Offre de lancement
+              </h4>
+            </div>
+
+            <div className="relative z-10 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Russian Feet Spa */}
+                <div className="border border-white/30 rounded-xl p-8 backdrop-blur-sm bg-black/40">
+                  <div className="flex justify-between items-start mb-4">
+                    <h4 className="text-2xl font-light text-white">
+                      Russian Feet Spa
+                    </h4>
+                    <div className="text-right">
+                      <span className="text-2xl font-light text-white">
+                        45€
+                      </span>
+                      <span className="text-sm text-white/60 ml-2 line-through">
+                        55€
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-white/80 font-medium mb-4">
+                    SOIN COMPLET DES PIEDS (SANS VERNIS) :
+                  </p>
+                  <ul className="text-white/70 space-y-2 text-sm">
+                    <li>- Travail des cuticules en profondeur</li>
+                    <li>- Travail des callosités & crevasses</li>
+                    <li>- Gommage doux au sable volcanique</li>
+                    <li>- Polissage et hydratation</li>
+                  </ul>
+                </div>
+
+                {/* Russian Pédiluxe */}
+                <div className="border border-white/30 rounded-xl p-8 backdrop-blur-sm bg-black/40">
+                  <div className="flex justify-between items-start mb-4">
+                    <h4 className="text-2xl font-light text-white">
+                      Russian Pédiluxe
+                    </h4>
+                    <div className="text-right">
+                      <span className="text-2xl font-light text-white">
+                        80€
+                      </span>
+                      <span className="text-sm text-white/60 ml-2 line-through">
+                        90€
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-white/80 font-medium mb-4">
+                    Soin complet des pieds (AVEC VERNIS) :
+                  </p>
+                  <ul className="text-white/70 space-y-2 text-sm">
+                    <li>- Travail des cuticules en profondeur</li>
+                    <li>- Travail des callosités & crevasses</li>
+                    <li>- Gommage doux au sable volcanique</li>
+                    <li>- Polissage et Hydratation</li>
+                    <li>- Massage</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <p className="text-white/80 italic">
+                  Offres de lancement valables pour les premières réservations
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Section 3 - Tarifs */}
           <motion.div
             id="tarifs"
