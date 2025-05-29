@@ -201,6 +201,14 @@ export default function Onglerie() {
     "ongles16.jpeg",
     "ongles17.jpeg",
     "ongles18.jpeg",
+    "onglerie-1.jpeg",
+    "onglerie-2.jpeg",
+    "onglerie-3.jpeg",
+    "onglerie-4.jpeg",
+    "onglerie-5.jpeg",
+    "onglerie-6.jpeg",
+    "onglerie-7.jpeg",
+    "onglerie-8.jpeg",
   ];
 
   // Gérer la navigation dans la modale
