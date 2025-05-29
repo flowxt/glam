@@ -673,12 +673,12 @@ export default function Galerie() {
       alt: "Maquillage Halloween professionnel",
       category: "Maquillage artistique",
     },
-    {
-      id: 86,
-      src: "/photo/artistique-2.png",
-      alt: "Maquillage Halloween professionnel",
-      category: "Maquillage artistique",
-    },
+    // {
+    //   id: 86,
+    //   src: "/photo/artistique-2.png",
+    //   alt: "Maquillage Halloween professionnel",
+    //   category: "Maquillage artistique",
+    // },
     {
       id: 86,
       src: "/photo/artistique-3.png",
