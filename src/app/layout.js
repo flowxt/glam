@@ -12,7 +12,7 @@ const raleway = Raleway({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://www.beautyglam-pro.fr"),
+  metadataBase: new URL("https://www.glambeauty-pro.fr"),
   title: {
     default:
       "GlamBeauty | Maquilleuse, Coiffeuse et Prothésiste Ongulaire Professionnelle à Saint-Égrève",
@@ -56,7 +56,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://www.beautyglam-pro.fr",
+    url: "https://www.glambeauty-pro.fr",
     siteName: "GlamBeauty",
     title:
       "GlamBeauty | Maquilleuse, Coiffeuse et Prothésiste Ongulaire à Saint-Égrève",
@@ -104,7 +104,7 @@ export const metadata = {
   },
   manifest: "/favicon/site.webmanifest",
   alternates: {
-    canonical: "https://www.beautyglam-pro.fr",
+    canonical: "https://www.glambeauty-pro.fr",
   },
   verification: {
     // Ajoutez vos codes de vérification Google, Bing, etc. quand vous les aurez
@@ -134,7 +134,7 @@ export default function RootLayout({ children }) {
               name: "GlamBeauty",
               description:
                 "Services professionnels de maquillage, coiffure et prothèse ongulaire à Saint-Égrève",
-              url: "https://www.beautyglam-pro.fr",
+              url: "https://www.glambeauty-pro.fr",
               telephone: "+33", // Ajoutez le vrai numéro quand vous l'aurez
               address: {
                 "@type": "PostalAddress",
@@ -153,7 +153,7 @@ export default function RootLayout({ children }) {
                 "Mo-Sa 09:00-19:00", // Ajustez selon vos vraies heures
               ],
               priceRange: "€€",
-              image: "https://www.beautyglam-pro.fr/photo/maquillage-pro4.jpeg",
+              image: "https://www.glambeauty-pro.fr/photo/maquillage-pro4.jpeg",
               sameAs: [
                 "https://www.planity.com/glambeauty-prothesiste-ongulaire-maquilleuse-38120-saint-egreve",
               ],

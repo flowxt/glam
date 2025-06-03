@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://www.beautyglam-pro.fr";
+  const baseUrl = "https://www.glambeauty-pro.fr";
 
   // Pages statiques avec leurs priorités et fréquences de mise à jour
   const routes = [

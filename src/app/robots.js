@@ -7,7 +7,7 @@ export default function robots() {
         disallow: ["/private/", "/admin/", "/api/"],
       },
     ],
-    sitemap: "https://www.beautyglam-pro.fr/sitemap.xml",
-    host: "https://www.beautyglam-pro.fr",
+    sitemap: "https://www.glambeauty-pro.fr/sitemap.xml",
+    host: "https://www.glambeauty-pro.fr",
   };
 }
