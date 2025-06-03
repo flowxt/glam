@@ -350,7 +350,7 @@ export default function WeddingPackages() {
                   <span className="font-semibold text-white text-lg md:text-xl">
                     Formule Saphir
                   </span>
-                  <span className=" text-white/80 text-xl md:hidden">
+                  <span className=" text-white/80  md:hidden">
                     Tarif sur demande
                   </span>
                 </div>
@@ -366,7 +366,7 @@ export default function WeddingPackages() {
                   <span className="font-semibold text-white text-lg md:text-xl">
                     Maquillage
                   </span>
-                  <span className=" text-white/80 text-xl md:hidden">
+                  <span className=" text-white/80  md:hidden">
                     Tarif sur demande
                   </span>
                 </div>
