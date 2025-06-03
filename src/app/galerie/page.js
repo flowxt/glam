@@ -383,12 +383,12 @@ export default function Galerie() {
       alt: "Coiffure pour shooting",
       category: "Mariages",
     },
-    {
-      id: 22,
-      src: "/photo/maquillage.jpeg",
-      alt: "Maquillage professionnel shooting",
-      category: "Mariages",
-    },
+    // {
+    //   id: 22,
+    //   src: "/photo/maquillage.jpeg",
+    //   alt: "Maquillage professionnel shooting",
+    //   category: "Mariages",
+    // },
     {
       id: 23,
       src: "/photo/maquillage-2.jpeg",
