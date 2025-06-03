@@ -184,28 +184,29 @@ export default function Onglerie() {
   const galleryImages = [
     "ongles.jpeg",
     "ongle2.jpeg",
+    "ongles17.jpeg",
     "ongle3.jpeg",
     "ongle4.jpeg",
     "ongle5.jpeg",
+    "ongles16.jpeg",
     "ongles5.jpeg",
     "ongles6.jpeg",
     "ongles7.jpeg",
+    "ongles15.jpeg",
     "ongles8.jpeg",
     "ongles9.jpeg",
     "ongles10.jpeg",
     "ongles11.jpeg",
+    "onglerie-7.jpeg",
     "ongles12.jpeg",
-    "ongles15.jpeg",
-    "ongles16.jpeg",
-    "ongles17.jpeg",
+
     "ongles18.jpeg",
     "onglerie-1.jpeg",
     "onglerie-2.jpeg",
-    "onglerie-3.jpeg",
     "onglerie-4.jpeg",
     "onglerie-5.jpeg",
     "onglerie-6.jpeg",
-    "onglerie-7.jpeg",
+    "onglerie-3.jpeg",
     "onglerie-8.jpeg",
   ];
 
@@ -922,7 +923,7 @@ export default function Onglerie() {
               variants={fadeInUp}
             >
               <Image
-                src="/photo/onglerie/ongles17.jpeg"
+                src="/photo/onglerie/onglerie-3.jpeg"
                 alt="Russian Feet Spa pédicure"
                 fill
                 className="object-cover"
