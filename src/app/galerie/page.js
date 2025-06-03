@@ -327,12 +327,12 @@ export default function Galerie() {
     //   alt: "Préparation de la mariée",
     //   category: "Mariages",
     // },
-    {
-      id: 15,
-      src: "/photo/preparation-mariage7test.png",
-      alt: "Maquillage de mariée",
-      category: "Mariages",
-    },
+    // {
+    //   id: 15,
+    //   src: "/photo/preparation-mariage7test.png",
+    //   alt: "Maquillage de mariée",
+    //   category: "Mariages",
+    // },
     {
       id: 16,
       src: "/photo/preparation-mariage8.jpeg",
