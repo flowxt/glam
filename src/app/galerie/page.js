@@ -339,12 +339,12 @@ export default function Galerie() {
       alt: "Préparation beauté mariage",
       category: "Mariages",
     },
-    {
-      id: 61,
-      src: "/photo/pack-mariage-4.jpeg",
-      alt: "Coiffure pour mariage",
-      category: "Mariages",
-    },
+    // {
+    //   id: 61,
+    //   src: "/photo/pack-mariage-4.jpeg",
+    //   alt: "Coiffure pour mariage",
+    //   category: "Mariages",
+    // },
     {
       id: 17,
       src: "/photo/mariée-maquillage-test.png",
@@ -375,7 +375,7 @@ export default function Galerie() {
       id: 21,
       src: "/photo/shooting.jpeg",
       alt: "Shooting photo professionnel",
-      category: "Mariages",
+      category: "Shooting - corporate",
     },
     {
       id: 58,
