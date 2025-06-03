@@ -982,9 +982,6 @@ export default function Onglerie() {
                     </h4>
                     <div className="text-right">
                       <span className="text-2xl font-light text-white">
-                        45€
-                      </span>
-                      <span className="text-sm text-white/60 ml-2 line-through">
                         55€
                       </span>
                     </div>
@@ -1008,9 +1005,6 @@ export default function Onglerie() {
                     </h4>
                     <div className="text-right">
                       <span className="text-2xl font-light text-white">
-                        80€
-                      </span>
-                      <span className="text-sm text-white/60 ml-2 line-through">
                         90€
                       </span>
                     </div>
@@ -1030,7 +1024,8 @@ export default function Onglerie() {
 
               <div className="mt-8 text-center">
                 <p className="text-white/80 italic">
-                  Offres de lancement valables pour les premières réservations
+                  Services de pédicure professionnelle disponibles sur
+                  rendez-vous
                 </p>
               </div>
             </div>
