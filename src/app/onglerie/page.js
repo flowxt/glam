@@ -968,7 +968,7 @@ export default function Onglerie() {
                 className="h-[1px] bg-white mx-auto mb-6"
               ></motion.div>
               <h4 className="text-2xl font-light text-white/80 mb-8">
-                Pédicure - Offre de lancement
+                Pédicure
               </h4>
             </div>
 
