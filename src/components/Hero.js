@@ -48,6 +48,9 @@ export default function Hero() {
             <div className="text-3xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-wider mt-8 leading-relaxed">
               Maquilleuse & Coiffeuse Professionnelle
             </div>
+            <div className="text-2xl md:text-3xl lg:text-4xl text-gray-400 font-light tracking-widest mt-4">
+              En Rhône-Alpes
+            </div>
           </h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-14 text-gray-300">
             Sublimez votre beauté pour vos moments les plus précieux
