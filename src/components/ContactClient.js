@@ -64,6 +64,7 @@ export default function ContactClient() {
         );
       }
 
+      console.log("✅ Email envoyé avec succès !");
       setSubmitStatus("success");
       // Réinitialiser le formulaire
       setFormData({
@@ -79,8 +80,9 @@ export default function ContactClient() {
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
+      console.log("=== FIN ENVOI FORMULAIRE ===");
     } catch (error) {
-      console.error("Erreur:", error);
+      console.error("❌ ERREUR FORMULAIRE:", error);
       setSubmitStatus("error");
       setErrorMessage(error.message);
     } finally {
