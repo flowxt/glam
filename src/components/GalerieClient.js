@@ -776,6 +776,64 @@ export default function GalerieClient() {
           </div>
         )}
 
+        {/* Remerciements aux photographes */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-10 rounded-sm">
+            <h3 className="text-2xl md:text-3xl font-light text-white mb-6">
+              Remerciements
+            </h3>
+            <div className="h-[1px] w-24 bg-white/40 mx-auto mb-6"></div>
+            <p className="text-white/80 mb-8 text-lg">
+              Un grand merci à tous les photographes professionnels qui ont
+              capturé ces moments magiques ☺️
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 text-sm md:text-base">
+              {[
+                "@julrophoto",
+                "@laetitiaguicherdphotographe",
+                "@marieamandinecharlotte",
+                "@audreydasphotographe",
+                "@tonyavenger photographe",
+                "@byherawedding",
+                "@aimydavid",
+                "@laetitiaphotographe38",
+                "@chovisual",
+                "@mehdimed",
+                "@nina_as_p",
+                "@hannahcybulska",
+                "@studiosemit/ budgiebandits",
+                "@maanphoto",
+                "@studioembrune",
+                "@aznphotographie",
+                "@jpmichelphotographie",
+                "@franzphotographie",
+                "@laurabertellephotographie",
+                "@florencecamilloti",
+                "@pascaliodice",
+                "@angieb38120",
+              ].map((photographer, index) => (
+                <motion.div
+                  key={photographer}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  className="text-white/70 hover:text-white transition-colors duration-300 font-light tracking-wide bg-white/5 p-3 rounded border border-white/10 hover:border-white/30 break-words overflow-wrap-anywhere text-center leading-relaxed"
+                >
+                  {photographer}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
         {/* Message de contact */}
         <motion.div
           initial={{ opacity: 0 }}
