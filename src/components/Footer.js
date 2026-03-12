@@ -224,7 +224,7 @@ export default function Footer() {
                     />
                   </svg>
                   <a
-                    href="https://www.instagram.com/glam_beauty_38?igsh=NzJvNXVqZGpuczgy&utm_source=qr"
+                    href="https://www.instagram.com/glam_beauty_pro"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-gray-300 hover:text-white transition-colors"

@@ -155,6 +155,7 @@ export default function RootLayout({ children }) {
               priceRange: "€€",
               image: "https://www.glambeauty-pro.fr/photo/maquillage-pro4.jpeg",
               sameAs: [
+                "https://www.instagram.com/glam_beauty_pro",
                 "https://www.planity.com/glambeauty-prothesiste-ongulaire-maquilleuse-38120-saint-egreve",
               ],
               serviceType: [
