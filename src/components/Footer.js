@@ -188,7 +188,7 @@ export default function Footer() {
                     />
                   </svg>
                   <span className="text-sm text-gray-300">
-                    42 rue saint Robert, 38120 Saint-Egrève
+                    38120 Saint-Égrève
                   </span>
                 </div>
                 <div className="flex items-start">
@@ -229,7 +229,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-sm text-gray-300 hover:text-white transition-colors"
                   >
-                    @glam_beauty_38
+                    @glam_beauty_pro
                   </a>
                 </div>
               </div>
