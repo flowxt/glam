@@ -9,8 +9,11 @@ export default function ContactClient() {
     nom: "",
     email: "",
     telephone: "",
-    service: "",
+    evenement: "",
     date: "",
+    heureCeremonie: "",
+    nomPhotographe: "",
+    lieuPreparation: "",
     message: "",
   });
 
@@ -70,8 +73,11 @@ export default function ContactClient() {
         nom: "",
         email: "",
         telephone: "",
-        service: "",
+        evenement: "",
         date: "",
+        heureCeremonie: "",
+        nomPhotographe: "",
+        lieuPreparation: "",
         message: "",
       });
 
@@ -230,34 +236,33 @@ export default function ContactClient() {
 
                   <div>
                     <label
-                      htmlFor="service"
+                      htmlFor="evenement"
                       className="block text-white/80 mb-2 text-sm"
                     >
-                      Service souhaité
+                      Événement
                     </label>
                     <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
+                      id="evenement"
+                      name="evenement"
+                      value={formData.evenement}
                       onChange={handleChange}
                       className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
                       required
                     >
                       <option value="" className="bg-black">
-                        Sélectionnez un service
+                        Événement
                       </option>
-                      <option value="mariage" className="bg-black">
-                        Maquillage & Coiffure Mariage
+                      <option value="Mariage" className="bg-black">
+                        Mariage
                       </option>
-                      <option value="maquillage" className="bg-black">
-                        Maquillage
+                      <option value="Shooting" className="bg-black">
+                        Shooting
                       </option>
-                      <option value="coiffure" className="bg-black">
-                        Coiffure
+                      <option value="Facepainting" className="bg-black">
+                        Facepainting
                       </option>
-
-                      <option value="autre" className="bg-black">
-                        Autre
+                      <option value="Autres" className="bg-black">
+                        Autres
                       </option>
                     </select>
                   </div>
@@ -279,6 +284,73 @@ export default function ContactClient() {
                     className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
                   />
                 </div>
+
+                {/* Champs spécifiques mariage */}
+                {formData.evenement === "Mariage" && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="space-y-6 border border-white/10 rounded-sm p-6 bg-white/[0.02]"
+                  >
+                    <p className="text-white/60 text-xs uppercase tracking-widest">
+                      Informations mariage
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label
+                          htmlFor="heureCeremonie"
+                          className="block text-white/80 mb-2 text-sm"
+                        >
+                          Heure de cérémonie
+                        </label>
+                        <input
+                          type="time"
+                          id="heureCeremonie"
+                          name="heureCeremonie"
+                          value={formData.heureCeremonie}
+                          onChange={handleChange}
+                          className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="nomPhotographe"
+                          className="block text-white/80 mb-2 text-sm"
+                        >
+                          Nom du photographe
+                        </label>
+                        <input
+                          type="text"
+                          id="nomPhotographe"
+                          name="nomPhotographe"
+                          value={formData.nomPhotographe}
+                          onChange={handleChange}
+                          placeholder="Ex : @photographe ou nom"
+                          className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="lieuPreparation"
+                        className="block text-white/80 mb-2 text-sm"
+                      >
+                        Lieu de préparation
+                      </label>
+                      <input
+                        type="text"
+                        id="lieuPreparation"
+                        name="lieuPreparation"
+                        value={formData.lieuPreparation}
+                        onChange={handleChange}
+                        placeholder="Adresse ou nom du lieu"
+                        className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
+                      />
+                    </div>
+                  </motion.div>
+                )}
 
                 <div>
                   <label
@@ -438,4 +510,3 @@ export default function ContactClient() {
     </div>
   );
 }
-// test

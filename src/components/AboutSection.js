@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
 export default function AboutSection() {
@@ -29,9 +30,9 @@ export default function AboutSection() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-black via-black to-white/5 text-white overflow-hidden relative">
+    <section className="py-24 bg-white text-black overflow-hidden relative">
       {/* Séparateur supérieur - délimitation avec Hero */}
-      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/30 to-transparent"></div>
 
       <div className="container mx-auto px-6 md:px-10">
         <div className="max-w-5xl mx-auto">
@@ -43,15 +44,15 @@ export default function AboutSection() {
                 titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
               }
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-light tracking-wider mb-6"
+              className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-black"
             >
-              À PROPOS
+              PRÉSENTATION
             </motion.h2>
             <motion.div
               initial={{ width: 0 }}
               animate={titleInView ? { width: "100px" } : { width: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-[1px] bg-white mx-auto"
+              className="h-[1px] bg-black mx-auto"
             ></motion.div>
           </div>
 
@@ -62,7 +63,7 @@ export default function AboutSection() {
             variants={fadeIn}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch"
           >
-            <div className="relative h-full min-h-[500px] overflow-hidden rounded-sm bg-white/5 border border-white/20">
+            <div className="relative h-full min-h-[500px] overflow-hidden rounded-sm bg-black/5 border border-black/10">
               <Image
                 src="/photo/jennifer1.jpeg"
                 alt="Jennifer - Maquilleuse et Coiffeuse professionnelle"
@@ -73,58 +74,105 @@ export default function AboutSection() {
               />
 
               {/* Filigrane subtil */}
-              <div className="absolute bottom-3 right-3 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
+              <div className="absolute bottom-3 right-3 bg-white/30 backdrop-blur-sm px-2 py-1 rounded text-xs text-black/70 font-light tracking-wide pointer-events-none">
                 © GlamBeauty
               </div>
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-sm border border-white/20 h-full flex flex-col justify-center">
-              <div className="space-y-5 text-white/90 leading-relaxed">
+            <div className="bg-black/[0.02] p-8 rounded-sm border border-black/10 h-full flex flex-col justify-center">
+              <div className="space-y-5 text-black/85 leading-relaxed">
                 <p>
-                  Coiffeuse et maquilleuse professionnelle diplômée depuis 2010,
-                  je propose un service de qualité et des prestations
-                  personnalisées. J&apos;utilise mes compétences, ma passion et
-                  mon oeil artistique pour mettre en valeur votre beauté
-                  naturelle.
+                  Derrière Glam Beauty, il y a bien plus qu&apos;une mise en
+                  beauté.
+                  <br />
+                  Il y a une vision, une exigence, une signature.
                 </p>
 
                 <p>
-                  Vous pouvez compter sur mon expérience pour une mise en beauté
-                  glamour, bohème ou sophistiquée selon vos préférences. Je suis
-                  capable de réaliser des coiffures élégantes et raffinées,
-                  offrant un résultat remarquable.
+                  Bridal Artist spécialisée dans l&apos;univers du mariage,
+                  j&apos;accompagne chaque mariée à travers une approche
+                  profondément personnalisée, pensée pour révéler une présence,
+                  une allure, une émotion.
                 </p>
 
                 <p>
-                  En matière de maquillage, j&apos;écoute vos souhaits tout en
-                  vous conseillant pour une mise en beauté parfaite, en harmonie
-                  avec votre morphologie, la couleur de votre peau et votre
-                  tenue.
+                  Experte en maquillage et coiffure professionnelle, je crée des
+                  mises en beauté où chaque détail trouve naturellement sa place
+                  — en harmonie avec votre personnalité, votre robe, votre
+                  énergie et l&apos;atmosphère de cette journée unique.
                 </p>
 
                 <p>
-                  Je mets un point d&apos;honneur à magnifier les mariées et les
-                  invitées avec soin et précision, en accord avec leurs goûts.
+                  Chaque rendez-vous est conçu comme une expérience intime, haut
+                  de gamme et sur-mesure.
+                  <br />
+                  Un moment suspendu, guidé par l&apos;écoute, la précision, la
+                  douceur et l&apos;exigence du détail.
                 </p>
 
                 <p>
-                  N&apos;hésitez pas à me contacter pour plus
-                  d&apos;informations ou demandes particulières.
+                  Mon rôle : vous accompagner avec sensibilité pour que, le jour
+                  de votre mariage, vous vous sentiez pleinement vous-même —
+                  sublimée, naturelle et pleinement assumée.
                 </p>
 
-                <p className="text-2xl text-white font-light italic tracking-wide pt-4">
-                  Jennifer
+                <p className="text-xl text-black font-light italic tracking-wide pt-2">
+                  « Le détail fait l&apos;exception. »
+                </p>
+
+                <p className="text-2xl text-black font-light italic tracking-wide pt-2">
+                  — Jennifer
+                  <br />
+                  <span className="text-base text-black/70 not-italic tracking-widest">
+                    Glam Beauty
+                  </span>
                 </p>
               </div>
             </div>
+          </motion.div>
+
+          {/* Boutons d'appel à l'action */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={contentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center"
+          >
+            {/* Bouton premium - Demande privée */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              className="relative group"
+            >
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 rounded-full blur-sm opacity-60 group-hover:opacity-100 transition duration-500"></div>
+              <Link
+                href="/contact"
+                className="relative inline-flex items-center bg-black text-white font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 shadow-xl text-sm md:text-base tracking-widest uppercase border border-black"
+              >
+                <span className="mr-2 text-amber-300">✦</span>
+                Demande privée
+                <span className="ml-2 text-amber-300">✦</span>
+              </Link>
+            </motion.div>
+
+            {/* Bouton secondaire - Explorer l'univers */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Link
+                href="/galerie"
+                className="inline-block bg-transparent border border-black/40 hover:border-black text-black font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase hover:bg-black/5"
+              >
+                Explorer l&apos;univers
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>
 
       {/* Séparateur inférieur - délimitation avec WeddingStory */}
-      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/30 to-transparent"></div>
     </section>
   );
 }

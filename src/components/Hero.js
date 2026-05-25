@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
@@ -46,67 +45,15 @@ export default function Hero() {
               ></motion.div>
             </motion.div>
             <div className="text-3xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-wider mt-8 leading-relaxed">
-              Maquilleuse & Coiffeuse Professionnelle
+              Makeup & Hair Signature
             </div>
             <div className="text-2xl md:text-3xl lg:text-4xl text-gray-400 font-light tracking-widest mt-4">
-              En Rhône-Alpes
+              Grenoble • Rhône-Alpes • France
             </div>
           </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-14 text-gray-300">
-            Sublimez votre beauté pour vos moments les plus précieux
+          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-14 text-gray-300 italic">
+            « Le détail, signature de l&apos;exception »
           </p>
-          <div className="flex flex-row gap-4 md:gap-6 justify-center">
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-            >
-              <Link
-                href="/contact"
-                className="bg-white hover:bg-gray-200 text-black font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 shadow-lg text-sm md:text-base inline-block"
-              >
-                Réserver maintenant
-              </Link>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
-            >
-              <Link
-                href="/galerie"
-                className="bg-transparent border border-white text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-white/10 transition-all duration-300 text-sm md:text-base inline-block"
-              >
-                Voir la galerie
-              </Link>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="mt-16 md:mt-24 flex justify-center gap-8 md:gap-16"
-        >
-          <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold text-white">5+</p>
-            <p className="text-gray-300 text-sm md:text-base">
-              Années d&apos;expérience
-            </p>
-          </div>
-          <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold text-white">100%</p>
-            <p className="text-gray-300 text-sm md:text-base">
-              Satisfaction client
-            </p>
-          </div>
-          <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold text-white">250+</p>
-            <p className="text-gray-300 text-sm md:text-base">
-              Clientes satisfaites
-            </p>
-          </div>
         </motion.div>
       </motion.div>
 

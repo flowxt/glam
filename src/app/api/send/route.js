@@ -1,42 +1,183 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-// Initialisation de Resend avec la clé API
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+const escapeHtml = (value) =>
+  String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 
 export async function POST(request) {
   try {
-    // Extraire les données du formulaire
     const formData = await request.json();
-    const { nom, email, telephone, service, date, message } = formData;
+    const {
+      nom,
+      email,
+      telephone,
+      evenement,
+      service, // compatibilité ancienne version
+      date,
+      heureCeremonie,
+      nomPhotographe,
+      lieuPreparation,
+      message,
+    } = formData;
 
-    // Vérification des données requises
-    if (!nom || !email || !service || !message) {
+    const typeEvenement = evenement || service;
+
+    if (!nom || !email || !typeEvenement || !message) {
       return NextResponse.json(
         { error: "Tous les champs obligatoires doivent être remplis" },
         { status: 400 }
       );
     }
 
-    // Construire le corps de l'email
-    const emailContent = `
-      <h2>Nouvelle demande de contact - GlamBeauty</h2>
-      <p><strong>Nom:</strong> ${nom}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Téléphone:</strong> ${telephone || "Non spécifié"}</p>
-      <p><strong>Service demandé:</strong> ${service}</p>
-      ${date ? `<p><strong>Date souhaitée:</strong> ${date}</p>` : ""}
-      <p><strong>Message:</strong></p>
-      <p>${message.replace(/\n/g, "<br/>")}</p>
-    `;
+    const safeNom = escapeHtml(nom);
+    const safeEmail = escapeHtml(email);
+    const safeTelephone = escapeHtml(telephone || "Non spécifié");
+    const safeEvenement = escapeHtml(typeEvenement);
+    const safeDate = escapeHtml(date || "");
+    const safeHeureCeremonie = escapeHtml(heureCeremonie || "");
+    const safeNomPhotographe = escapeHtml(nomPhotographe || "");
+    const safeLieuPreparation = escapeHtml(lieuPreparation || "");
+    const safeMessage = escapeHtml(message).replace(/\n/g, "<br/>");
 
-    // Envoi de l'email
+    // Sujet de l'email - pré-rempli pour la réponse
+    const subject = `[GlamBeauty] Nouvelle demande - ${typeEvenement} - ${nom}`;
+    const replySubject = `Re: Votre demande Glam Beauty - ${typeEvenement}`;
+    const replyBody = `Bonjour ${nom},%0D%0A%0D%0AMerci pour votre demande concernant votre ${typeEvenement.toLowerCase()}.%0D%0A%0D%0A`;
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+      replySubject
+    )}&body=${replyBody}`;
+
+    // Bloc spécifique mariage
+    const mariageBlock =
+      typeEvenement === "Mariage"
+        ? `
+        <tr>
+          <td style="padding-top:16px;">
+            <div style="background:#f8f5f0;border-left:3px solid #c9a87a;padding:16px 20px;border-radius:4px;">
+              <p style="margin:0 0 12px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8a7458;font-weight:600;">Informations mariage</p>
+              <p style="margin:6px 0;color:#2a2a2a;font-size:14px;"><strong>Heure de cérémonie :</strong> ${
+                safeHeureCeremonie || "Non précisée"
+              }</p>
+              <p style="margin:6px 0;color:#2a2a2a;font-size:14px;"><strong>Photographe :</strong> ${
+                safeNomPhotographe || "Non précisé"
+              }</p>
+              <p style="margin:6px 0;color:#2a2a2a;font-size:14px;"><strong>Lieu de préparation :</strong> ${
+                safeLieuPreparation || "Non précisé"
+              }</p>
+            </div>
+          </td>
+        </tr>`
+        : "";
+
+    const emailContent = `
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Nouvelle demande Glam Beauty</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:'Helvetica Neue',Arial,sans-serif;color:#2a2a2a;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f4f4f4;padding:24px 0;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:6px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.06);">
+          <!-- Header -->
+          <tr>
+            <td style="background:#000000;padding:32px 28px;text-align:center;">
+              <h1 style="margin:0;color:#ffffff;font-weight:300;letter-spacing:6px;font-size:22px;">GLAM BEAUTY</h1>
+              <p style="margin:8px 0 0;color:#c9a87a;font-size:11px;letter-spacing:3px;text-transform:uppercase;">Nouvelle demande de contact</p>
+            </td>
+          </tr>
+
+          <!-- CTA Répondre direct -->
+          <tr>
+            <td style="padding:28px 28px 8px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td align="center">
+                    <a href="${mailtoLink}" style="display:inline-block;background:#000000;color:#ffffff;text-decoration:none;padding:14px 28px;border-radius:30px;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:500;">✦ Répondre à ${safeNom} ✦</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-top:10px;">
+                    <p style="margin:0;font-size:11px;color:#888;">Ou utilise simplement le bouton "Répondre" de ta messagerie</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Infos client -->
+          <tr>
+            <td style="padding:24px 28px 8px;">
+              <h2 style="margin:0 0 14px;font-size:13px;color:#8a7458;letter-spacing:3px;text-transform:uppercase;font-weight:600;">Coordonnées</h2>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="font-size:14px;color:#2a2a2a;">
+                <tr><td style="padding:6px 0;width:140px;color:#666;">Nom</td><td style="padding:6px 0;font-weight:500;">${safeNom}</td></tr>
+                <tr><td style="padding:6px 0;color:#666;">Email</td><td style="padding:6px 0;"><a href="mailto:${safeEmail}" style="color:#000;text-decoration:underline;">${safeEmail}</a></td></tr>
+                <tr><td style="padding:6px 0;color:#666;">Téléphone</td><td style="padding:6px 0;">${safeTelephone}</td></tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Infos événement -->
+          <tr>
+            <td style="padding:16px 28px 8px;">
+              <h2 style="margin:0 0 14px;font-size:13px;color:#8a7458;letter-spacing:3px;text-transform:uppercase;font-weight:600;">Événement</h2>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="font-size:14px;color:#2a2a2a;">
+                <tr><td style="padding:6px 0;width:140px;color:#666;">Type</td><td style="padding:6px 0;font-weight:500;">${safeEvenement}</td></tr>
+                ${
+                  safeDate
+                    ? `<tr><td style="padding:6px 0;color:#666;">Date souhaitée</td><td style="padding:6px 0;">${safeDate}</td></tr>`
+                    : ""
+                }
+              </table>
+            </td>
+          </tr>
+
+          ${mariageBlock}
+
+          <!-- Message -->
+          <tr>
+            <td style="padding:24px 28px 8px;">
+              <h2 style="margin:0 0 14px;font-size:13px;color:#8a7458;letter-spacing:3px;text-transform:uppercase;font-weight:600;">Message</h2>
+              <div style="background:#f8f5f0;padding:18px 20px;border-radius:4px;font-size:14px;line-height:1.6;color:#2a2a2a;">
+                ${safeMessage}
+              </div>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="padding:28px;text-align:center;border-top:1px solid #eee;margin-top:20px;">
+              <p style="margin:0;font-size:11px;color:#aaa;letter-spacing:1px;">Email envoyé depuis glambeauty-pro.fr</p>
+              <p style="margin:6px 0 0;font-size:11px;color:#aaa;">« Le détail, signature de l'exception »</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`;
+
     const data = await resend.emails.send({
       from: "GlamBeauty <onboarding@resend.dev>",
       to: process.env.CONTACT_EMAIL,
-      subject: `[GlamBeauty] Nouvelle demande - ${service}`,
+      subject,
       html: emailContent,
-      reply_to: email,
+      replyTo: email,
+      headers: {
+        "X-Entity-Ref-ID": `glambeauty-${Date.now()}`,
+      },
     });
 
     return NextResponse.json({ success: true, data });
