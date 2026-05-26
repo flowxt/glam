@@ -30,9 +30,9 @@ export default function AboutSection() {
   };
 
   return (
-    <section className="py-24 bg-white text-black overflow-hidden relative">
+    <section className="py-24 bg-gradient-to-b from-black via-black to-black/95 text-white overflow-hidden relative">
       {/* Séparateur supérieur - délimitation avec Hero */}
-      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/30 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
 
       <div className="container mx-auto px-6 md:px-10">
         <div className="max-w-5xl mx-auto">
@@ -44,7 +44,7 @@ export default function AboutSection() {
                 titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
               }
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-black"
+              className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-white"
             >
               PRÉSENTATION
             </motion.h2>
@@ -52,7 +52,7 @@ export default function AboutSection() {
               initial={{ width: 0 }}
               animate={titleInView ? { width: "100px" } : { width: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-[1px] bg-black mx-auto"
+              className="h-[1px] bg-white mx-auto"
             ></motion.div>
           </div>
 
@@ -63,7 +63,7 @@ export default function AboutSection() {
             variants={fadeIn}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch"
           >
-            <div className="relative h-full min-h-[500px] overflow-hidden rounded-sm bg-black/5 border border-black/10">
+            <div className="relative h-full min-h-[500px] overflow-hidden rounded-sm bg-white/5 border border-white/20">
               <Image
                 src="/photo/jennifer1.jpeg"
                 alt="Jennifer - Maquilleuse et Coiffeuse professionnelle"
@@ -74,12 +74,13 @@ export default function AboutSection() {
               />
 
               {/* Filigrane subtil */}
-              <div className="absolute bottom-3 right-3 bg-white/30 backdrop-blur-sm px-2 py-1 rounded text-xs text-black/70 font-light tracking-wide pointer-events-none">
+              <div className="absolute bottom-3 right-3 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
                 © GlamBeauty
               </div>
             </div>
 
-            <div className="bg-black/[0.02] p-8 rounded-sm border border-black/10 h-full flex flex-col justify-center">
+            {/* Encadré texte fond blanc, écriture noire */}
+            <div className="bg-white p-8 rounded-sm border border-white/10 h-full flex flex-col justify-center shadow-xl">
               <div className="space-y-5 text-black/85 leading-relaxed">
                 <p>
                   Derrière Glam Beauty, il y a bien plus qu&apos;une mise en
@@ -123,7 +124,7 @@ export default function AboutSection() {
                 <p className="text-2xl text-black font-light italic tracking-wide pt-2">
                   — Jennifer
                   <br />
-                  <span className="text-base text-black/70 not-italic tracking-widest">
+                  <span className="text-base text-black/60 not-italic tracking-widest">
                     Glam Beauty
                   </span>
                 </p>
@@ -147,11 +148,11 @@ export default function AboutSection() {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 rounded-full blur-sm opacity-60 group-hover:opacity-100 transition duration-500"></div>
               <Link
                 href="/contact"
-                className="relative inline-flex items-center bg-black text-white font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 shadow-xl text-sm md:text-base tracking-widest uppercase border border-black"
+                className="relative inline-flex items-center bg-white text-black font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 shadow-xl text-sm md:text-base tracking-widest uppercase border border-white/20"
               >
-                <span className="mr-2 text-amber-300">✦</span>
+                <span className="mr-2 text-amber-500">✦</span>
                 Demande privée
-                <span className="ml-2 text-amber-300">✦</span>
+                <span className="ml-2 text-amber-500">✦</span>
               </Link>
             </motion.div>
 
@@ -162,7 +163,7 @@ export default function AboutSection() {
             >
               <Link
                 href="/galerie"
-                className="inline-block bg-transparent border border-black/40 hover:border-black text-black font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase hover:bg-black/5"
+                className="inline-block bg-transparent border border-white/40 hover:border-white text-white font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase hover:bg-white/5"
               >
                 Explorer l&apos;univers
               </Link>
@@ -172,7 +173,7 @@ export default function AboutSection() {
       </div>
 
       {/* Séparateur inférieur - délimitation avec WeddingStory */}
-      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/30 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
     </section>
   );
 }
