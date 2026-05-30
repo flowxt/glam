@@ -60,10 +60,10 @@ export default function Hero() {
                 style={{ originX: 0.5 }}
               ></motion.div>
             </motion.div>
-            <div className="font-sans text-3xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-wider mt-8 leading-relaxed uppercase">
+            <div className="font-sans text-lg sm:text-2xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-normal md:tracking-wider mt-8 leading-relaxed uppercase whitespace-nowrap">
               MAKEUP &amp; HAIR SIGNATURE
             </div>
-            <div className="font-sans text-2xl md:text-3xl lg:text-4xl text-white font-bold tracking-widest mt-4">
+            <div className="font-sans text-base sm:text-xl md:text-3xl lg:text-4xl text-white font-bold tracking-normal md:tracking-widest mt-4 whitespace-nowrap">
               Grenoble • Rhône-Alpes • France
             </div>
           </h1>
