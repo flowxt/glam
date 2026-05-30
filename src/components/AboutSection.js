@@ -114,17 +114,19 @@ export default function AboutSection() {
                 <p>
                   Mon rôle : vous accompagner avec sensibilité pour que, le jour
                   de votre mariage, vous vous sentiez pleinement vous-même —
-                  sublimée, naturelle et pleinement assumée.
+                  sublimée, naturelle et assumée.
                 </p>
 
                 <p className="text-xl text-black font-light italic tracking-wide pt-2">
                   « Le détail fait l&apos;exception. »
                 </p>
 
-                <p className="text-2xl text-black font-light italic tracking-wide pt-2">
-                  — Jennifer
+                <p className="pt-2">
+                  <span className="font-burgues text-5xl md:text-6xl text-black leading-none">
+                    Jennifer
+                  </span>
                   <br />
-                  <span className="text-base text-black/60 not-italic tracking-widest">
+                  <span className="text-base text-black/60 tracking-widest">
                     Glam Beauty
                   </span>
                 </p>
@@ -139,31 +141,21 @@ export default function AboutSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-16 flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center"
           >
-            {/* Bouton premium - Demande privée */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className="relative group"
-            >
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 rounded-full blur-sm opacity-60 group-hover:opacity-100 transition duration-500"></div>
+            {/* Bouton - Demande privée */}
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/contact"
-                className="relative inline-flex items-center bg-white text-black font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 shadow-xl text-sm md:text-base tracking-widest uppercase border border-white/20"
+                className="inline-block bg-white hover:bg-gray-200 text-black font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
               >
-                <span className="mr-2 text-amber-500">✦</span>
                 Demande privée
-                <span className="ml-2 text-amber-500">✦</span>
               </Link>
             </motion.div>
 
-            {/* Bouton secondaire - Explorer l'univers */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-            >
+            {/* Bouton - Explorer l'univers */}
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/galerie"
-                className="inline-block bg-transparent border border-white/40 hover:border-white text-white font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase hover:bg-white/5"
+                className="inline-block bg-white hover:bg-gray-200 text-black font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
               >
                 Explorer l&apos;univers
               </Link>

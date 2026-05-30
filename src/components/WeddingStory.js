@@ -2,15 +2,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
-import {
-  IconPhone,
-  IconHeart,
-  IconDiamond,
-  IconRings,
-  IconWand,
-  IconBrush,
-  IconMoodSmile,
-} from "@tabler/icons-react";
 
 export default function WeddingStory() {
   // Animation hooks pour chaque section
@@ -84,63 +75,45 @@ export default function WeddingStory() {
           variants={fadeIn}
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-32"
         >
-          <div className="order-2 lg:order-1 bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm h-full flex flex-col justify-center">
+          <div className="order-2 lg:order-1 bg-white p-8 rounded-sm border border-white/10 shadow-xl h-full flex flex-col justify-center">
             <div className="mb-8">
-              <h3 className="text-3xl font-light tracking-wide mb-3 flex items-center gap-3">
-                <IconRings className="w-6 h-6 text-white" stroke={1.5} />
-                Tout commence par une belle histoire
+              <h3 className="text-3xl font-bold tracking-wide mb-3 text-black">
+                Tout commence par un oui
               </h3>
               <motion.div
                 initial={{ width: 0 }}
                 animate={section1InView ? { width: "120px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-[1px] bg-white mb-6"
+                className="h-[1px] bg-black mb-6"
               ></motion.div>
             </div>
-            <div className="space-y-4 text-white/90 leading-relaxed">
-              <p>Et parfois par un simple &quot;oui&quot; qui change tout.</p>
+            <div className="space-y-4 text-black/85 leading-relaxed">
               <p>
-                Vous préparez le grand jour : votre mariage. Félicitations ! Si
-                vous êtes ici, c&apos;est sûrement que vous cherchez
-                quelqu&apos;un pour prendre soin de vous ce jour-là — et je suis
-                ravie que nos chemins se croisent.
+                Une promesse.
+                <br />
+                Une émotion.
+                <br />
+                Le début d&apos;une histoire unique.
               </p>
               <p>
-                Maquilleuse professionnelle depuis 5 ans, je suis passionnée,
-                attentive, douce, un peu rigolote (parfait pour apaiser les
-                petits stress du jour J !), mais surtout là pour vous mettre à
-                l&apos;aise. Mon but: que vous vous sentiez belle, sereine, et
-                surtout vous-même, avec une mise en beauté qui vous sublime tout
-                en restant fidèle à votre style.
+                Puis vient l&apos;envie de créer un mariage qui vous ressemble
+                jusque dans les moindres attentions.
               </p>
               <p>
-                Le moment de la préparation, c&apos;est plus qu&apos;un simple
-                maquillage ou une coiffure. C&apos;est un instant suspendu,
-                souvent rempli d&apos;émotions, où je vous aide à vous détendre,
-                à souffler... et à vous sentir bien entourée.
+                Vous recherchez bien plus qu&apos;une mise en beauté.
+                <br />
+                Vous recherchez une présence rassurante, une expertise, un
+                regard capable de comprendre ce qui vous met réellement en
+                valeur.
               </p>
               <p>
-                On échange, on rigole, je vous glisse mes meilleurs conseils
-                pour que tout se passe au mieux — et je m&apos;occupe de créer,
-                avec vous, le look qui vous mettra en valeur, tout en finesse et
-                en naturel.
+                Je vous accompagne à travers une approche entièrement
+                personnalisée, pensée pour vous offrir une expérience fluide,
+                raffinée et profondément humaine.
               </p>
               <p>
-                Mon approche : un maquillage élégant, soigné, avec une touche de
-                glamour, sans jamais en faire trop. Je vous accompagne avec
-                bienveillance en prenant toujours le temps de comprendre ce qui
-                vous fait vous sentir belle et confiante.
-              </p>
-              <p className="flex items-start gap-2">
-                <IconMoodSmile
-                  className="w-5 h-5 text-white mt-1 flex-shrink-0"
-                  stroke={1.5}
-                />
-                <span>
-                  Mon petit conseil : restez vous-même. Faites confiance à votre
-                  instinct — et laissez-moi prendre soin de vous, tout
-                  simplement.
-                </span>
+                L&apos;objectif n&apos;est jamais de vous transformer, mais de
+                révéler avec justesse celle que vous êtes déjà…
               </p>
             </div>
           </div>
@@ -184,64 +157,44 @@ export default function WeddingStory() {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
-          <div className="bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm h-full flex flex-col justify-center">
+          <div className="bg-white p-8 rounded-sm border border-white/10 shadow-xl h-full flex flex-col justify-center">
             <div className="mb-8">
-              <h3 className="text-3xl font-light tracking-wide mb-3">
+              <h3 className="text-3xl font-bold tracking-wide mb-3 text-black">
                 Avant le grand jour
               </h3>
               <motion.div
                 initial={{ width: 0 }}
                 animate={section2InView ? { width: "120px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-[1px] bg-white mb-6"
+                className="h-[1px] bg-black mb-6"
               ></motion.div>
             </div>
-            <div className="space-y-4 text-white/90 leading-relaxed">
-              <div className="mb-8">
-                <h4 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
-                  <IconPhone className="w-5 h-5 text-white" stroke={1.5} />
-                  Un moment d&apos;échange avant tout
-                </h4>
-                <p>
-                  Avant notre première rencontre, j&apos;aime prendre le temps
-                  de discuter avec vous au téléphone, une fois le formulaire
-                  rempli.
-                </p>
-                <p>
-                  Ce moment est précieux : il me permet de mieux comprendre
-                  votre projet, de cerner vos envies et de répondre à vos
-                  premières questions. C&apos;est aussi l&apos;occasion de poser
-                  les bases d&apos;une relation de confiance, essentielle pour
-                  une collaboration fluide et sereine.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
-                  <IconHeart className="w-5 h-5 text-white" stroke={1.5} />
-                  Le jour de l&apos;essai
-                </h4>
-                <p>
-                  C&apos;est lors de l&apos;essai qu&apos;on se rencontre
-                  vraiment et que votre mise en beauté commence à prendre forme.
-                </p>
-                <p>
-                  Vous me partagez vos idées, vos inspirations, votre style,
-                  peut-être une photo de votre robe… Et ensemble, on définit le
-                  look qui vous ressemble.
-                </p>
-                <p>
-                  Je prends en compte chaque détail : votre visage, votre peau,
-                  vos cheveux, votre morphologie, la saison de votre mariage, et
-                  l&apos;ambiance du jour J.
-                </p>
-                <p>
-                  L&apos;objectif ? Qu&apos;on crée ensemble, dans la bonne
-                  humeur, un maquillage et une coiffure à votre image,
-                  jusqu&apos;à obtenir le résultat qui vous fait vibrer. Je
-                  guette toujours ce petit &quot;wow&quot; devant le miroir –
-                  c&apos;est mon moment préféré !
-                </p>
-              </div>
+            <div className="space-y-4 text-black/85 leading-relaxed">
+              <p>
+                Chaque échange permet de construire cette confiance essentielle.
+              </p>
+              <p>
+                Tout commence par un premier contact, un moment de partage pour
+                comprendre vos envies, votre univers et l&apos;atmosphère de
+                votre mariage.
+              </p>
+              <p>Puis vient l&apos;essai.</p>
+              <p>
+                Un instant privilégié où l&apos;on affine ensemble la mise en
+                beauté idéale : celle qui s&apos;accordera parfaitement à vos
+                traits, votre robe, votre coiffure et à l&apos;énergie de cette
+                journée unique.
+              </p>
+              <p>
+                Teint, lumière, équilibre, tenue…
+                <br />
+                Rien n&apos;est laissé au hasard afin de créer un résultat
+                harmonieux, lumineux et fidèle à vous-même.
+              </p>
+              <p>
+                Vous avancez sereinement, avec la certitude d&apos;être
+                accompagnée avec attention et maîtrise…
+              </p>
             </div>
           </div>
         </motion.div>
@@ -254,49 +207,44 @@ export default function WeddingStory() {
           variants={fadeIn}
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch"
         >
-          <div className="order-2 lg:order-1 bg-white/5 p-8 rounded-sm border border-white/20 backdrop-blur-sm h-full flex flex-col justify-center">
+          <div className="order-2 lg:order-1 bg-white p-8 rounded-sm border border-white/10 shadow-xl h-full flex flex-col justify-center">
             <div className="mb-8">
-              <h3 className="text-3xl font-light tracking-wide mb-3">
-                Le grand jour
+              <h3 className="text-3xl font-bold tracking-wide mb-3 text-black">
+                Le jour J
               </h3>
               <motion.div
                 initial={{ width: 0 }}
                 animate={section3InView ? { width: "120px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-[1px] bg-white mb-6"
+                className="h-[1px] bg-black mb-6"
               ></motion.div>
             </div>
-            <div className="space-y-4 text-white/90 leading-relaxed">
-              <div>
-                <h4 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
-                  <IconDiamond className="w-5 h-5 text-white" stroke={1.5} />
-                  Le jour J
-                </h4>
-                <p>
-                  Le grand jour est enfin là, et je suis tellement heureuse de
-                  faire partie de ce moment inoubliable avec vous. Je prends le
-                  temps de m&apos;installer sereinement sur le lieu de
-                  préparation, pour m&apos;assurer que tout soit parfait pour
-                  vous et vos proches.
-                </p>
-                <p>
-                  Je commence souvent par chouchouter vos invités, pour que vous
-                  puissiez vraiment profiter de votre matinée, et vous avez
-                  ensuite toute mon attention pour le meilleur moment : vous.
-                </p>
-                <p>
-                  Vous êtes ma priorité, et je vous invite à savourer ces
-                  instants de complicité avec vos proches. Puis, pendant que je
-                  prends soin de vous, accordez-vous un petit moment de sérénité
-                  pour souffler avant le grand moment.
-                </p>
-                <p>
-                  Je reste présente tout au long de votre préparation,
-                  jusqu&apos;à votre départ, pour ajuster vos accessoires et
-                  bijoux, et m&apos;assurer que vous êtes resplendissante et
-                  prête à vivre ce jour exceptionnel.
-                </p>
-              </div>
+            <div className="space-y-4 text-black/85 leading-relaxed">
+              <p>
+                Le temps ralentit.
+                <br />
+                L&apos;émotion s&apos;installe.
+              </p>
+              <p>
+                Dans le calme des préparatifs, chaque geste est réalisé avec
+                précision, délicatesse et savoir-faire.
+              </p>
+              <p>
+                Votre mise en beauté prend vie naturellement, dans une élégance
+                subtile et intemporelle, pensée pour vous accompagner du premier
+                regard jusqu&apos;aux derniers instants de cette journée.
+              </p>
+              <p>
+                Tout est maîtrisé pour que vous puissiez simplement profiter,
+                respirer et vivre pleinement chaque émotion.
+              </p>
+              <p className="text-black font-medium">
+                Vous êtes prête…
+                <br />
+                Lumineuse…
+                <br />
+                Sereine…
+              </p>
             </div>
           </div>
           <motion.div
@@ -327,14 +275,11 @@ export default function WeddingStory() {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="mt-24 text-center max-w-2xl mx-auto px-4"
       >
-        <h3 className="text-2xl md:text-4xl font-bold mb-6">
-          Prête à vivre votre plus belle journée ?
+        <h3 className="text-2xl md:text-4xl font-light italic mb-6">
+          « Le détail fait l&apos;exception »
         </h3>
         <div className="h-[1px] w-20 bg-white/40 mx-auto mb-8"></div>
-        <p className="text-white/80 mb-8">
-          Discutons ensemble de votre vision et créons une mise en beauté qui
-          vous ressemble pour ce jour exceptionnel.
-        </p>
+        <p className="text-white/80 mb-8">Et si tout commençait ici ?</p>
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
@@ -346,7 +291,7 @@ export default function WeddingStory() {
           >
             <span className="absolute left-0 w-full h-0 transition-all bg-gradient-to-r from-gray-200 to-white opacity-20 group-hover:h-full top-0 duration-300"></span>
             <span className="relative flex items-center">
-              Réserver ma date
+              Réserver mon expérience
               <svg
                 className="w-5 h-5 ml-2"
                 fill="none"

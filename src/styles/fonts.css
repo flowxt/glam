@@ -1,3 +1,6 @@
+/* Burgues Script (calligraphie) - fallback Great Vibes en attendant le fichier de police */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 /* Déclaration de la police Fiona */
 @font-face {
   font-family: 'Fiona';
@@ -8,4 +11,17 @@
   font-display: swap;
 }
 
-/* Note: Vous n'avez actuellement que la version Regular de la police Fiona dans le dossier /public/fonts/ */ 
+/* Note: Vous n'avez actuellement que la version Regular de la police Fiona dans le dossier /public/fonts/ */
+
+@font-face {
+  font-family: 'Burgues Script';
+  src: url('/fonts/BurguesScript.woff2') format('woff2'),
+       url('/fonts/BurguesScript.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-burgues {
+  font-family: 'Burgues Script', 'Great Vibes', cursive;
+}

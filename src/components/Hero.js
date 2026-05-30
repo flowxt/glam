@@ -28,12 +28,28 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="max-w-5xl mx-auto"
         >
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.8 }}
+            className="flex justify-center mb-2 md:mb-4"
+          >
+            <Image
+              src="/logos/logo-sans-fond.png"
+              alt="Logo GlamBeauty"
+              width={160}
+              height={160}
+              priority
+              className="w-28 h-28 md:w-40 md:h-40 object-contain"
+            />
+          </motion.div>
           <h1 className="mb-8 md:mb-12">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 tracking-wider"
+              className="text-6xl md:text-8xl lg:text-9xl font-light text-white mb-6 tracking-wider"
             >
               GLAM BEAUTY
               <motion.div
@@ -44,10 +60,10 @@ export default function Hero() {
                 style={{ originX: 0.5 }}
               ></motion.div>
             </motion.div>
-            <div className="text-3xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-wider mt-8 leading-relaxed">
-              Makeup & Hair Signature
+            <div className="font-sans text-3xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-wider mt-8 leading-relaxed uppercase">
+              MAKEUP &amp; HAIR SIGNATURE
             </div>
-            <div className="text-2xl md:text-3xl lg:text-4xl text-gray-400 font-light tracking-widest mt-4">
+            <div className="font-sans text-2xl md:text-3xl lg:text-4xl text-white font-bold tracking-widest mt-4">
               Grenoble • Rhône-Alpes • France
             </div>
           </h1>
