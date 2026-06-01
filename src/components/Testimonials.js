@@ -179,7 +179,7 @@ export default function Testimonials() {
         {[...Array(rating)].map((_, i) => (
           <svg
             key={i}
-            className="w-5 h-5 text-white"
+            className="w-5 h-5 text-amber-500"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -238,7 +238,7 @@ export default function Testimonials() {
               className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
             >
               <span className="text-lg font-light">
-                <span className="text-white font-normal">54</span> avis 5
+                <span className="text-white font-normal">100</span> avis 5
                 étoiles sur Google
               </span>
               <svg
@@ -323,18 +323,18 @@ export default function Testimonials() {
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <div className="w-full h-full p-4 md:p-8">
-                  <div className="bg-gradient-to-r from-gray-900/60 via-black/40 to-gray-900/60 backdrop-blur-xl p-6 md:p-8 rounded-3xl border border-gray-500/20 shadow-[0_0_40px_rgba(255,255,255,0.05)] h-full flex flex-col">
+                  <div className="bg-white p-6 md:p-8 rounded-sm border border-white/10 shadow-xl h-full flex flex-col">
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex flex-col">
-                        <h3 className="text-xl font-light text-white mb-1">
+                        <h3 className="text-xl font-light text-black mb-1">
                           {testimonials[currentIndex].name}
                         </h3>
-                        <p className="text-xs text-white/60">
+                        <p className="text-xs text-black/60">
                           {testimonials[currentIndex].date}
                         </p>
 
                         {testimonials[currentIndex].isNew && (
-                          <span className="bg-gradient-to-r from-white to-gray-200 text-xs text-black px-2 py-0.5 rounded-full mt-2 inline-block w-fit">
+                          <span className="bg-black text-xs text-white px-2 py-0.5 rounded-full mt-2 inline-block w-fit">
                             NOUVEAU
                           </span>
                         )}
@@ -345,18 +345,18 @@ export default function Testimonials() {
                       </div>
                     </div>
 
-                    <div className="flex-grow text-white/90 leading-relaxed bg-gradient-to-r from-gray-900/40 to-black/40 p-4 rounded-xl backdrop-blur-sm">
+                    <div className="flex-grow text-black/85 leading-relaxed bg-black/[0.03] p-4 rounded-sm border border-black/5">
                       <p className="italic">
-                        &quot;{testimonials[currentIndex].text}&quot;
+                        &ldquo;{testimonials[currentIndex].text}&rdquo;
                       </p>
                     </div>
 
                     {testimonials[currentIndex].services && (
-                      <div className="mt-6 pt-4 border-t border-white/10">
+                      <div className="mt-6 pt-4 border-t border-black/10">
                         <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-r from-gray-500/30 to-white/30 flex items-center justify-center">
+                          <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center">
                             <svg
-                              className="w-4 h-4 text-gray-300"
+                              className="w-4 h-4 text-black/60"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -370,8 +370,8 @@ export default function Testimonials() {
                               />
                             </svg>
                           </div>
-                          <p className="text-sm text-white/80">
-                            <span className="text-white/90 font-light">
+                          <p className="text-sm text-black/80">
+                            <span className="text-black font-light">
                               Services :{" "}
                             </span>
                             {testimonials[currentIndex].services}

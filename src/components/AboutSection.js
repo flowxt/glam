@@ -121,12 +121,10 @@ export default function AboutSection() {
                   « Le détail fait l&apos;exception. »
                 </p>
 
-                <p className="pt-2">
-                  <span className="font-burgues text-5xl md:text-6xl text-black leading-none">
-                    Jennifer
-                  </span>
+                <p className="font-sans text-xl md:text-2xl text-black font-light italic tracking-wide pt-2">
+                  — Jennifer
                   <br />
-                  <span className="text-base text-black/60 tracking-widest">
+                  <span className="text-sm md:text-base text-black/60 not-italic tracking-widest">
                     Glam Beauty
                   </span>
                 </p>

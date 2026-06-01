@@ -276,7 +276,7 @@ export default function WeddingStory() {
         className="mt-24 text-center max-w-2xl mx-auto px-4"
       >
         <h3 className="text-2xl md:text-4xl font-light italic mb-6">
-          « Le détail fait l&apos;exception »
+          &ldquo;Le détail fait l&apos;exception&rdquo;
         </h3>
         <div className="h-[1px] w-20 bg-white/40 mx-auto mb-8"></div>
         <p className="text-white/80 mb-8">Et si tout commençait ici ?</p>

@@ -1,11 +1,9 @@
 "use client";
 import Hero from "../components/Hero";
 import AboutSection from "../components/AboutSection";
-import WeddingPackages from "../components/WeddingPackages";
 import Testimonials from "../components/Testimonials";
 import CallToAction from "../components/CallToAction";
 import WeddingStory from "@/components/WeddingStory";
-import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -13,9 +11,7 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <WeddingStory />
-      <WeddingPackages />
       <Testimonials />
-      <FAQ />
       <CallToAction />
     </div>
   );
