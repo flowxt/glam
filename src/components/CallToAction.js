@@ -64,7 +64,7 @@ export default function CallToAction() {
             <motion.div variants={itemVariants}>
               <Link
                 href="/contact"
-                className="inline-block bg-black hover:bg-black/80 text-white font-light px-8 py-3 md:px-10 md:py-4 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
+                className="inline-block bg-black hover:bg-black/80 text-white font-light px-6 py-2.5 md:px-8 md:py-3 rounded-full transition-all duration-300 text-xs md:text-sm tracking-wide"
               >
                 Soumettre ma demande
               </Link>

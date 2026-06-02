@@ -456,7 +456,7 @@ export default function Testimonials() {
               href="https://g.co/kgs/HkoUeFV"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-gray-900/40 to-black/40 backdrop-blur-sm text-white/80 hover:text-white transition-all duration-300 border border-gray-500/20 hover:border-white/30 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.03)]"
+              className="inline-block px-8 py-3 bg-white hover:bg-gray-200 text-black font-light transition-all duration-300 border border-white/20 rounded-full shadow-lg text-sm tracking-wide"
             >
               Voir tous les avis Google
             </Link>
