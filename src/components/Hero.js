@@ -63,7 +63,7 @@ export default function Hero() {
             <div className="font-sans text-lg sm:text-2xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-normal md:tracking-wider mt-8 leading-relaxed uppercase whitespace-nowrap">
               MAKEUP &amp; HAIR SIGNATURE
             </div>
-            <div className="font-sans text-base sm:text-xl md:text-3xl lg:text-4xl text-white font-bold tracking-normal md:tracking-widest mt-4 whitespace-nowrap">
+            <div className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-white font-bold tracking-normal md:tracking-wide mt-4 whitespace-nowrap">
               Grenoble • Rhône-Alpes • France
             </div>
           </h1>
