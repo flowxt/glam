@@ -1,102 +1,35 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 
 export default function CallToAction() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [cursorVariant, setCursorVariant] = useState("default");
-
-  // Suivi de la position de la souris pour créer un effet interactif
-  useEffect(() => {
-    const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-
-    window.addEventListener("mousemove", mouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", mouseMove);
-    };
-  }, []);
-
-  // Animation du blob en fonction de la position de la souris
-  const variants = {
-    default: {
-      x: mousePosition.x - 250,
-      y: mousePosition.y - 650,
-      transition: {
-        type: "spring",
-        mass: 2,
-        stiffness: 30,
-        damping: 20,
-      },
-    },
-  };
-
-  // Animations pour les éléments du CTA
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
         when: "beforeChildren",
       },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 10,
+        duration: 0.6,
+        ease: "easeOut",
       },
     },
-  };
-
-  const buttonVariants = {
-    initial: { scale: 1 },
-    hover: {
-      scale: 1.05,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10,
-      },
-    },
-    tap: { scale: 0.95 },
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Séparateur supérieur pour délimiter de la section Testimonials */}
+    <section className="py-16 md:py-20 relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
-
-      {/* Arrière-plan décoratif avec effet de profondeur */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/20 to-black"></div>
-
-      {/* Blob interactif qui suit la souris */}
-      <motion.div
-        className="hidden md:block absolute -z-10 top-0 left-0 w-[500px] h-[500px] rounded-full bg-gradient-to-r from-white/10 via-gray-500/10 to-transparent blur-[100px]"
-        variants={variants}
-        animate="default"
-      />
-
-      {/* Lignes décoratives */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/20 to-transparent absolute top-[20%]"></div>
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-gray-500/20 to-transparent absolute top-[60%]"></div>
-        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent absolute left-[20%]"></div>
-        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-gray-500/20 to-transparent absolute left-[80%]"></div>
-      </div>
 
       <div className="container mx-auto px-6 md:px-10 relative z-10">
         <motion.div
@@ -104,138 +37,39 @@ export default function CallToAction() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={containerVariants}
-          className="max-w-5xl mx-auto"
+          className="max-w-xl mx-auto"
         >
-          <div className="bg-gradient-to-r from-gray-900/60 via-black/40 to-gray-900/60 backdrop-blur-xl p-8 md:p-12 lg:p-16 rounded-3xl border border-gray-500/20 shadow-[0_0_40px_rgba(255,255,255,0.15)]">
-            <motion.div className="text-center" variants={itemVariants}>
-              <span className="inline-block px-4 py-1 bg-gradient-to-r from-gray-500/20 to-white/20 rounded-full text-sm font-medium text-gray-300 mb-4 backdrop-blur-md border border-gray-500/20">
-                Prête pour un moment de beauté ?
-              </span>
-              <h2 className="text-3xl md:text-6xl mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-white tracking-wider font-heading">
-                SUBLIMEZ VOTRE BEAUTÉ
-              </h2>
-              <motion.p
-                className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed"
-                variants={itemVariants}
+          <motion.div
+            variants={itemVariants}
+            className="bg-white p-6 md:p-8 rounded-sm border border-white/10 shadow-xl text-center"
+          >
+            <h2 className="font-sans text-xs md:text-sm tracking-[0.2em] uppercase text-black font-semibold mb-4">
+              Shooting ou événement
+            </h2>
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "80px" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="h-[1px] bg-black/30 mx-auto mb-5"
+            ></motion.div>
+            <p className="font-sans text-base md:text-lg text-black/90 mb-3 leading-relaxed">
+              Vous avez un projet personnel ou professionnel ?
+            </p>
+            <p className="font-sans text-sm md:text-base text-black/75 mb-8 leading-relaxed">
+              Je vous accompagne dans sa réalisation avec une approche sur
+              mesure.
+            </p>
+
+            <motion.div variants={itemVariants}>
+              <Link
+                href="/contact"
+                className="inline-block bg-black hover:bg-black/80 text-white font-light px-8 py-3 md:px-10 md:py-4 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
               >
-                Experte en mise en beauté mariée depuis 2021 et prothésiste
-                ongulaire depuis 2023, je combine talent artistique et
-                perfection technique pour révéler votre beauté naturelle.
-              </motion.p>
-
-              <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6 mb-8">
-                <motion.div
-                  className="flex items-center p-3 gap-3 bg-gradient-to-r from-gray-900/10 to-black/10 rounded-xl backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:text-white group"
-                  variants={itemVariants}
-                >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-500/30 to-white/30 flex items-center justify-center transition-all duration-300 group-hover:bg-white/30">
-                    <svg
-                      className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                    Accompagnement
-                  </span>
-                </motion.div>
-
-                <motion.div
-                  className="flex items-center p-3 gap-3 bg-gradient-to-r from-gray-900/10 to-black/10 rounded-xl backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:text-white group"
-                  variants={itemVariants}
-                >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-500/30 to-white/30 flex items-center justify-center transition-all duration-300 group-hover:bg-white/30">
-                    <svg
-                      className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905a3.61 3.61 0 01-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                    Professionnalisme
-                  </span>
-                </motion.div>
-
-                <motion.div
-                  className="flex items-center p-3 gap-3 bg-gradient-to-r from-gray-900/10 to-black/10 rounded-xl backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:text-white group"
-                  variants={itemVariants}
-                >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-500/30 to-white/30 flex items-center justify-center transition-all duration-300 group-hover:bg-white/30">
-                    <svg
-                      className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                    Sens du détail
-                  </span>
-                </motion.div>
-              </div>
-
-              <motion.div
-                variants={itemVariants}
-                className="relative z-20 mt-10"
-              >
-                <motion.div
-                  variants={buttonVariants}
-                  initial="initial"
-                  whileHover="hover"
-                  whileTap="tap"
-                  className="relative inline-block"
-                >
-                  <Link
-                    href="/contact"
-                    className="relative inline-flex items-center px-12 py-5 bg-white hover:bg-gray-200 text-lg md:text-xl font-semibold text-black rounded-full shadow-lg overflow-hidden group"
-                  >
-                    <span className="absolute inset-0 bg-gradient-to-r from-gray-200/80 to-gray-300/80 opacity-0 group-hover:opacity-100 duration-300 z-10"></span>
-                    <span className="relative z-20">Prendre rendez-vous</span>
-                    <svg
-                      className="w-6 h-6 ml-2 relative z-20"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </Link>
-                </motion.div>
-              </motion.div>
+                Soumettre ma demande
+              </Link>
             </motion.div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
