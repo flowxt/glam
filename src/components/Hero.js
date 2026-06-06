@@ -49,7 +49,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-6xl md:text-8xl lg:text-9xl font-light text-white mb-6 tracking-wider"
+              className="text-6xl md:text-7xl lg:text-8xl font-light text-white mb-6 tracking-wider"
             >
               GLAM BEAUTY
               <motion.div
@@ -60,7 +60,7 @@ export default function Hero() {
                 style={{ originX: 0.5 }}
               ></motion.div>
             </motion.div>
-            <div className="font-sans text-lg sm:text-2xl md:text-4xl lg:text-5xl text-gray-300 font-light tracking-normal md:tracking-wider mt-8 leading-relaxed uppercase whitespace-nowrap">
+            <div className="font-sans text-lg sm:text-2xl md:text-3xl lg:text-4xl text-gray-300 font-light tracking-normal md:tracking-wider mt-8 leading-relaxed uppercase whitespace-nowrap">
               MAKEUP &amp; HAIR SIGNATURE
             </div>
             <div className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-white font-bold tracking-normal md:tracking-wide mt-4 whitespace-nowrap">
