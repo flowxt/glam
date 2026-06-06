@@ -122,7 +122,7 @@ export default function WeddingStory() {
             variants={imageVariant}
           >
             <Image
-              src="/photo/mariés2.jpeg"
+              src="/photo/votre-mariage.jpeg"
               alt="Maquillage de mariée"
               fill
               className="object-cover"
@@ -144,7 +144,7 @@ export default function WeddingStory() {
             variants={imageVariant}
           >
             <Image
-              src="/photo/maquillage-en-cours.jpeg"
+              src="/photo/votre-mariage2.JPG"
               alt="Essai maquillage mariée"
               fill
               className="object-cover "
@@ -252,10 +252,10 @@ export default function WeddingStory() {
             variants={imageVariant}
           >
             <Image
-              src="/photo/preparation-mariage2.jpeg"
+              src="/photo/votre-mariage3.JPG"
               alt="Mariée prête pour le grand jour"
               fill
-              className="object-cover "
+              className="object-cover object-top"
             />
 
             {/* Filigrane subtil */}

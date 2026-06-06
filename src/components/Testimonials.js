@@ -85,6 +85,45 @@ export default function Testimonials() {
       services: "Coiffure pour mariage, Maquillage pour mariage",
       rating: 5,
     },
+    {
+      name: "tatati toto",
+      date: "il y a 2 semaines",
+      text: "Formule complète avec essaie maquillage et coiffure....parfait. Accompagnement du début à la fin. Répond à toute les questions qu'une future mariée peu avoir. Prend du temps et à l'écoute. Je recommande les yeux fermés. Merci encore pour tout 😊😉",
+      services: "Maquillage & Coiffure Mariage",
+      rating: 5,
+      isNew: true,
+    },
+    {
+      name: "Amandine LOUIS",
+      date: "il y a 2 semaines",
+      text: "Milles merci Jennyfer ! Tu as su m'embellir, me conseiller et me sublimer. Merci pour tous tes conseils, ta bienveillance et ta bonne humeur. Je penserai avec plaisir à toi si un jour on me demande si je connais une maquilleuse et coiffeuse ❤️❤️❤️",
+      services: "",
+      rating: 5,
+      isNew: true,
+    },
+    {
+      name: "Termat Audrey",
+      date: "il y a 3 semaines",
+      text: "Jennifer a su répondre parfaitement à mes attentes pour mon mariage. Le résultat de la coiffure ainsi que le maquillage est juste wahouuu. Je suis vraiment satisfaite de son travail. Jennifer est une personne douce, qui recherche la perfection et la bienveillance. Je recommande +++.",
+      services: "Coiffure pour mariage, Maquillage pour mariage",
+      rating: 5,
+      isNew: true,
+    },
+    {
+      name: "Dalila M",
+      date: "il y a 3 semaines",
+      text: "Deuxième fois que je fais appel aux services de Glam Beauty, et honnêtement… je suis toujours aussi fan 😍✨ Que ce soit pour la coiffure ou le maquillage, le résultat est absolument magnifique à chaque fois. En plus d'être ultra talentueuse, elle est douce, gentille, professionnelle et tellement agréable 🫶🏼 On se sent directement en confiance et chouchoutée du début à la fin. Merci encore pour ton travail incroyable, je recommande les yeux fermés 🤍",
+      services: "Coiffure, Maquillage",
+      rating: 5,
+      isNew: true,
+    },
+    {
+      name: "LORENE BRUYERE",
+      date: "il y a 5 mois",
+      text: "Un grand merci à Jennifer pour son professionnalisme et sa flexibilité ! Elle a réalisé mon maquillage et ma coiffure pour le plus beau jour de ma vie et cela était exactement ce que j'avais en tête. Elle a été très à l'écoute et a même accepté de suivre mon changement d'idée de coiffure de dernière minute. Plusieurs de mes invitées ont également été préparées par ses soins. Elles étaient ravies. Je vous recommande ses services les yeux fermés !",
+      services: "Coiffure pour mariage, Maquillage pour mariage",
+      rating: 5,
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

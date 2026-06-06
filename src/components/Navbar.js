@@ -68,7 +68,7 @@ export default function Navbar() {
           transition-all duration-300 border-b border-white/10
         `}
       >
-        <div className="container mx-auto px-4 md:px-8">
+        <div className="w-full px-4 md:px-8 lg:px-12">
           <div className="flex items-center justify-between">
             {/* Logo avec effet de brillance */}
             <Link href="/" className="group">

@@ -65,7 +65,7 @@ export default function AboutSection() {
           >
             <div className="relative h-full min-h-[500px] overflow-hidden rounded-sm bg-white/5 border border-white/20">
               <Image
-                src="/photo/jennifer1.jpeg"
+                src="/photo/jennifer2.jpeg"
                 alt="Jennifer - Maquilleuse et Coiffeuse professionnelle"
                 fill
                 className="object-cover"

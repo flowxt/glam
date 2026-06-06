@@ -223,21 +223,9 @@ export default function GalerieClient() {
   const galleryImages = [
     // Mariages
     {
-      id: 1,
-      src: "/photo/mariage.jpeg",
-      alt: "Mariée en préparation",
-      category: "Mariages",
-    },
-    {
       id: 2,
       src: "/photo/mariage-5.jpeg",
       alt: "Préparation mariage",
-      category: "Mariages",
-    },
-    {
-      id: 59,
-      src: "/photo/pack-mariage-2.jpeg",
-      alt: "Coiffure pour mariage",
       category: "Mariages",
     },
     {
@@ -247,63 +235,9 @@ export default function GalerieClient() {
       category: "Mariages",
     },
     {
-      id: 63,
-      src: "/photo/pack-mariage-5.png",
-      alt: "Coiffure pour mariage",
-      category: "Mariages",
-    },
-    {
-      id: 6,
-      src: "/photo/mariée1test.png",
-      alt: "Mariée élégante",
-      category: "Mariages",
-    },
-    {
-      id: 7,
-      src: "/photo/mariée4.jpeg",
-      alt: "Mariée en robe blanche",
-      category: "Mariages",
-    },
-    {
-      id: 8,
-      src: "/photo/coiffure.jpeg",
-      alt: "Coiffure professionnelle",
-      category: "Mariages",
-    },
-    {
-      id: 9,
-      src: "/photo/mariés1.jpeg",
-      alt: "Couple après cérémonie",
-      category: "Mariages",
-    },
-    {
-      id: 60,
-      src: "/photo/pack-mariage-3.jpeg",
-      alt: "Coiffure pour mariage",
-      category: "Mariages",
-    },
-    {
-      id: 10,
-      src: "/photo/mariés2.jpeg",
-      alt: "Mariage élégant",
-      category: "Mariages",
-    },
-    {
       id: 11,
       src: "/photo/photo-mariage.jpeg",
       alt: "Photo de mariage",
-      category: "Mariages",
-    },
-    {
-      id: 12,
-      src: "/photo/preparation-mariage.jpeg",
-      alt: "Préparatifs de mariage",
-      category: "Mariages",
-    },
-    {
-      id: 13,
-      src: "/photo/preparation-mariage2.jpeg",
-      alt: "Mariée en préparation",
       category: "Mariages",
     },
     {
@@ -313,80 +247,24 @@ export default function GalerieClient() {
       category: "Mariages",
     },
     {
-      id: 17,
-      src: "/photo/mariée-maquillage-test.png",
-      alt: "Maquillage de mariée",
+      id: 30,
+      src: "/photo/maquillage-mariage.jpeg",
+      alt: "Maquillage créatif mariage",
       category: "Mariages",
     },
     {
-      id: 18,
-      src: "/photo/mariée-shooting-test.png",
-      alt: "Shooting photo mariée",
-      category: "Mariages",
-    },
-    {
-      id: 19,
-      src: "/photo/discours-mariage.jpeg",
-      alt: "Discours de mariage",
+      id: 40,
+      src: "/photo/preparation-maquillage.jpeg",
+      alt: "Préparation maquillage artistique",
       category: "Mariages",
     },
 
     // Shooting - corporate
     {
-      id: 20,
-      src: "/photo/pose-shooting.jpeg",
-      alt: "Pose professionnelle",
-      category: "Mariages",
-    },
-    {
       id: 21,
       src: "/photo/shooting.jpeg",
       alt: "Shooting photo professionnel",
       category: "Shooting - corporate",
-    },
-    {
-      id: 58,
-      src: "/photo/pack-mariage-1.jpeg",
-      alt: "Coiffure pour shooting",
-      category: "Mariages",
-    },
-    {
-      id: 23,
-      src: "/photo/maquillage-2.jpeg",
-      alt: "Maquillage élégant pour shooting",
-      category: "Mariages",
-    },
-    {
-      id: 24,
-      src: "/photo/pack-1.png",
-      alt: "Maquillage shooting corporate",
-      category: "Mariages",
-    },
-    {
-      id: 62,
-      src: "/photo/pack-mariage-4.jpeg",
-      alt: "Coiffure pour mariage",
-      category: "Mariages",
-    },
-    {
-      id: 25,
-      src: "/photo/mariés.jpeg",
-      alt: "Couple de mariés heureux",
-      category: "Mariages",
-    },
-    {
-      id: 26,
-      src: "/photo/coiffure2.jpeg",
-      alt: "Coiffure pour shooting",
-      category: "Mariages",
-    },
-
-    // Maquillage artistique et corporate
-    {
-      id: 27,
-      src: "/photo/maquillage-en-cours.jpeg",
-      alt: "Maquillage artistique en cours",
-      category: "Mariages",
     },
     {
       id: 28,
@@ -401,24 +279,6 @@ export default function GalerieClient() {
       category: "Shooting - corporate",
     },
     {
-      id: 30,
-      src: "/photo/maquillage-mariage.jpeg",
-      alt: "Maquillage créatif mariage",
-      category: "Mariages",
-    },
-    {
-      id: 31,
-      src: "/photo/maquillage-mariage1.jpeg",
-      alt: "Maquillage artistique mariée",
-      category: "Mariages",
-    },
-    {
-      id: 64,
-      src: "/photo/pack-mariage-6.jpeg",
-      alt: "Coiffure pour mariage",
-      category: "Mariages",
-    },
-    {
       id: 34,
       src: "/photo/maquillage-pro2.jpeg",
       alt: "Artiste maquillage créations",
@@ -431,56 +291,14 @@ export default function GalerieClient() {
       category: "Shooting - corporate",
     },
     {
-      id: 38,
-      src: "/photo/maquillage-terminé.jpeg",
-      alt: "Résultat maquillage artistique",
-      category: "Mariages",
-    },
-    {
       id: 39,
       src: "/photo/maquillage-visage.jpeg",
       alt: "Maquillage artistique du visage",
       category: "Shooting - corporate",
     },
     {
-      id: 71,
-      src: "/photo/shooting-2.jpg",
-      alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
-    },
-    {
-      id: 72,
-      src: "/photo/shooting-3.png",
-      alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
-    },
-    {
-      id: 73,
-      src: "/photo/shooting-4.png",
-      alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
-    },
-    {
       id: 74,
       src: "/photo/shooting-5.png",
-      alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
-    },
-    {
-      id: 75,
-      src: "/photo/shooting-6.png",
-      alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
-    },
-    {
-      id: 76,
-      src: "/photo/shooting-7.jpg",
-      alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
-    },
-    {
-      id: 77,
-      src: "/photo/shooting-8.jpeg",
       alt: "Artiste maquillage créations",
       category: "Shooting - corporate",
     },
@@ -496,26 +314,8 @@ export default function GalerieClient() {
       alt: "Artiste maquillage créations",
       category: "Shooting - corporate",
     },
-    {
-      id: 80,
-      src: "/photo/shooting-13.jpeg",
-      alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
-    },
-    {
-      id: 81,
-      src: "/photo/shooting-14.jpeg",
-      alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
-    },
-    {
-      id: 40,
-      src: "/photo/preparation-maquillage.jpeg",
-      alt: "Préparation maquillage artistique",
-      category: "Mariages",
-    },
 
-    // Halloween dans Maquillage artistique
+    // Maquillage artistique (Halloween)
     {
       id: 43,
       src: "/photo/maquillage-halloween.jpeg",

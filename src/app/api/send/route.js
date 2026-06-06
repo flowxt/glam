@@ -16,18 +16,22 @@ export async function POST(request) {
     const formData = await request.json();
     const {
       nom,
+      prenom,
       email,
       telephone,
       evenement,
       service, // compatibilité ancienne version
       date,
-      heureCeremonie,
-      nomPhotographe,
       lieuPreparation,
+      heureCeremonie,
+      misesEnBeauteProches,
+      nomPhotographe,
+      commentConnu,
       message,
     } = formData;
 
     const typeEvenement = evenement || service;
+    const nomComplet = [prenom, nom].filter(Boolean).join(" ") || nom;
 
     if (!nom || !email || !typeEvenement || !message) {
       return NextResponse.json(
@@ -36,7 +40,7 @@ export async function POST(request) {
       );
     }
 
-    const safeNom = escapeHtml(nom);
+    const safeNom = escapeHtml(nomComplet);
     const safeEmail = escapeHtml(email);
     const safeTelephone = escapeHtml(telephone || "Non spécifié");
     const safeEvenement = escapeHtml(typeEvenement);
@@ -44,37 +48,44 @@ export async function POST(request) {
     const safeHeureCeremonie = escapeHtml(heureCeremonie || "");
     const safeNomPhotographe = escapeHtml(nomPhotographe || "");
     const safeLieuPreparation = escapeHtml(lieuPreparation || "");
+    const safeMisesEnBeauteProches = escapeHtml(misesEnBeauteProches || "");
+    const safeCommentConnu = escapeHtml(commentConnu || "");
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br/>");
 
     // Sujet de l'email - pré-rempli pour la réponse
-    const subject = `[GlamBeauty] Nouvelle demande - ${typeEvenement} - ${nom}`;
+    const subject = `[GlamBeauty] Nouvelle demande - ${typeEvenement} - ${nomComplet}`;
     const replySubject = `Re: Votre demande Glam Beauty - ${typeEvenement}`;
-    const replyBody = `Bonjour ${nom},%0D%0A%0D%0AMerci pour votre demande concernant votre ${typeEvenement.toLowerCase()}.%0D%0A%0D%0A`;
+    const replyBody = `Bonjour ${
+      prenom || nom
+    },%0D%0A%0D%0AMerci pour votre demande concernant votre ${typeEvenement.toLowerCase()}.%0D%0A%0D%0A`;
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
       replySubject
     )}&body=${replyBody}`;
 
-    // Bloc spécifique mariage
-    const mariageBlock =
-      typeEvenement === "Mariage"
-        ? `
+    // Bloc détails événement
+    const detailsBlock = `
         <tr>
           <td style="padding-top:16px;">
             <div style="background:#f8f5f0;border-left:3px solid #c9a87a;padding:16px 20px;border-radius:4px;">
-              <p style="margin:0 0 12px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8a7458;font-weight:600;">Informations mariage</p>
+              <p style="margin:0 0 12px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8a7458;font-weight:600;">Détails de l'événement</p>
+              <p style="margin:6px 0;color:#2a2a2a;font-size:14px;"><strong>Lieu de préparation :</strong> ${
+                safeLieuPreparation || "Non précisé"
+              }</p>
               <p style="margin:6px 0;color:#2a2a2a;font-size:14px;"><strong>Heure de cérémonie :</strong> ${
                 safeHeureCeremonie || "Non précisée"
               }</p>
               <p style="margin:6px 0;color:#2a2a2a;font-size:14px;"><strong>Photographe :</strong> ${
                 safeNomPhotographe || "Non précisé"
               }</p>
-              <p style="margin:6px 0;color:#2a2a2a;font-size:14px;"><strong>Lieu de préparation :</strong> ${
-                safeLieuPreparation || "Non précisé"
+              <p style="margin:6px 0;color:#2a2a2a;font-size:14px;"><strong>Mises en beauté des proches :</strong> ${
+                safeMisesEnBeauteProches || "Non précisé"
+              }</p>
+              <p style="margin:6px 0;color:#2a2a2a;font-size:14px;"><strong>Comment connu :</strong> ${
+                safeCommentConnu || "Non précisé"
               }</p>
             </div>
           </td>
-        </tr>`
-        : "";
+        </tr>`;
 
     const emailContent = `
 <!DOCTYPE html>
@@ -142,7 +153,7 @@ export async function POST(request) {
             </td>
           </tr>
 
-          ${mariageBlock}
+          ${detailsBlock}
 
           <!-- Message -->
           <tr>

@@ -7,13 +7,16 @@ import Image from "next/image";
 export default function ContactClient() {
   const [formData, setFormData] = useState({
     nom: "",
+    prenom: "",
     email: "",
     telephone: "",
     evenement: "",
     date: "",
-    heureCeremonie: "",
-    nomPhotographe: "",
     lieuPreparation: "",
+    heureCeremonie: "",
+    misesEnBeauteProches: "",
+    nomPhotographe: "",
+    commentConnu: "",
     message: "",
   });
 
@@ -71,13 +74,16 @@ export default function ContactClient() {
       // Réinitialiser le formulaire
       setFormData({
         nom: "",
+        prenom: "",
         email: "",
         telephone: "",
         evenement: "",
         date: "",
-        heureCeremonie: "",
-        nomPhotographe: "",
         lieuPreparation: "",
+        heureCeremonie: "",
+        misesEnBeauteProches: "",
+        nomPhotographe: "",
+        commentConnu: "",
         message: "",
       });
 
@@ -177,95 +183,111 @@ export default function ContactClient() {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor="nom"
-                      className="block text-white/80 mb-2 text-sm"
-                    >
-                      Nom complet
-                    </label>
-                    <input
-                      type="text"
-                      id="nom"
-                      name="nom"
-                      value={formData.nom}
-                      onChange={handleChange}
-                      className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-white/80 mb-2 text-sm"
-                    >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
-                      required
-                    />
-                  </div>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label
+                    htmlFor="nom"
+                    className="block text-white/80 mb-2 text-sm"
+                  >
+                    Nom <span className="text-white/40">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="nom"
+                    name="nom"
+                    value={formData.nom}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
+                    required
+                  />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor="telephone"
-                      className="block text-white/80 mb-2 text-sm"
-                    >
-                      Téléphone
-                    </label>
-                    <input
-                      type="tel"
-                      id="telephone"
-                      name="telephone"
-                      value={formData.telephone}
-                      onChange={handleChange}
-                      className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
-                    />
-                  </div>
+                <div>
+                  <label
+                    htmlFor="prenom"
+                    className="block text-white/80 mb-2 text-sm"
+                  >
+                    Prénom <span className="text-white/40">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="prenom"
+                    name="prenom"
+                    value={formData.prenom}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
+                    required
+                  />
+                </div>
 
-                  <div>
-                    <label
-                      htmlFor="evenement"
-                      className="block text-white/80 mb-2 text-sm"
-                    >
-                      Événement
-                    </label>
-                    <select
-                      id="evenement"
-                      name="evenement"
-                      value={formData.evenement}
-                      onChange={handleChange}
-                      className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
-                      required
-                    >
-                      <option value="" className="bg-black">
-                        Événement
-                      </option>
-                      <option value="Mariage" className="bg-black">
-                        Mariage
-                      </option>
-                      <option value="Shooting" className="bg-black">
-                        Shooting
-                      </option>
-                      <option value="Facepainting" className="bg-black">
-                        Facepainting
-                      </option>
-                      <option value="Autres" className="bg-black">
-                        Autres
-                      </option>
-                    </select>
-                  </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-white/80 mb-2 text-sm"
+                  >
+                    E-Mail <span className="text-white/40">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="telephone"
+                    className="block text-white/80 mb-2 text-sm"
+                  >
+                    Téléphone <span className="text-white/40">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    id="telephone"
+                    name="telephone"
+                    value={formData.telephone}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="evenement"
+                    className="block text-white/80 mb-2 text-sm"
+                  >
+                    Type d&apos;événement{" "}
+                    <span className="text-white/40">*</span>
+                  </label>
+                  <select
+                    id="evenement"
+                    name="evenement"
+                    value={formData.evenement}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
+                    required
+                  >
+                    <option value="" className="bg-black">
+                      Choisir...
+                    </option>
+                    <option value="Mariage" className="bg-black">
+                      Mariage
+                    </option>
+                    <option value="Shooting" className="bg-black">
+                      Shooting
+                    </option>
+                    <option value="Facepainting" className="bg-black">
+                      Facepainting
+                    </option>
+                    <option value="Autres" className="bg-black">
+                      Autres
+                    </option>
+                  </select>
                 </div>
 
                 <div>
@@ -273,7 +295,8 @@ export default function ContactClient() {
                     htmlFor="date"
                     className="block text-white/80 mb-2 text-sm"
                   >
-                    Date souhaitée (optionnel)
+                    Date de l&apos;événement{" "}
+                    <span className="text-white/40">*</span>
                   </label>
                   <input
                     type="date"
@@ -282,89 +305,132 @@ export default function ContactClient() {
                     value={formData.date}
                     onChange={handleChange}
                     className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
+                    required
                   />
                 </div>
 
-                {/* Champs spécifiques mariage */}
-                {formData.evenement === "Mariage" && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="space-y-6 border border-white/10 rounded-sm p-6 bg-white/[0.02]"
+                <div>
+                  <label
+                    htmlFor="lieuPreparation"
+                    className="block text-white/80 mb-2 text-sm"
                   >
-                    <p className="text-white/60 text-xs uppercase tracking-widest">
-                      Informations mariage
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label
-                          htmlFor="heureCeremonie"
-                          className="block text-white/80 mb-2 text-sm"
-                        >
-                          Heure de cérémonie
-                        </label>
-                        <input
-                          type="time"
-                          id="heureCeremonie"
-                          name="heureCeremonie"
-                          value={formData.heureCeremonie}
-                          onChange={handleChange}
-                          className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="nomPhotographe"
-                          className="block text-white/80 mb-2 text-sm"
-                        >
-                          Nom du photographe
-                        </label>
-                        <input
-                          type="text"
-                          id="nomPhotographe"
-                          name="nomPhotographe"
-                          value={formData.nomPhotographe}
-                          onChange={handleChange}
-                          placeholder="Ex : @photographe ou nom"
-                          className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="lieuPreparation"
-                        className="block text-white/80 mb-2 text-sm"
-                      >
-                        Lieu de préparation
-                      </label>
-                      <input
-                        type="text"
-                        id="lieuPreparation"
-                        name="lieuPreparation"
-                        value={formData.lieuPreparation}
-                        onChange={handleChange}
-                        placeholder="Adresse ou nom du lieu"
-                        className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
-                      />
-                    </div>
-                  </motion.div>
-                )}
+                    Lieu de votre préparation{" "}
+                    <span className="text-white/40">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="lieuPreparation"
+                    name="lieuPreparation"
+                    value={formData.lieuPreparation}
+                    onChange={handleChange}
+                    placeholder="Adresse ou nom du lieu"
+                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="heureCeremonie"
+                    className="block text-white/80 mb-2 text-sm"
+                  >
+                    Heure de cérémonie
+                  </label>
+                  <input
+                    type="time"
+                    id="heureCeremonie"
+                    name="heureCeremonie"
+                    value={formData.heureCeremonie}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="misesEnBeauteProches"
+                    className="block text-white/80 mb-2 text-sm"
+                  >
+                    Mises en beauté des proches
+                  </label>
+                  <input
+                    type="text"
+                    id="misesEnBeauteProches"
+                    name="misesEnBeauteProches"
+                    value={formData.misesEnBeauteProches}
+                    onChange={handleChange}
+                    placeholder="Ex : 2 personnes (maman, témoin...)"
+                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="nomPhotographe"
+                    className="block text-white/80 mb-2 text-sm"
+                  >
+                    Votre photographe ?
+                  </label>
+                  <input
+                    type="text"
+                    id="nomPhotographe"
+                    name="nomPhotographe"
+                    value={formData.nomPhotographe}
+                    onChange={handleChange}
+                    placeholder="Ex : @photographe ou nom"
+                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="commentConnu"
+                    className="block text-white/80 mb-2 text-sm"
+                  >
+                    Comment m&apos;avez-vous connu ?
+                  </label>
+                  <select
+                    id="commentConnu"
+                    name="commentConnu"
+                    value={formData.commentConnu}
+                    onChange={handleChange}
+                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
+                  >
+                    <option value="" className="bg-black">
+                      Choisir...
+                    </option>
+                    <option value="Instagram" className="bg-black">
+                      Instagram
+                    </option>
+                    <option value="Google" className="bg-black">
+                      Google
+                    </option>
+                    <option value="Planity" className="bg-black">
+                      Planity
+                    </option>
+                    <option value="Recommandation" className="bg-black">
+                      Bouche à oreille / Recommandation
+                    </option>
+                    <option value="Autre" className="bg-black">
+                      Autre
+                    </option>
+                  </select>
+                </div>
 
                 <div>
                   <label
                     htmlFor="message"
                     className="block text-white/80 mb-2 text-sm"
                   >
-                    Votre message
+                    Vos envies maquillages, coiffures, vos attentes, vos
+                    habitudes... <span className="text-white/40">*</span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows="4"
+                    rows="5"
                     className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors resize-none"
                     required
                   ></textarea>
@@ -379,7 +445,7 @@ export default function ContactClient() {
                       : "bg-transparent hover:bg-white/10 text-white"
                   }`}
                 >
-                  {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
+                  {isSubmitting ? "Envoi en cours..." : "Envoyer ma demande"}
                 </button>
               </form>
             </div>
@@ -394,115 +460,126 @@ export default function ContactClient() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 lg:mt-24"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="border border-white/10 rounded-sm p-6 bg-black/80">
-              <h3 className="text-2xl font-light mb-4 text-white tracking-wide">
+          <div className="border border-white/10 rounded-sm bg-white/[0.02] divide-y divide-white/10 lg:divide-y-0 lg:divide-x lg:grid lg:grid-cols-3">
+            {/* Coordonnées */}
+            <div className="p-8 md:p-10 text-center flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center mb-5">
+                <svg
+                  className="w-5 h-5 text-white/70"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-sm font-normal mb-5 text-white tracking-[0.2em] uppercase">
                 Coordonnées
               </h3>
-              <div className="space-y-4 text-white/80">
-                <p className="flex items-start gap-3">
-                  <svg
-                    className="w-5 h-5 text-white/60 mt-1 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    strokeWidth="1.5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    ></path>
-                  </svg>
-                  <span>glambeautypro38@gmail.com</span>
-                </p>
-                <p className="flex items-start gap-3">
-                  <svg
-                    className="w-5 h-5 text-white/60 mt-1 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    strokeWidth="1.5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    ></path>
-                  </svg>
-                  <span>06.85.91.48.25</span>
-                </p>
-                <p className="flex items-start gap-3">
-                  <svg
-                    className="w-5 h-5 text-white/60 mt-1 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    strokeWidth="1.5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <span>Saint-Égrève, Grenoble et alentours</span>
+              <div className="space-y-3 text-sm">
+                <a
+                  href="mailto:glambeautypro38@gmail.com"
+                  className="block text-white/70 hover:text-white transition-colors break-words"
+                >
+                  glambeautypro38@gmail.com
+                </a>
+                <a
+                  href="tel:+33685914825"
+                  className="block text-white/70 hover:text-white transition-colors"
+                >
+                  06.85.91.48.25
+                </a>
+                <p className="text-white/70">
+                  Saint-Égrève, Grenoble et alentours
                 </p>
               </div>
             </div>
 
-            <div className="border border-white/10 rounded-sm p-6 bg-black/80">
-              <h3 className="text-2xl font-light mb-4 text-white tracking-wide">
+            {/* Horaires */}
+            <div className="p-8 md:p-10 text-center flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center mb-5">
+                <svg
+                  className="w-5 h-5 text-white/70"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-sm font-normal mb-5 text-white tracking-[0.2em] uppercase">
                 Horaires
               </h3>
-              <div className="space-y-3 text-white/80">
-                <p className="flex justify-between">
-                  <span>Lundi - Vendredi</span>
-                  <span>9h - 19h</span>
-                </p>
-                <p className="flex justify-between">
-                  <span>Samedi</span>
-                  <span>Événement uniquement</span>
-                </p>
-                <p className="flex justify-between">
-                  <span>Dimanche</span>
-                  <span>Événements uniquement</span>
-                </p>
-                <div className="pt-3 mt-3 border-t border-white/10">
-                  <p className="text-sm text-white/60 italic">
-                    Les prestations d&apos;onglerie ne sont pas disponibles le
-                    dimanche.
-                  </p>
+              <div className="w-full max-w-[240px] space-y-2.5 text-sm">
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-white/70">Lun – Ven</span>
+                  <span className="text-white font-light whitespace-nowrap">
+                    9h – 19h
+                  </span>
                 </div>
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-white/70">Samedi</span>
+                  <span className="text-white font-light whitespace-nowrap">
+                    Sur événement
+                  </span>
+                </div>
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="text-white/70">Dimanche</span>
+                  <span className="text-white font-light whitespace-nowrap">
+                    Sur événement
+                  </span>
+                </div>
+                <p className="pt-3 mt-2 border-t border-white/10 text-xs text-white/50 italic leading-relaxed">
+                  Onglerie non disponible le dimanche.
+                </p>
               </div>
             </div>
 
-            <div className="border border-white/10 rounded-sm p-6 bg-black/80">
-              <h3 className="text-2xl font-light  mb-4 text-white tracking-wide">
+            {/* Zone d'intervention */}
+            <div className="p-8 md:p-10 text-center flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center mb-5">
+                <svg
+                  className="w-5 h-5 text-white/70"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-sm font-normal mb-5 text-white tracking-[0.2em] uppercase">
                 Zone d&apos;intervention
               </h3>
-              <p className="text-white/80 mb-3">
-                <span className="font-medium text-white">
-                  Déplacement offert
-                </span>{" "}
-                sur Saint-Égrève, Fontanil et Saint-Martin-le-Vinoux.
-              </p>
-              <p className="text-white/80">
-                Je me déplace également dans toute la région Rhône-Alpes avec un
-                supplément selon la distance.
-              </p>
-              <p className="mt-4 text-white/60 text-sm italic">
-                &quot;La beauté commence au moment où vous d&apos;être
-                vous-même&quot;
-              </p>
+              <div className="space-y-3 text-sm text-white/70 max-w-xs">
+                <p>
+                  <span className="text-white">Déplacement offert</span> sur
+                  Saint-Égrève, Fontanil et Saint-Martin-le-Vinoux.
+                </p>
+                <p>
+                  Également dans toute la région Rhône-Alpes (supplément selon la
+                  distance).
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>

@@ -8,12 +8,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/90"></div>
       <div className="absolute inset-0 overflow-hidden">
         <Image
-          src="/photo/preparation-mariage8.jpeg"
+          src="/photo/hero.jpeg"
           alt="Fond beauté mariage"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-top md:object-center opacity-20 grayscale"
+          className="object-cover object-[center_20%] opacity-20 grayscale"
         />
       </div>
       <motion.div
