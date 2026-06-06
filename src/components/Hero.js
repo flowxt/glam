@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/90"></div>
       <div className="absolute inset-0 overflow-hidden">
         <Image
-          src="/photo/hero.jpeg"
+          src="/photo/preparation-mariage8.jpeg"
           alt="Fond beauté mariage"
           fill
           priority

@@ -122,10 +122,10 @@ export default function WeddingStory() {
             variants={imageVariant}
           >
             <Image
-              src="/photo/votre-mariage.jpeg"
+              src="/photo/hero.jpeg"
               alt="Maquillage de mariée"
               fill
-              className="object-cover"
+              className="object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
