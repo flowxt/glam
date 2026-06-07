@@ -51,14 +51,17 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-6xl md:text-7xl lg:text-8xl font-light text-white mb-6 tracking-wider"
             >
-              GLAM BEAUTY
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "50%" }}
-                transition={{ delay: 0.5, duration: 1.2, ease: "easeInOut" }}
-                className="h-1 bg-white mx-auto mt-10"
-                style={{ originX: 0.5 }}
-              ></motion.div>
+              <span className="inline-block">
+                GLAM BEAUTY
+                <div className="mt-6 mx-[0.65em]">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%" }}
+                    transition={{ delay: 0.5, duration: 1.2, ease: "easeInOut" }}
+                    className="h-1 bg-white"
+                  />
+                </div>
+              </span>
             </motion.div>
             <div className="font-sans text-lg sm:text-2xl md:text-3xl lg:text-4xl text-gray-300 font-light tracking-normal md:tracking-wider mt-8 leading-relaxed uppercase whitespace-nowrap">
               MAKEUP &amp; HAIR SIGNATURE
@@ -67,7 +70,7 @@ export default function Hero() {
               Grenoble • Rhône-Alpes • France
             </div>
           </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-14 text-gray-300 italic">
+          <p className="text-sm md:text-base max-w-3xl mx-auto mb-10 md:mb-14 text-gray-300 italic">
             « Le détail, signature de l&apos;exception »
           </p>
         </motion.div>
