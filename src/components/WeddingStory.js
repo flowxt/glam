@@ -252,10 +252,10 @@ export default function WeddingStory() {
             variants={imageVariant}
           >
             <Image
-              src="/photo/votre-mariage3.JPG"
+              src="/photo/jour-j2.JPG"
               alt="Mariée prête pour le grand jour"
               fill
-              className="object-cover object-top"
+              className="object-cover object-[center_28%]"
             />
 
             {/* Filigrane subtil */}
