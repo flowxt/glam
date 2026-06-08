@@ -206,13 +206,12 @@ export default function GalerieClient() {
 
   // Catégories pour le filtrage
   const categories = [
-    "Tous",
     "Mariages",
     "Shooting - corporate",
     "Maquillage artistique",
   ];
 
-  const [activeCategory, setActiveCategory] = useState("Tous");
+  const [activeCategory, setActiveCategory] = useState("Mariages");
   const [isLoading, setIsLoading] = useState(true);
   const [titleRef, titleInView] = useInView({
     triggerOnce: true,
@@ -421,10 +420,9 @@ export default function GalerieClient() {
   ];
 
   // Filtrer les images en fonction de la catégorie sélectionnée
-  const filteredImages =
-    activeCategory === "Tous"
-      ? galleryImages
-      : galleryImages.filter((img) => img.category === activeCategory);
+  const filteredImages = galleryImages.filter(
+    (img) => img.category === activeCategory
+  );
 
   // Simule le chargement des images
   useEffect(() => {
@@ -479,7 +477,7 @@ export default function GalerieClient() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl font-light tracking-wider mb-6"
           >
-            GALERIE
+            PORTFOLIO
             <span className="text-2xl md:text-3xl font-light text-white/80 tracking-wide mt-3 block">
               Découvrez mes réalisations
             </span>

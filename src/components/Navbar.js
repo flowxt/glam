@@ -32,7 +32,7 @@ export default function Navbar() {
 
   const menuItems = [
     { name: "Accueil", href: "/" },
-    { name: "Galerie", href: "/galerie" },
+    { name: "Portfolio", href: "/galerie" },
     { name: "Onglerie", href: "/onglerie" },
     { name: "Contact", href: "/contact" },
   ];
