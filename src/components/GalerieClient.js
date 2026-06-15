@@ -207,8 +207,8 @@ export default function GalerieClient() {
   // Catégories pour le filtrage
   const categories = [
     "Mariages",
-    "Shooting - corporate",
-    "Maquillage artistique",
+    "Éditorial & Corporate",
+    "Facepainting - Artistique",
   ];
 
   const [activeCategory, setActiveCategory] = useState("Mariages");
@@ -263,55 +263,55 @@ export default function GalerieClient() {
       id: 21,
       src: "/photo/shooting.jpeg",
       alt: "Shooting photo professionnel",
-      category: "Shooting - corporate",
+      category: "Éditorial & Corporate",
     },
     {
       id: 28,
       src: "/photo/maquillage-enceinte.jpeg",
       alt: "Maquillage artistique femme enceinte",
-      category: "Shooting - corporate",
+      category: "Éditorial & Corporate",
     },
     {
       id: 29,
       src: "/photo/maquillage-enceinte1.png",
       alt: "Maquillage artistique grossesse",
-      category: "Shooting - corporate",
+      category: "Éditorial & Corporate",
     },
     {
       id: 34,
       src: "/photo/maquillage-pro2.jpeg",
       alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
+      category: "Éditorial & Corporate",
     },
     {
       id: 70,
       src: "/photo/shooting-1.png",
       alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
+      category: "Éditorial & Corporate",
     },
     {
       id: 39,
       src: "/photo/maquillage-visage.jpeg",
       alt: "Maquillage artistique du visage",
-      category: "Shooting - corporate",
+      category: "Éditorial & Corporate",
     },
     {
       id: 74,
       src: "/photo/shooting-5.png",
       alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
+      category: "Éditorial & Corporate",
     },
     {
       id: 78,
       src: "/photo/shooting-11.jpeg",
       alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
+      category: "Éditorial & Corporate",
     },
     {
       id: 79,
       src: "/photo/shooting-12.jpeg",
       alt: "Artiste maquillage créations",
-      category: "Shooting - corporate",
+      category: "Éditorial & Corporate",
     },
 
     // Maquillage artistique (Halloween)
@@ -319,103 +319,103 @@ export default function GalerieClient() {
       id: 43,
       src: "/photo/maquillage-halloween.jpeg",
       alt: "Maquillage Halloween",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 44,
       src: "/photo/maquillage-halloween1.jpeg",
       alt: "Maquillage Halloween effrayant",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 45,
       src: "/photo/maquillage-halloween2.jpeg",
       alt: "Maquillage Halloween spécial",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 46,
       src: "/photo/maquillage-halloween3.jpeg",
       alt: "Makeup Halloween créatif",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 47,
       src: "/photo/maquillage-halloween4.jpeg",
       alt: "Maquillage Halloween artistique",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 48,
       src: "/photo/maquillage-halloween5.jpeg",
       alt: "Halloween makeup pro",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 49,
       src: "/photo/maquillage-halloween6.jpeg",
       alt: "Maquillage Halloween fantôme",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 50,
       src: "/photo/maquillage-halloween7.jpeg",
       alt: "Maquillage Halloween effets spéciaux",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 51,
       src: "/photo/maquillage-halloween8.jpeg",
       alt: "Maquillage Halloween sorcière",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 52,
       src: "/photo/maquillage-halloween9.jpeg",
       alt: "Halloween makeup monstre",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 53,
       src: "/photo/maquillage-halloween10.jpeg",
       alt: "Maquillage Halloween horreur",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 54,
       src: "/photo/maquillage-halloween11.jpeg",
       alt: "Halloween makeup gore",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 55,
       src: "/photo/maquillage-halloween12.jpeg",
       alt: "Maquillage Halloween citrouille",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 56,
       src: "/photo/maquillage-halloween13.jpeg",
       alt: "Halloween makeup squelette",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 57,
       src: "/photo/maquillage-halloween-14.jpeg",
       alt: "Maquillage Halloween professionnel",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 85,
       src: "/photo/artistique-1.png",
       alt: "Maquillage Halloween professionnel",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
     {
       id: 86,
       src: "/photo/artistique-3.png",
       alt: "Maquillage Halloween",
-      category: "Maquillage artistique",
+      category: "Facepainting - Artistique",
     },
   ];
 
@@ -456,7 +456,7 @@ export default function GalerieClient() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-16">
+    <div className="min-h-screen bg-black text-white">
       {/* Composant Modale pour afficher les images en plein écran */}
       <ImageModal
         images={filteredImages}
@@ -467,18 +467,22 @@ export default function GalerieClient() {
         onNext={handleNextImage}
       />
 
-      <div className="container mx-auto px-6 md:px-10">
-        <div ref={titleRef} className="text-center mb-16">
+      {/* Hero portfolio - fond blanc, texte noir */}
+      <div className="bg-white text-black py-16 md:py-24">
+        <div
+          ref={titleRef}
+          className="container mx-auto px-6 md:px-10 text-center"
+        >
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={
               titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
             }
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-light tracking-wider mb-6"
+            className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-black"
           >
             PORTFOLIO
-            <span className="text-2xl md:text-3xl font-light text-white/80 tracking-wide mt-3 block">
+            <span className="text-2xl md:text-3xl font-light text-black/70 tracking-wide mt-3 block">
               Découvrez mes réalisations
             </span>
           </motion.h1>
@@ -486,19 +490,20 @@ export default function GalerieClient() {
             initial={{ width: 0 }}
             animate={titleInView ? { width: "120px" } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-[1px] bg-white/40 mx-auto mb-8"
+            className="h-[1px] bg-black/40 mx-auto mb-8"
           ></motion.div>
           <motion.p
             initial={{ opacity: 0 }}
             animate={titleInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-center text-white/80 max-w-2xl mx-auto"
+            className="text-center text-black/70 max-w-2xl mx-auto italic"
           >
-            Explorez mon portfolio de maquillages et coiffures pour mariages,
-            événements et occasions spéciales
+            L&apos;art de sublimer les instants les plus précieux.
           </motion.p>
         </div>
+      </div>
 
+      <div className="container mx-auto px-6 md:px-10 py-16">
         {/* Filtres par catégorie */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (
@@ -574,64 +579,6 @@ export default function GalerieClient() {
           </div>
         )}
 
-        {/* Remerciements aux photographes */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="mt-20 text-center"
-        >
-          <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-10 rounded-sm">
-            <h3 className="text-2xl md:text-3xl font-light text-white mb-6">
-              Remerciements
-            </h3>
-            <div className="h-[1px] w-24 bg-white/40 mx-auto mb-6"></div>
-            <p className="text-white/80 mb-8 text-lg">
-              Un grand merci à tous les photographes professionnels qui ont
-              capturé ces moments magiques ☺️
-            </p>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 text-sm md:text-base">
-              {[
-                "@julrophoto",
-                "@laetitiaguicherdphotographe",
-                "@marieamandinecharlotte",
-                "@audreydasphotographe",
-                "@tonyavenger photographe",
-                "@byherawedding",
-                "@aimydavid",
-                "@laetitiaphotographe38",
-                "@chovisual",
-                "@mehdimed",
-                "@nina_as_p",
-                "@hannahcybulska",
-                "@studiosemit/ budgiebandits",
-                "@maanphoto",
-                "@studioembrune",
-                "@aznphotographie",
-                "@jpmichelphotographie",
-                "@franzphotographie",
-                "@laurabertellephotographie",
-                "@florencecamilloti",
-                "@pascaliodice",
-                "@angieb38120",
-              ].map((photographer, index) => (
-                <motion.div
-                  key={photographer}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="text-white/70 hover:text-white transition-colors duration-300 font-light tracking-wide bg-white/5 p-3 rounded border border-white/10 hover:border-white/30 break-words overflow-wrap-anywhere text-center leading-relaxed"
-                >
-                  {photographer}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
         {/* Message de contact */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -640,39 +587,50 @@ export default function GalerieClient() {
           viewport={{ once: true }}
           className="mt-24 text-center"
         >
-          <div className="max-w-2xl mx-auto bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-12 rounded-sm">
-            <h3 className="text-2xl md:text-3xl font-light text-white mb-4">
-              Sublimez votre beauté pour vos moments importants
-            </h3>
-            <div className="h-[1px] w-24 bg-white/40 mx-auto mb-6"></div>
-            <p className="text-white/80 mb-8 max-w-xl mx-auto">
-              Après avoir découvert mes réalisations, transformez votre vision
-              en réalité. Que ce soit pour votre mariage, un événement spécial
-              ou une séance photo, je m&apos;adapte à vos envies pour créer un
-              look qui vous ressemble.
+          <div className="max-w-2xl mx-auto bg-white border border-white/10 p-8 md:p-12 rounded-sm shadow-xl text-left">
+            <p className="text-black/85 leading-relaxed mb-5">
+              Après la découverte de mon univers, je vous invite à prolonger
+              cette expérience en me confiant votre projet.
             </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <a
-                href="/contact"
-                className="inline-flex items-center bg-white hover:bg-gray-100 text-black font-medium px-8 py-3 tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+            <div className="h-[1px] w-24 bg-black/30 mb-5"></div>
+            <p className="text-black/85 leading-relaxed mb-5">
+              Mariage, événement privé ou séance photo : chaque création est
+              pensée sur mesure, au service de votre élégance et de
+              l&apos;instant.
+            </p>
+            <p className="text-black/85 leading-relaxed mb-8">
+              J&apos;accorde une attention particulière à chaque détail, afin de
+              créer une expérience intime, cohérente et fidèle à votre
+              singularité.
+            </p>
+            <div className="text-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-block"
               >
-                <span>PRENDRE RENDEZ-VOUS</span>
-                <svg
-                  className="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <a
+                  href="/contact"
+                  className="inline-flex items-center bg-black hover:bg-black/80 text-white font-light px-8 py-3 tracking-widest uppercase text-sm transition-all duration-300 rounded-full"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </a>
-            </motion.div>
+                  <span>Votre projet sur mesure</span>
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </a>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
