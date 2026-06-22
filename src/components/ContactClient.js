@@ -309,78 +309,82 @@ export default function ContactClient() {
                   />
                 </div>
 
-                <div>
-                  <label
-                    htmlFor="lieuPreparation"
-                    className="block text-white/80 mb-2 text-sm"
-                  >
-                    Lieu de votre préparation{" "}
-                    <span className="text-white/40">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="lieuPreparation"
-                    name="lieuPreparation"
-                    value={formData.lieuPreparation}
-                    onChange={handleChange}
-                    placeholder="Adresse ou nom du lieu"
-                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
-                    required
-                  />
-                </div>
+                {/* Champs spécifiques au mariage uniquement */}
+                {formData.evenement === "Mariage" && (
+                  <>
+                    <div>
+                      <label
+                        htmlFor="lieuPreparation"
+                        className="block text-white/80 mb-2 text-sm"
+                      >
+                        Lieu de votre préparation{" "}
+                        <span className="text-white/40">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="lieuPreparation"
+                        name="lieuPreparation"
+                        value={formData.lieuPreparation}
+                        onChange={handleChange}
+                        placeholder="Adresse ou nom du lieu"
+                        className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
+                      />
+                    </div>
 
-                <div>
-                  <label
-                    htmlFor="heureCeremonie"
-                    className="block text-white/80 mb-2 text-sm"
-                  >
-                    Heure de cérémonie
-                  </label>
-                  <input
-                    type="time"
-                    id="heureCeremonie"
-                    name="heureCeremonie"
-                    value={formData.heureCeremonie}
-                    onChange={handleChange}
-                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
-                  />
-                </div>
+                    <div>
+                      <label
+                        htmlFor="heureCeremonie"
+                        className="block text-white/80 mb-2 text-sm"
+                      >
+                        Heure de cérémonie
+                      </label>
+                      <input
+                        type="time"
+                        id="heureCeremonie"
+                        name="heureCeremonie"
+                        value={formData.heureCeremonie}
+                        onChange={handleChange}
+                        className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors"
+                      />
+                    </div>
 
-                <div>
-                  <label
-                    htmlFor="misesEnBeauteProches"
-                    className="block text-white/80 mb-2 text-sm"
-                  >
-                    Mises en beauté des proches
-                  </label>
-                  <input
-                    type="text"
-                    id="misesEnBeauteProches"
-                    name="misesEnBeauteProches"
-                    value={formData.misesEnBeauteProches}
-                    onChange={handleChange}
-                    placeholder="Ex : 2 personnes (maman, témoin...)"
-                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
-                  />
-                </div>
+                    <div>
+                      <label
+                        htmlFor="misesEnBeauteProches"
+                        className="block text-white/80 mb-2 text-sm"
+                      >
+                        Mises en beauté des proches
+                      </label>
+                      <input
+                        type="text"
+                        id="misesEnBeauteProches"
+                        name="misesEnBeauteProches"
+                        value={formData.misesEnBeauteProches}
+                        onChange={handleChange}
+                        placeholder="Ex : 2 personnes (maman, témoin...)"
+                        className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
+                      />
+                    </div>
 
-                <div>
-                  <label
-                    htmlFor="nomPhotographe"
-                    className="block text-white/80 mb-2 text-sm"
-                  >
-                    Votre photographe ?
-                  </label>
-                  <input
-                    type="text"
-                    id="nomPhotographe"
-                    name="nomPhotographe"
-                    value={formData.nomPhotographe}
-                    onChange={handleChange}
-                    placeholder="Ex : @photographe ou nom"
-                    className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
-                  />
-                </div>
+                    <div>
+                      <label
+                        htmlFor="nomPhotographe"
+                        className="block text-white/80 mb-2 text-sm"
+                      >
+                        Votre photographe ?
+                      </label>
+                      <input
+                        type="text"
+                        id="nomPhotographe"
+                        name="nomPhotographe"
+                        value={formData.nomPhotographe}
+                        onChange={handleChange}
+                        placeholder="Ex : @photographe ou nom"
+                        className="w-full p-3 bg-transparent border border-white/20 focus:border-white/40 rounded-sm focus:outline-none text-white transition-colors placeholder:text-white/30"
+                      />
+                    </div>
+                  </>
+                )}
 
                 <div>
                   <label
