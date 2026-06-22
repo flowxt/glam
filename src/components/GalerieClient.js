@@ -482,9 +482,6 @@ export default function GalerieClient() {
             className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-black"
           >
             PORTFOLIO
-            <span className="text-2xl md:text-3xl font-light text-black/70 tracking-wide mt-3 block">
-              Découvrez mes réalisations
-            </span>
           </motion.h1>
           <motion.div
             initial={{ width: 0 }}
