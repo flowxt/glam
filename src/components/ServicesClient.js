@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
@@ -9,8 +9,6 @@ import { useInView } from "react-intersection-observer";
 const univers = {
   mariees: {
     label: "Mariées & Particuliers",
-    intro:
-      "Une mise en beauté pensée pour révéler l'éclat de vos instants précieux, où le détail fait l'exception.",
     sections: [
       {
         id: "univers-mariee",
@@ -94,24 +92,17 @@ const univers = {
         image: "/photo/maquillage-enceinte.jpeg",
         imagePosition: "object-[center_28%]",
         intro:
-          "Couple • Grossesse • Famille. Une mise en beauté naturelle et lumineuse, pensée pour sublimer vos souvenirs et révéler votre authenticité.",
-        blocks: [],
-      },
-      {
-        id: "univers-enfant",
-        title: "Univers Enfant",
-        image: "/photo/artistique-1.png",
-        imagePosition: "object-[center_35%]",
-        intro:
-          "Face Painting pour anniversaires et événements privés. À partir de 6 enfants.",
-        blocks: [],
+          "Une mise en beauté naturelle et lumineuse, pensée pour sublimer vos souvenirs et révéler votre authenticité.",
+        blocks: [
+          {
+            items: ["Couple", "Grossesse", "Famille"],
+          },
+        ],
       },
     ],
   },
   pros: {
     label: "Professionnels & Créations",
-    intro:
-      "Des créations sur mesure au service de vos projets éditoriaux, artistiques et de votre image.",
     sections: [
       {
         id: "editorial-creation",
@@ -224,7 +215,7 @@ const ServiceSection = ({ section, reversed }) => {
 
       {/* Encart texte - fond blanc, écriture noire */}
       <div
-        className={`bg-white text-black rounded-sm p-8 md:p-10 h-full flex flex-col justify-center order-2 ${
+        className={`bg-white text-black rounded-sm p-6 md:p-8 h-full flex flex-col justify-center order-2 ${
           reversed ? "lg:order-1" : "lg:order-2"
         }`}
       >
@@ -243,7 +234,7 @@ const ServiceSection = ({ section, reversed }) => {
             {section.blocks.map((block, i) => (
               <div key={i}>
                 {block.subtitle && (
-                  <h3 className="text-sm font-semibold tracking-widest uppercase mb-3">
+                  <h3 className="text-base md:text-lg font-semibold tracking-widest uppercase mb-3">
                     {block.subtitle}
                   </h3>
                 )}
@@ -253,7 +244,9 @@ const ServiceSection = ({ section, reversed }) => {
                       key={j}
                       className="flex items-start text-black/70 text-sm md:text-base"
                     >
-                      <span className="mr-3 mt-[2px] text-black/40">—</span>
+                      <span className="mr-2 mt-[2px] text-black/40 text-[10px] md:text-xs">
+                        —
+                      </span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -292,13 +285,13 @@ const InclusFormules = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.7 }}
-      className="bg-white text-black rounded-sm p-8 md:p-12 text-center"
+      className="bg-white text-black rounded-sm p-6 md:p-10 text-center"
     >
       <h2 className="text-2xl md:text-3xl font-light tracking-wider uppercase">
         Inclus dans chacune des formules Mariée
       </h2>
       <p className="mt-4 text-black/70 italic">
-        ✨ Un accompagnement d&apos;exception jusqu&apos;au grand jour
+        Un accompagnement d&apos;exception jusqu&apos;au grand jour
       </p>
       <div className="h-[1px] w-16 bg-black/40 mx-auto mt-6 mb-8"></div>
       <ul className="max-w-2xl mx-auto space-y-3 text-left">
@@ -307,7 +300,9 @@ const InclusFormules = () => {
             key={i}
             className="flex items-start text-black/70 text-sm md:text-base"
           >
-            <span className="mr-3 mt-[2px] text-black/40">—</span>
+            <span className="mr-2 mt-[2px] text-black/40 text-[10px] md:text-xs">
+              —
+            </span>
             <span>{item}</span>
           </li>
         ))}
@@ -355,7 +350,8 @@ export default function ServicesClient() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center text-black/70 max-w-2xl mx-auto italic"
           >
-            Des prestations sur mesure, où le détail fait l&apos;exception.
+            Une mise en beauté pensée pour révéler l&apos;éclat de vos
+            instants précieux, où le détail fait l&apos;exception.
           </motion.p>
         </div>
       </div>
@@ -377,20 +373,6 @@ export default function ServicesClient() {
             </button>
           ))}
         </div>
-
-        {/* Phrase d'introduction de l'univers actif */}
-        <AnimatePresence mode="wait">
-          <motion.p
-            key={activeUniverse}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="text-center text-white/60 italic max-w-2xl mx-auto mt-8"
-          >
-            {current.intro}
-          </motion.p>
-        </AnimatePresence>
 
         {/* Sections alternées image / texte */}
         <div className="mt-16 space-y-16 md:space-y-24">
