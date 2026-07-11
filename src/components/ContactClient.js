@@ -101,41 +101,53 @@ export default function ContactClient() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-24">
-      <div className="container mx-auto px-6 md:px-10">
-        {/* En-tête avec titre et trait animé */}
-        <div ref={titleRef} className="text-center mb-16">
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero contact - fond blanc, texte noir (même style que Portfolio/Services) */}
+      <div className="bg-white text-black py-16 md:py-24">
+        <div
+          ref={titleRef}
+          className="container mx-auto px-6 md:px-10 text-center"
+        >
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={
               titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
             }
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-light tracking-wider mb-6"
+            className="text-4xl md:text-6xl font-light tracking-wider mb-4 text-black uppercase"
           >
-            VOTRE MAQUILLEUSE PROFESSIONNELLE
-            <br />
-            <span className="text-2xl md:text-3xl font-bold text-white/80 tracking-wide mt-3 block">
-              Saint-Égrève, Grenoble et alentours
-            </span>
+            Votre maquilleuse professionnelle
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            animate={
+              titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }
+            }
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="text-lg md:text-xl font-semibold tracking-wide text-black/70 mb-8"
+          >
+            Grenoble - Rhône-Alpes - France
+          </motion.p>
           <motion.div
             initial={{ width: 0 }}
             animate={titleInView ? { width: "120px" } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-[1px] bg-white/40 mx-auto mb-8"
+            className="h-[1px] bg-black/40 mx-auto mb-8"
           ></motion.div>
           <motion.p
             initial={{ opacity: 0 }}
             animate={titleInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-center text-white/80 max-w-2xl mx-auto"
+            className="text-center text-black/70 max-w-2xl mx-auto italic"
           >
-            Pour toute demande d&apos;information ou réservation, n&apos;hésitez
-            pas à me contacter. Je vous répondrai dans les plus brefs délais.
+            Je vous invite à me faire part de votre projet via le formulaire
+            ci-dessous. Je reviendrai vers vous afin d&apos;échanger sur vos
+            attentes et de vous proposer un accompagnement sur mesure.
           </motion.p>
         </div>
+      </div>
 
+      <div className="container mx-auto px-6 md:px-10 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
           {/* Image */}
           <motion.div
@@ -183,7 +195,10 @@ export default function ContactClient() {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form
+                onSubmit={handleSubmit}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+              >
                 <div>
                   <label
                     htmlFor="nom"
@@ -386,7 +401,7 @@ export default function ContactClient() {
                   </>
                 )}
 
-                <div>
+                <div className="sm:col-span-2">
                   <label
                     htmlFor="commentConnu"
                     className="block text-white/80 mb-2 text-sm"
@@ -421,7 +436,7 @@ export default function ContactClient() {
                   </select>
                 </div>
 
-                <div>
+                <div className="sm:col-span-2">
                   <label
                     htmlFor="message"
                     className="block text-white/80 mb-2 text-sm"
@@ -443,7 +458,7 @@ export default function ContactClient() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full py-3 border border-white/40 rounded-sm font-light tracking-wide text-lg transition-all duration-300 ${
+                  className={`sm:col-span-2 w-full py-3 border border-white/40 rounded-sm font-light tracking-wide text-lg transition-all duration-300 ${
                     isSubmitting
                       ? "bg-white/10 text-white/50 cursor-not-allowed"
                       : "bg-transparent hover:bg-white/10 text-white"
@@ -464,12 +479,12 @@ export default function ContactClient() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 lg:mt-24"
         >
-          <div className="border border-white/10 rounded-sm bg-white/[0.02] divide-y divide-white/10 lg:divide-y-0 lg:divide-x lg:grid lg:grid-cols-3">
+          <div className="bg-white text-black rounded-sm divide-y divide-black/10 lg:divide-y-0 lg:divide-x lg:grid lg:grid-cols-2">
             {/* Coordonnées */}
             <div className="p-8 md:p-10 text-center flex flex-col items-center">
-              <div className="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-full border border-black/15 flex items-center justify-center mb-5">
                 <svg
-                  className="w-5 h-5 text-white/70"
+                  className="w-5 h-5 text-black/70"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -482,78 +497,33 @@ export default function ContactClient() {
                   />
                 </svg>
               </div>
-              <h3 className="text-sm font-normal mb-5 text-white tracking-[0.2em] uppercase">
+              <h3 className="text-sm font-normal mb-5 text-black tracking-[0.2em] uppercase">
                 Coordonnées
               </h3>
               <div className="space-y-3 text-sm">
                 <a
                   href="mailto:glambeautypro38@gmail.com"
-                  className="block text-white/70 hover:text-white transition-colors break-words"
+                  className="block text-black/70 hover:text-black transition-colors break-words"
                 >
                   glambeautypro38@gmail.com
                 </a>
                 <a
                   href="tel:+33685914825"
-                  className="block text-white/70 hover:text-white transition-colors"
+                  className="block text-black/70 hover:text-black transition-colors"
                 >
                   06.85.91.48.25
                 </a>
-                <p className="text-white/70">
-                  Saint-Égrève, Grenoble et alentours
-                </p>
-              </div>
-            </div>
-
-            {/* Horaires */}
-            <div className="p-8 md:p-10 text-center flex flex-col items-center">
-              <div className="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center mb-5">
-                <svg
-                  className="w-5 h-5 text-white/70"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-sm font-normal mb-5 text-white tracking-[0.2em] uppercase">
-                Horaires
-              </h3>
-              <div className="w-full max-w-[240px] space-y-2.5 text-sm">
-                <div className="flex items-baseline justify-between gap-4">
-                  <span className="text-white/70">Lun – Ven</span>
-                  <span className="text-white font-light whitespace-nowrap">
-                    9h – 19h
-                  </span>
-                </div>
-                <div className="flex items-baseline justify-between gap-4">
-                  <span className="text-white/70">Samedi</span>
-                  <span className="text-white font-light whitespace-nowrap">
-                    Sur événement
-                  </span>
-                </div>
-                <div className="flex items-baseline justify-between gap-4">
-                  <span className="text-white/70">Dimanche</span>
-                  <span className="text-white font-light whitespace-nowrap">
-                    Sur événement
-                  </span>
-                </div>
-                <p className="pt-3 mt-2 border-t border-white/10 text-xs text-white/50 italic leading-relaxed">
-                  Onglerie non disponible le dimanche.
+                <p className="text-black/70">
+                  Grenoble - Rhône-Alpes - France
                 </p>
               </div>
             </div>
 
             {/* Zone d'intervention */}
             <div className="p-8 md:p-10 text-center flex flex-col items-center">
-              <div className="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-full border border-black/15 flex items-center justify-center mb-5">
                 <svg
-                  className="w-5 h-5 text-white/70"
+                  className="w-5 h-5 text-black/70"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -571,21 +541,40 @@ export default function ContactClient() {
                   />
                 </svg>
               </div>
-              <h3 className="text-sm font-normal mb-5 text-white tracking-[0.2em] uppercase">
+              <h3 className="text-sm font-normal mb-5 text-black tracking-[0.2em] uppercase">
                 Zone d&apos;intervention
               </h3>
-              <div className="space-y-3 text-sm text-white/70 max-w-xs">
+              <div className="space-y-3 text-sm text-black/70 max-w-xs">
                 <p>
-                  <span className="text-white">Déplacement offert</span> sur
-                  Saint-Égrève, Fontanil et Saint-Martin-le-Vinoux.
+                  <span className="text-black">Déplacements :</span> Grenoble,
+                  en Rhône-Alpes et partout en France.
                 </p>
-                <p>
-                  Également dans toute la région Rhône-Alpes (supplément selon la
-                  distance).
+                <p className="text-black/50 italic text-xs leading-relaxed">
+                  Des frais de déplacement peuvent être appliqués selon le lieu
+                  de la prestation.
                 </p>
               </div>
             </div>
           </div>
+        </motion.div>
+
+        {/* Prestataires recommandés */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 lg:mt-24 text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-light tracking-wider uppercase mb-6">
+            Prestataires recommandés
+          </h2>
+          <p className="text-white/70 max-w-2xl mx-auto italic">
+            Je vous invite à découvrir une sélection de professionnels avec
+            lesquels j&apos;ai eu le plaisir de collaborer. Des partenaires de
+            confiance, choisis pour leur talent, leur professionnalisme et la
+            qualité de leurs prestations.
+          </p>
         </motion.div>
       </div>
     </div>

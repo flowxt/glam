@@ -196,11 +196,11 @@ const ServiceSection = ({ section, reversed }) => {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.7 }}
-      className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
     >
-      {/* Photo — même hauteur que l'encart texte */}
+      {/* Photo — plus haute pour un cadrage plus naturel, indépendante du texte */}
       <div
-        className={`relative h-full min-h-[320px] sm:min-h-[380px] lg:min-h-[480px] overflow-hidden rounded-sm order-1 ${
+        className={`relative min-h-[420px] sm:min-h-[520px] lg:min-h-[640px] xl:min-h-[720px] overflow-hidden rounded-sm order-1 ${
           reversed ? "lg:order-2" : "lg:order-1"
         }`}
       >
@@ -215,7 +215,7 @@ const ServiceSection = ({ section, reversed }) => {
 
       {/* Encart texte - fond blanc, écriture noire */}
       <div
-        className={`bg-white text-black rounded-sm p-6 md:p-8 h-full flex flex-col justify-center order-2 ${
+        className={`bg-white text-black rounded-sm p-6 md:p-8 flex flex-col justify-center order-2 ${
           reversed ? "lg:order-1" : "lg:order-2"
         }`}
       >

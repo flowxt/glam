@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center py-24 md:py-0">
-      <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/90"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/70"></div>
       <div className="absolute inset-0 overflow-hidden">
         <Image
           src="/photo/hero3.JPG"
@@ -13,7 +13,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_20%] opacity-20 grayscale"
+          className="object-cover object-[center_20%] opacity-35 grayscale"
         />
       </div>
       <motion.div
