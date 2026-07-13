@@ -215,17 +215,17 @@ const ServiceSection = ({ section, reversed }) => {
 
       {/* Encart texte - fond blanc, écriture noire */}
       <div
-        className={`bg-white text-black rounded-sm p-6 md:p-8 flex flex-col justify-center order-2 ${
+        className={`bg-white text-ink rounded-sm p-6 md:p-8 flex flex-col justify-center order-2 ${
           reversed ? "lg:order-1" : "lg:order-2"
         }`}
       >
           <h2 className="text-2xl md:text-3xl font-light tracking-wider uppercase">
             {section.title}
           </h2>
-          <div className="h-[1px] w-16 bg-black/40 mt-4 mb-6"></div>
+          <div className="h-[1px] w-16 bg-ink/40 mt-4 mb-6"></div>
 
           {section.intro && (
-            <p className="text-black/70 leading-relaxed mb-6">
+            <p className="text-ink/70 leading-relaxed mb-6">
               {section.intro}
             </p>
           )}
@@ -242,9 +242,9 @@ const ServiceSection = ({ section, reversed }) => {
                   {block.items.map((item, j) => (
                     <li
                       key={j}
-                      className="flex items-start text-black/70 text-sm md:text-base"
+                      className="flex items-start text-ink/70 text-sm md:text-base"
                     >
-                      <span className="mr-2 mt-[2px] text-black/40 text-[10px] md:text-xs">
+                      <span className="mr-2 mt-[2px] text-ink/40 text-[10px] md:text-xs">
                         —
                       </span>
                       <span>{item}</span>
@@ -252,7 +252,7 @@ const ServiceSection = ({ section, reversed }) => {
                   ))}
                 </ul>
                 {block.note && (
-                  <p className="text-black/50 italic text-sm mt-3">
+                  <p className="text-ink/50 italic text-sm mt-3">
                     {block.note}
                   </p>
                 )}
@@ -264,7 +264,7 @@ const ServiceSection = ({ section, reversed }) => {
             <div className="mt-8">
               <Link
                 href={section.cta.href}
-                className="inline-flex items-center bg-black hover:bg-black/80 text-white px-6 py-3 rounded-sm text-sm tracking-wide uppercase transition-colors"
+                className="inline-flex items-center bg-ink hover:bg-ink/80 text-white px-6 py-3 rounded-sm text-sm tracking-wide uppercase transition-colors"
               >
                 {section.cta.label}
               </Link>
@@ -285,22 +285,22 @@ const InclusFormules = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.7 }}
-      className="bg-white text-black rounded-sm p-6 md:p-10 text-center"
+      className="bg-white text-ink rounded-sm p-6 md:p-10 text-center"
     >
       <h2 className="text-2xl md:text-3xl font-light tracking-wider uppercase">
         Inclus dans chacune des formules Mariée
       </h2>
-      <p className="mt-4 text-black/70 italic">
+      <p className="mt-4 text-ink/70 italic">
         Un accompagnement d&apos;exception jusqu&apos;au grand jour
       </p>
-      <div className="h-[1px] w-16 bg-black/40 mx-auto mt-6 mb-8"></div>
+      <div className="h-[1px] w-16 bg-ink/40 mx-auto mt-6 mb-8"></div>
       <ul className="max-w-2xl mx-auto space-y-3 text-left">
         {inclusFormulesMariee.map((item, i) => (
           <li
             key={i}
-            className="flex items-start text-black/70 text-sm md:text-base"
+            className="flex items-start text-ink/70 text-sm md:text-base"
           >
-            <span className="mr-2 mt-[2px] text-black/40 text-[10px] md:text-xs">
+            <span className="mr-2 mt-[2px] text-ink/40 text-[10px] md:text-xs">
               —
             </span>
             <span>{item}</span>
@@ -321,9 +321,9 @@ export default function ServicesClient() {
   const current = univers[activeUniverse];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-sable text-ink">
       {/* Hero services - fond blanc, texte noir (même style que Portfolio) */}
-      <div className="bg-white text-black py-16 md:py-24">
+      <div className="bg-white text-ink py-10 md:py-16">
         <div
           ref={titleRef}
           className="container mx-auto px-6 md:px-10 text-center"
@@ -334,7 +334,7 @@ export default function ServicesClient() {
               titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
             }
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-black"
+            className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-ink"
           >
             SERVICES
           </motion.h1>
@@ -342,13 +342,13 @@ export default function ServicesClient() {
             initial={{ width: 0 }}
             animate={titleInView ? { width: "120px" } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-[1px] bg-black/40 mx-auto mb-8"
+            className="h-[1px] bg-ink/40 mx-auto mb-8"
           ></motion.div>
           <motion.p
             initial={{ opacity: 0 }}
             animate={titleInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-center text-black/70 max-w-2xl mx-auto italic"
+            className="text-center text-ink/70 max-w-2xl mx-auto italic"
           >
             Une mise en beauté pensée pour révéler l&apos;éclat de vos
             instants précieux, où le détail fait l&apos;exception.
@@ -365,8 +365,8 @@ export default function ServicesClient() {
               onClick={() => setActiveUniverse(key)}
               className={`px-5 py-2 rounded-sm transition-all duration-300 uppercase tracking-wide text-sm ${
                 activeUniverse === key
-                  ? "bg-white text-black"
-                  : "bg-transparent border border-white/20 text-white hover:border-white/60"
+                  ? "bg-ink text-white"
+                  : "bg-transparent border border-ink/20 text-ink hover:border-ink/50"
               }`}
             >
               {u.label}
@@ -392,17 +392,17 @@ export default function ServicesClient() {
         {/* Conclusion + CTA (univers professionnels) */}
         {activeUniverse === "pros" && (
           <div className="mt-16 md:mt-24 text-center max-w-2xl mx-auto">
-            <p className="text-white/70 leading-relaxed">
+            <p className="text-ink/70 leading-relaxed">
               Chaque projet est une rencontre entre votre univers et mon
               expertise, pour créer une mise en beauté harmonieuse, adaptée à
               chaque instant de votre vie.
             </p>
-            <p className="text-white/70 mt-4 italic">
+            <p className="text-ink/70 mt-4 italic">
               Je serai ravie d&apos;échanger avec vous.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center mt-8 bg-white hover:bg-white/90 text-black px-8 py-3 rounded-sm text-sm tracking-wide uppercase transition-colors"
+              className="inline-flex items-center mt-8 bg-white hover:bg-white/90 text-ink px-8 py-3 rounded-sm text-sm tracking-wide uppercase transition-colors"
             >
               Demande privée
             </Link>

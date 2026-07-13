@@ -30,12 +30,12 @@ export default function AboutSection() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-black via-black to-black/95 text-white overflow-hidden relative">
+    <section className="py-24 bg-sable text-ink overflow-hidden relative">
       {/* Séparateur supérieur - délimitation avec Hero */}
-      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ink/20 to-transparent"></div>
 
       <div className="container mx-auto px-6 md:px-10">
-        <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto">
           {/* Titre principal avec trait animé */}
           <div ref={titleRef} className="text-center mb-16">
             <motion.h2
@@ -44,7 +44,7 @@ export default function AboutSection() {
                 titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
               }
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-white"
+              className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-ink"
             >
               PRÉSENTATION
             </motion.h2>
@@ -52,7 +52,7 @@ export default function AboutSection() {
               initial={{ width: 0 }}
               animate={titleInView ? { width: "100px" } : { width: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-[1px] bg-white mx-auto"
+              className="h-[1px] bg-ink mx-auto"
             ></motion.div>
           </div>
 
@@ -81,7 +81,7 @@ export default function AboutSection() {
 
             {/* Encadré texte fond blanc, écriture noire */}
             <div className="bg-white p-8 rounded-sm border border-white/10 h-full flex flex-col justify-center shadow-xl">
-              <div className="space-y-5 text-black/85 leading-relaxed">
+              <div className="space-y-5 text-ink/85 leading-relaxed">
                 <p>
                   Derrière Glam Beauty, il y a bien plus qu&apos;une mise en
                   beauté.
@@ -117,14 +117,14 @@ export default function AboutSection() {
                   sublimée, naturelle et assumée.
                 </p>
 
-                <p className="text-xl text-black font-light italic tracking-wide pt-2">
+                <p className="text-xl text-ink font-light italic tracking-wide pt-2">
                   « Le détail fait l&apos;exception. »
                 </p>
 
-                <p className="font-sans text-xl md:text-2xl text-black font-light italic tracking-wide pt-2">
+                <p className="font-sans text-xl md:text-2xl text-ink font-light italic tracking-wide pt-2">
                   — Jennifer
                   <br />
-                  <span className="text-sm md:text-base text-black/60 not-italic tracking-widest">
+                  <span className="text-sm md:text-base text-ink/60 not-italic tracking-widest">
                     Glam Beauty
                   </span>
                 </p>
@@ -143,7 +143,7 @@ export default function AboutSection() {
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/contact"
-                className="inline-block bg-white hover:bg-gray-200 text-black font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
+                className="inline-block bg-white hover:bg-gray-200 text-ink font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
               >
                 Demande privée
               </Link>
@@ -153,7 +153,7 @@ export default function AboutSection() {
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/galerie"
-                className="inline-block bg-white hover:bg-gray-200 text-black font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
+                className="inline-block bg-white hover:bg-gray-200 text-ink font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
               >
                 Explorer l&apos;univers
               </Link>
@@ -163,7 +163,7 @@ export default function AboutSection() {
       </div>
 
       {/* Séparateur inférieur - délimitation avec WeddingStory */}
-      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ink/20 to-transparent"></div>
     </section>
   );
 }

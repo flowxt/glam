@@ -230,19 +230,16 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-24 bg-black text-white overflow-hidden relative">
+    <section className="py-24 bg-sable text-ink overflow-hidden relative">
       {/* Séparateur supérieur */}
-      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
-
-      {/* Arrière-plan décoratif avec effet de profondeur */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/20 to-black"></div>
+      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ink/20 to-transparent"></div>
 
       {/* Lignes décoratives */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/20 to-transparent absolute top-[20%]"></div>
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-gray-500/20 to-transparent absolute top-[60%]"></div>
-        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent absolute left-[20%]"></div>
-        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-gray-500/20 to-transparent absolute left-[80%]"></div>
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-ink/10 to-transparent absolute top-[20%]"></div>
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-ink/5 to-transparent absolute top-[60%]"></div>
+        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-ink/10 to-transparent absolute left-[20%]"></div>
+        <div className="h-full w-[1px] bg-gradient-to-b from-transparent via-ink/5 to-transparent absolute left-[80%]"></div>
       </div>
 
       <div className="container mx-auto px-6 md:px-10 relative z-10">
@@ -254,7 +251,7 @@ export default function Testimonials() {
               titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
             }
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-light tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-white"
+            className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-ink"
           >
             CE QUE DISENT NOS CLIENTES
           </motion.h2>
@@ -262,7 +259,7 @@ export default function Testimonials() {
             initial={{ width: 0 }}
             animate={titleInView ? { width: "120px" } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-[1px] bg-white/40 mx-auto mb-6"
+            className="h-[1px] bg-ink/30 mx-auto mb-6"
           ></motion.div>
           <motion.div
             initial={{ opacity: 0 }}
@@ -274,10 +271,10 @@ export default function Testimonials() {
               href="https://g.co/kgs/HkoUeFV"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-ink/70 hover:text-ink transition-colors"
             >
               <span className="text-lg font-light">
-                <span className="text-white font-normal">100</span> avis 5
+                <span className="text-ink font-normal">100</span> avis 5
                 étoiles sur Google
               </span>
               <svg
@@ -308,7 +305,7 @@ export default function Testimonials() {
             {/* Bouton de navigation précédent amélioré - Maintenant en dehors de l'AnimatePresence */}
             <motion.button
               onClick={handlePrev}
-              className="absolute left-1 md:left-1 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-white/80 hover:text-white bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm rounded-full border border-white/20 transition-all duration-300 hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] z-[60]"
+              className="absolute left-1 md:left-1 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-ink/70 hover:text-ink bg-white/40 backdrop-blur-sm rounded-full border border-ink/15 transition-all duration-300 hover:border-ink/30 hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] z-[60]"
               whileHover={{ scale: 1.1, x: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -331,7 +328,7 @@ export default function Testimonials() {
             {/* Bouton de navigation suivant amélioré - Maintenant en dehors de l'AnimatePresence */}
             <motion.button
               onClick={handleNext}
-              className="absolute right-1 md:right-1 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-white/80 hover:text-white bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm rounded-full border border-white/20 transition-all duration-300 hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] z-[60]"
+              className="absolute right-1 md:right-1 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-ink/70 hover:text-ink bg-white/40 backdrop-blur-sm rounded-full border border-ink/15 transition-all duration-300 hover:border-ink/30 hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] z-[60]"
               whileHover={{ scale: 1.1, x: 2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -362,18 +359,18 @@ export default function Testimonials() {
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <div className="w-full h-full p-4 md:p-8">
-                  <div className="bg-white p-6 md:p-8 rounded-sm border border-white/10 shadow-xl h-full flex flex-col">
+                  <div className="bg-white p-6 md:p-8 rounded-sm border border-ink/10 shadow-xl h-full flex flex-col">
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex flex-col">
-                        <h3 className="text-xl font-light text-black mb-1">
+                        <h3 className="text-xl font-light text-ink mb-1">
                           {testimonials[currentIndex].name}
                         </h3>
-                        <p className="text-xs text-black/60">
+                        <p className="text-xs text-ink/60">
                           {testimonials[currentIndex].date}
                         </p>
 
                         {testimonials[currentIndex].isNew && (
-                          <span className="bg-black text-xs text-white px-2 py-0.5 rounded-full mt-2 inline-block w-fit">
+                          <span className="bg-ink text-xs text-white px-2 py-0.5 rounded-full mt-2 inline-block w-fit">
                             NOUVEAU
                           </span>
                         )}
@@ -384,18 +381,18 @@ export default function Testimonials() {
                       </div>
                     </div>
 
-                    <div className="flex-grow text-black/85 leading-relaxed bg-black/[0.03] p-4 rounded-sm border border-black/5">
+                    <div className="flex-grow text-ink/85 leading-relaxed bg-ink/[0.03] p-4 rounded-sm border border-ink/5">
                       <p className="italic">
                         &ldquo;{testimonials[currentIndex].text}&rdquo;
                       </p>
                     </div>
 
                     {testimonials[currentIndex].services && (
-                      <div className="mt-6 pt-4 border-t border-black/10">
+                      <div className="mt-6 pt-4 border-t border-ink/10">
                         <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center">
+                          <div className="w-8 h-8 rounded-full bg-ink/5 flex items-center justify-center">
                             <svg
-                              className="w-4 h-4 text-black/60"
+                              className="w-4 h-4 text-ink/60"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -409,8 +406,8 @@ export default function Testimonials() {
                               />
                             </svg>
                           </div>
-                          <p className="text-sm text-black/80">
-                            <span className="text-black font-light">
+                          <p className="text-sm text-ink/80">
+                            <span className="text-ink font-light">
                               Services :{" "}
                             </span>
                             {testimonials[currentIndex].services}
@@ -429,7 +426,7 @@ export default function Testimonials() {
               <div className="flex items-center gap-6 mt-4">
                 <button
                   onClick={handlePrev}
-                  className="group flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-300"
+                  className="group flex items-center gap-2 text-ink/60 hover:text-ink transition-colors duration-300"
                 >
                   <svg
                     className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1"
@@ -449,7 +446,7 @@ export default function Testimonials() {
                 </button>
                 <button
                   onClick={handleNext}
-                  className="group flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-300"
+                  className="group flex items-center gap-2 text-ink/60 hover:text-ink transition-colors duration-300"
                 >
                   <span>Avis suivant</span>
                   <svg
@@ -480,8 +477,8 @@ export default function Testimonials() {
                     }}
                     className={`h-[3px] rounded-full transition-all duration-300 ${
                       index === currentIndex
-                        ? "bg-white w-8"
-                        : "bg-white/30 w-4 hover:bg-white/50"
+                        ? "bg-ink w-8"
+                        : "bg-ink/30 w-4 hover:bg-ink/50"
                     }`}
                     aria-label={`Voir l'avis ${index + 1}`}
                   />
@@ -495,7 +492,7 @@ export default function Testimonials() {
               href="https://g.co/kgs/HkoUeFV"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 bg-white hover:bg-gray-200 text-black font-light transition-all duration-300 border border-white/20 rounded-full shadow-lg text-sm tracking-wide"
+              className="inline-block px-8 py-3 bg-white hover:bg-gray-100 text-ink font-light transition-all duration-300 border border-ink/10 rounded-full shadow-lg text-sm tracking-wide"
             >
               Voir tous les avis Google
             </Link>
@@ -504,7 +501,7 @@ export default function Testimonials() {
       </div>
 
       {/* Séparateur inférieur */}
-      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ink/20 to-transparent"></div>
     </section>
   );
 }

@@ -44,9 +44,9 @@ export default function WeddingStory() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black via-black/90 to-white/5 text-white overflow-hidden relative">
+    <section className="py-20 bg-sable text-ink overflow-hidden relative">
       {/* Séparateur supérieur - délimitation avec AboutSection */}
-      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ink/20 to-transparent"></div>
 
       <div className="container mx-auto px-4 md:px-8">
         {/* En-tête de la section */}
@@ -63,7 +63,7 @@ export default function WeddingStory() {
             initial={{ width: 0 }}
             animate={{ width: "100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-[1px] bg-white mx-auto"
+            className="h-[1px] bg-ink mx-auto"
           ></motion.div>
         </div>
 
@@ -77,17 +77,17 @@ export default function WeddingStory() {
         >
           <div className="order-2 lg:order-1 bg-white p-8 rounded-sm border border-white/10 shadow-xl h-full flex flex-col justify-center">
             <div className="mb-8">
-              <h3 className="text-3xl font-bold tracking-wide mb-3 text-black">
+              <h3 className="text-3xl font-bold tracking-wide mb-3 text-ink">
                 Tout commence par un oui
               </h3>
               <motion.div
                 initial={{ width: 0 }}
                 animate={section1InView ? { width: "120px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-[1px] bg-black mb-6"
+                className="h-[1px] bg-ink mb-6"
               ></motion.div>
             </div>
-            <div className="space-y-4 text-black/85 leading-relaxed">
+            <div className="space-y-4 text-ink/85 leading-relaxed">
               <p>
                 Une promesse.
                 <br />
@@ -159,17 +159,17 @@ export default function WeddingStory() {
           </motion.div>
           <div className="bg-white p-8 rounded-sm border border-white/10 shadow-xl h-full flex flex-col justify-center">
             <div className="mb-8">
-              <h3 className="text-3xl font-bold tracking-wide mb-3 text-black">
+              <h3 className="text-3xl font-bold tracking-wide mb-3 text-ink">
                 Avant le grand jour
               </h3>
               <motion.div
                 initial={{ width: 0 }}
                 animate={section2InView ? { width: "120px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-[1px] bg-black mb-6"
+                className="h-[1px] bg-ink mb-6"
               ></motion.div>
             </div>
-            <div className="space-y-4 text-black/85 leading-relaxed">
+            <div className="space-y-4 text-ink/85 leading-relaxed">
               <p>
                 Chaque échange permet de construire cette confiance essentielle.
               </p>
@@ -209,17 +209,17 @@ export default function WeddingStory() {
         >
           <div className="order-2 lg:order-1 bg-white p-8 rounded-sm border border-white/10 shadow-xl h-full flex flex-col justify-center">
             <div className="mb-8">
-              <h3 className="text-3xl font-bold tracking-wide mb-3 text-black">
+              <h3 className="text-3xl font-bold tracking-wide mb-3 text-ink">
                 Le jour J
               </h3>
               <motion.div
                 initial={{ width: 0 }}
                 animate={section3InView ? { width: "120px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-[1px] bg-black mb-6"
+                className="h-[1px] bg-ink mb-6"
               ></motion.div>
             </div>
-            <div className="space-y-4 text-black/85 leading-relaxed">
+            <div className="space-y-4 text-ink/85 leading-relaxed">
               <p>
                 Le temps ralentit.
                 <br />
@@ -238,7 +238,7 @@ export default function WeddingStory() {
                 Tout est maîtrisé pour que vous puissiez simplement profiter,
                 respirer et vivre pleinement chaque émotion.
               </p>
-              <p className="text-black font-medium">
+              <p className="text-ink font-medium">
                 Vous êtes prêtes…
                 <br />
                 Lumineuses…
@@ -278,8 +278,8 @@ export default function WeddingStory() {
         <h3 className="text-2xl md:text-4xl font-light italic mb-6">
           &ldquo;Le détail fait l&apos;exception&rdquo;
         </h3>
-        <div className="h-[1px] w-20 bg-white/40 mx-auto mb-8"></div>
-        <p className="text-white/80 mb-8">Et si tout commençait ici ?</p>
+        <div className="h-[1px] w-20 bg-ink/30 mx-auto mb-8"></div>
+        <p className="text-ink/70 mb-8">Et si tout commençait ici ?</p>
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
@@ -287,9 +287,9 @@ export default function WeddingStory() {
         >
           <a
             href="/contact"
-            className="relative inline-flex items-center px-12 py-4 overflow-hidden text-lg bg-gradient-to-r from-gray-100 to-white text-black font-medium rounded-full group hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300"
+            className="relative inline-flex items-center px-12 py-4 overflow-hidden text-lg bg-ink hover:bg-ink/90 text-white font-medium rounded-full group hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] transition-all duration-300"
           >
-            <span className="absolute left-0 w-full h-0 transition-all bg-gradient-to-r from-gray-200 to-white opacity-20 group-hover:h-full top-0 duration-300"></span>
+            <span className="absolute left-0 w-full h-0 transition-all bg-white opacity-10 group-hover:h-full top-0 duration-300"></span>
             <span className="relative flex items-center">
               Réserver mon expérience
               <svg
@@ -313,7 +313,7 @@ export default function WeddingStory() {
 
       {/* Séparateur de section avec dégradé */}
       <div className="relative mt-24">
-        <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ink/20 to-transparent"></div>
       </div>
     </section>
   );

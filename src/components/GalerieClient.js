@@ -456,7 +456,7 @@ export default function GalerieClient() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-sable text-ink">
       {/* Composant Modale pour afficher les images en plein écran */}
       <ImageModal
         images={filteredImages}
@@ -468,7 +468,7 @@ export default function GalerieClient() {
       />
 
       {/* Hero portfolio - fond blanc, texte noir */}
-      <div className="bg-white text-black py-16 md:py-24">
+      <div className="bg-white text-ink py-10 md:py-16">
         <div
           ref={titleRef}
           className="container mx-auto px-6 md:px-10 text-center"
@@ -479,7 +479,7 @@ export default function GalerieClient() {
               titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }
             }
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-black"
+            className="text-5xl md:text-7xl font-light tracking-wider mb-6 text-ink"
           >
             PORTFOLIO
           </motion.h1>
@@ -487,13 +487,13 @@ export default function GalerieClient() {
             initial={{ width: 0 }}
             animate={titleInView ? { width: "120px" } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-[1px] bg-black/40 mx-auto mb-8"
+            className="h-[1px] bg-ink/40 mx-auto mb-8"
           ></motion.div>
           <motion.p
             initial={{ opacity: 0 }}
             animate={titleInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-center text-black/70 max-w-2xl mx-auto italic"
+            className="text-center text-ink/70 max-w-2xl mx-auto italic"
           >
             L&apos;art de sublimer les instants les plus précieux.
           </motion.p>
@@ -509,8 +509,8 @@ export default function GalerieClient() {
               onClick={() => setActiveCategory(category)}
               className={`px-5 py-2 rounded-sm transition-all duration-300 ${
                 activeCategory === category
-                  ? "bg-white text-black"
-                  : "bg-transparent border border-white/20 text-white hover:border-white/60"
+                  ? "bg-ink text-white"
+                  : "bg-transparent border border-ink/20 text-ink hover:border-ink/50"
               }`}
             >
               {category}
@@ -521,8 +521,8 @@ export default function GalerieClient() {
         {/* Affichage du chargement */}
         {isLoading && (
           <div className="text-center py-12">
-            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-white border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"></div>
-            <p className="mt-4 text-white/60">Chargement de la galerie...</p>
+            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-ink border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"></div>
+            <p className="mt-4 text-ink/60">Chargement de la galerie...</p>
           </div>
         )}
 
@@ -570,7 +570,7 @@ export default function GalerieClient() {
         {/* Aucune image trouvée */}
         {!isLoading && filteredImages.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-white/60">
+            <p className="text-ink/60">
               Aucune image trouvée pour cette catégorie.
             </p>
           </div>
@@ -584,18 +584,18 @@ export default function GalerieClient() {
           viewport={{ once: true }}
           className="mt-24 text-center"
         >
-          <div className="max-w-2xl mx-auto bg-white border border-white/10 p-8 md:p-12 rounded-sm shadow-xl text-left">
-            <p className="text-black/85 leading-relaxed mb-5">
+          <div className="max-w-2xl mx-auto bg-white border border-ink/10 p-8 md:p-12 rounded-sm shadow-xl text-left">
+            <p className="text-ink/85 leading-relaxed mb-5">
               Après la découverte de mon univers, je vous invite à prolonger
               cette expérience en me confiant votre projet.
             </p>
-            <div className="h-[1px] w-24 bg-black/30 mb-5"></div>
-            <p className="text-black/85 leading-relaxed mb-5">
+            <div className="h-[1px] w-24 bg-ink/30 mb-5"></div>
+            <p className="text-ink/85 leading-relaxed mb-5">
               Mariage, événement privé ou séance photo : chaque création est
               pensée sur mesure, au service de votre élégance et de
               l&apos;instant.
             </p>
-            <p className="text-black/85 leading-relaxed mb-8">
+            <p className="text-ink/85 leading-relaxed mb-8">
               J&apos;accorde une attention particulière à chaque détail, afin de
               créer une expérience intime, cohérente et fidèle à votre
               singularité.
@@ -608,7 +608,7 @@ export default function GalerieClient() {
               >
                 <a
                   href="/contact"
-                  className="inline-flex items-center bg-black hover:bg-black/80 text-white font-light px-8 py-3 tracking-widest uppercase text-sm transition-all duration-300 rounded-full"
+                  className="inline-flex items-center bg-ink hover:bg-ink/80 text-white font-light px-8 py-3 tracking-widest uppercase text-sm transition-all duration-300 rounded-full"
                 >
                   <span>Votre projet sur mesure</span>
                   <svg

@@ -11,6 +11,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-raleway);
   --font-heading: var(--font-fiona);
+  /* Test palette client : fond beige + noir adoucis à ~50% (plus doux à l'œil) */
+  --color-ink: #8c8c8c;
+  --color-sable: #eee5d9;
 }
 
 @media (prefers-color-scheme: dark) {
