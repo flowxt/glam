@@ -287,9 +287,8 @@ export default function WeddingStory() {
         >
           <a
             href="/contact"
-            className="relative inline-flex items-center px-12 py-4 overflow-hidden text-lg bg-ink hover:bg-ink/90 text-white font-medium rounded-full group hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] transition-all duration-300"
+            className="relative inline-flex items-center px-12 py-4 overflow-hidden text-lg bg-white hover:bg-black text-ink hover:text-white font-medium rounded-full group hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] transition-all duration-300"
           >
-            <span className="absolute left-0 w-full h-0 transition-all bg-white opacity-10 group-hover:h-full top-0 duration-300"></span>
             <span className="relative flex items-center">
               Réserver mon expérience
               <svg

@@ -143,7 +143,7 @@ export default function AboutSection() {
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/contact"
-                className="inline-block bg-white hover:bg-gray-200 text-ink font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
+                className="inline-block bg-white hover:bg-black text-ink hover:text-white font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
               >
                 Demande privée
               </Link>
@@ -153,7 +153,7 @@ export default function AboutSection() {
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/galerie"
-                className="inline-block bg-white hover:bg-gray-200 text-ink font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
+                className="inline-block bg-white hover:bg-black text-ink hover:text-white font-light px-8 py-4 md:px-10 md:py-5 rounded-full transition-all duration-300 text-sm md:text-base tracking-widest uppercase"
               >
                 Explorer l&apos;univers
               </Link>

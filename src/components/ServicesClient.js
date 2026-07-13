@@ -366,7 +366,7 @@ export default function ServicesClient() {
               className={`px-5 py-2 rounded-sm transition-all duration-300 uppercase tracking-wide text-sm ${
                 activeUniverse === key
                   ? "bg-ink text-white"
-                  : "bg-transparent border border-ink/20 text-ink hover:border-ink/50"
+                  : "bg-white border border-ink/20 text-ink hover:border-ink/50"
               }`}
             >
               {u.label}

@@ -510,7 +510,7 @@ export default function GalerieClient() {
               className={`px-5 py-2 rounded-sm transition-all duration-300 ${
                 activeCategory === category
                   ? "bg-ink text-white"
-                  : "bg-transparent border border-ink/20 text-ink hover:border-ink/50"
+                  : "bg-white border border-ink/20 text-ink hover:border-ink/50"
               }`}
             >
               {category}
