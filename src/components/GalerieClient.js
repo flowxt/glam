@@ -234,9 +234,9 @@ export default function GalerieClient() {
       category: "Mariages",
     },
     {
-      id: 11,
-      src: "/photo/photo-mariage.jpeg",
-      alt: "Photo de mariage",
+      id: 40,
+      src: "/photo/preparation-maquillage.jpeg",
+      alt: "Préparation maquillage artistique",
       category: "Mariages",
     },
     {
@@ -273,9 +273,9 @@ export default function GalerieClient() {
       position: "object-top",
     },
     {
-      id: 40,
-      src: "/photo/preparation-maquillage.jpeg",
-      alt: "Préparation maquillage artistique",
+      id: 11,
+      src: "/photo/photo-mariage.jpeg",
+      alt: "Photo de mariage",
       category: "Mariages",
     },
     {
