@@ -165,7 +165,7 @@ export default function ContactClient() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
           {/* Image */}
           <motion.div
-            className="lg:col-span-2 relative h-[500px] md:h-[600px] overflow-hidden rounded-sm"
+            className="lg:col-span-2 relative aspect-[2/3] max-h-[700px] w-full overflow-hidden rounded-sm"
             initial={{ opacity: 0, x: -30 }}
             animate={formInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
