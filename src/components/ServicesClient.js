@@ -16,6 +16,7 @@ const univers = {
         image: "/photo/services-mariee-1.JPG",
         imageWidth: 5295,
         imageHeight: 7943,
+        fullHeight: true,
         intro:
           "Une mise en beauté entièrement personnalisée pour sublimer l'un des plus beaux jours de votre vie. Chaque prestation est imaginée avec soin afin d'assurer une harmonie parfaite entre votre personnalité, votre robe et l'atmosphère de votre mariage.",
         blocks: [
@@ -210,25 +211,43 @@ const ServiceSection = ({ section, reversed }) => {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.7 }}
-      className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 ${
+        section.fullHeight ? "items-stretch" : "items-center"
+      }`}
     >
-      {/* Photo — affichée entière à son ratio naturel (jamais recadrée, sans bandes blanches) */}
-      <div
-        className={`flex justify-center order-1 ${
-          reversed ? "lg:order-2" : "lg:order-1"
-        }`}
-      >
-        <Image
-          src={section.image}
-          alt={section.title}
-          width={section.imageWidth}
-          height={section.imageHeight}
-          className={`h-auto w-auto rounded-sm ${
-            section.imageClass || "max-h-[620px]"
+      {/* Photo — pleine hauteur (comme la page d'accueil) ou ratio naturel selon la section */}
+      {section.fullHeight ? (
+        <div
+          className={`relative h-full min-h-[500px] lg:min-h-[600px] overflow-hidden rounded-sm order-1 ${
+            reversed ? "lg:order-2" : "lg:order-1"
           }`}
-          sizes="(max-width: 1024px) 100vw, 50vw"
-        />
-      </div>
+        >
+          <Image
+            src={section.image}
+            alt={section.title}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
+      ) : (
+        <div
+          className={`flex justify-center order-1 ${
+            reversed ? "lg:order-2" : "lg:order-1"
+          }`}
+        >
+          <Image
+            src={section.image}
+            alt={section.title}
+            width={section.imageWidth}
+            height={section.imageHeight}
+            className={`h-auto w-auto rounded-sm ${
+              section.imageClass || "max-h-[620px]"
+            }`}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
+      )}
 
       {/* Encart texte - fond blanc, écriture noire */}
       <div

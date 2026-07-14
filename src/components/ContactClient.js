@@ -8,14 +8,14 @@ import Image from "next/image";
 const prestatairesGroups = [
   ["nocialine38", "lesvoilesdalize", "leshowroomdelamariee"],
   [
-    "elowphotograhies",
+    "elowphotographies",
     "anais.soldano",
     "hannahcybulska",
     "theclercs",
     "takeinpic",
     "jpmichelphotographe38",
   ],
-  ["maj_events", "lereperedespepites", "atelier628_", "a.flower38"],
+  ["maj__events", "lereperedespepites", "atelier628_", "a.flower38"],
 ];
 
 export default function ContactClient() {
@@ -162,10 +162,10 @@ export default function ContactClient() {
       </div>
 
       <div className="container mx-auto px-6 md:px-10 py-16 md:py-24">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-          {/* Image */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          {/* Image - même hauteur que le formulaire (comme sur la page d'accueil) */}
           <motion.div
-            className="lg:col-span-2 relative aspect-[2/3] max-h-[700px] w-full overflow-hidden rounded-sm"
+            className="relative h-full min-h-[500px] overflow-hidden rounded-sm"
             initial={{ opacity: 0, x: -30 }}
             animate={formInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -175,7 +175,8 @@ export default function ContactClient() {
               src="/photo/contact-photo.png"
               alt="Maquillage professionnel à Saint-Égrève et Grenoble - Jennifer, maquilleuse et coiffeuse"
               fill
-              className="object-cover "
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
           </motion.div>
@@ -185,7 +186,6 @@ export default function ContactClient() {
             initial={{ opacity: 0, y: 30 }}
             animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="lg:col-span-3"
           >
             <div className="border border-ink/10 rounded-sm p-8 bg-white">
               <h2 className="text-3xl font-light mb-8 tracking-wide text-ink">
