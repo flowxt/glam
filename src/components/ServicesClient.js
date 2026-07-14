@@ -13,8 +13,9 @@ const univers = {
       {
         id: "univers-mariee",
         title: "L'Univers Mariée",
-        image: "/photo/mariée.jpeg",
-        imagePosition: "object-[center_20%]",
+        image: "/photo/services-mariee-1.JPG",
+        imageWidth: 5295,
+        imageHeight: 7943,
         intro:
           "Une mise en beauté entièrement personnalisée pour sublimer l'un des plus beaux jours de votre vie. Chaque prestation est imaginée avec soin afin d'assurer une harmonie parfaite entre votre personnalité, votre robe et l'atmosphère de votre mariage.",
         blocks: [
@@ -51,8 +52,9 @@ const univers = {
       {
         id: "proches-invites",
         title: "Vos Proches & Invités",
-        image: "/photo/preparation-mariage.jpeg",
-        imagePosition: "object-[center_22%]",
+        image: "/photo/services-mariee-2.jpg",
+        imageWidth: 6458,
+        imageHeight: 4305,
         intro: "Parce que chaque détail compte.",
         blocks: [
           {
@@ -71,8 +73,9 @@ const univers = {
       {
         id: "atelier-auto-maquillage",
         title: "Atelier d'Auto-Maquillage",
-        image: "/photo/maquillage-en-cours.jpeg",
-        imagePosition: "object-[center_30%]",
+        image: "/photo/services-mariee-3.jpeg",
+        imageWidth: 3808,
+        imageHeight: 5712,
         intro:
           "Apprenez à maîtriser les gestes essentiels grâce à un accompagnement sur mesure. Conseils personnalisés selon votre peau, votre morphologie et vos habitudes. Seule ou en groupe. Pinceaux fournis et produits professionnels mis à disposition.",
         blocks: [
@@ -89,8 +92,9 @@ const univers = {
       {
         id: "seances-photo",
         title: "Séances Photo",
-        image: "/photo/maquillage-enceinte.jpeg",
-        imagePosition: "object-[center_28%]",
+        image: "/photo/services-mariee-4.JPG",
+        imageWidth: 1371,
+        imageHeight: 2048,
         intro:
           "Une mise en beauté naturelle et lumineuse, pensée pour sublimer vos souvenirs et révéler votre authenticité.",
         blocks: [
@@ -107,8 +111,9 @@ const univers = {
       {
         id: "editorial-creation",
         title: "Éditorial & Création",
-        image: "/photo/shooting-8.jpeg",
-        imagePosition: "object-[center_25%]",
+        image: "/photo/services-pro-1.JPG",
+        imageWidth: 3808,
+        imageHeight: 5712,
         intro: "",
         blocks: [
           {
@@ -124,8 +129,9 @@ const univers = {
       {
         id: "image-de-marque",
         title: "Image de Marque",
-        image: "/photo/maquillage-pro2.jpeg",
-        imagePosition: "object-[center_22%]",
+        image: "/photo/services-pro-2.jpeg",
+        imageWidth: 3808,
+        imageHeight: 5712,
         intro: "",
         blocks: [
           {
@@ -141,8 +147,9 @@ const univers = {
       {
         id: "evenements-prives",
         title: "Événements Privés & Entreprises",
-        image: "/photo/shooting-11.jpeg",
-        imagePosition: "object-[center_22%]",
+        image: "/photo/services-pro-3.JPG",
+        imageWidth: 3808,
+        imageHeight: 5712,
         intro: "",
         blocks: [
           {
@@ -159,8 +166,9 @@ const univers = {
       {
         id: "associations-collectivites",
         title: "Associations & Collectivités",
-        image: "/photo/maquillage-halloween.jpeg",
-        imagePosition: "object-[center_30%]",
+        image: "/photo/services-pro-4.png",
+        imageWidth: 1023,
+        imageHeight: 1537,
         intro: "",
         blocks: [
           {
@@ -198,17 +206,18 @@ const ServiceSection = ({ section, reversed }) => {
       transition={{ duration: 0.7 }}
       className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
     >
-      {/* Photo — plus haute pour un cadrage plus naturel, indépendante du texte */}
+      {/* Photo — affichée entière à son ratio naturel (jamais recadrée, sans bandes blanches) */}
       <div
-        className={`relative min-h-[420px] sm:min-h-[520px] lg:min-h-[640px] xl:min-h-[720px] overflow-hidden rounded-sm order-1 ${
+        className={`flex justify-center order-1 ${
           reversed ? "lg:order-2" : "lg:order-1"
         }`}
       >
         <Image
           src={section.image}
           alt={section.title}
-          fill
-          className={`object-cover ${section.imagePosition || "object-[center_22%]"}`}
+          width={section.imageWidth}
+          height={section.imageHeight}
+          className="w-full max-w-xl h-auto rounded-sm"
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </div>
@@ -389,25 +398,23 @@ export default function ServicesClient() {
           ))}
         </div>
 
-        {/* Conclusion + CTA (univers professionnels) */}
-        {activeUniverse === "pros" && (
-          <div className="mt-16 md:mt-24 text-center max-w-2xl mx-auto">
-            <p className="text-ink/70 leading-relaxed">
-              Chaque projet est une rencontre entre votre univers et mon
-              expertise, pour créer une mise en beauté harmonieuse, adaptée à
-              chaque instant de votre vie.
-            </p>
-            <p className="text-ink/70 mt-4 italic">
-              Je serai ravie d&apos;échanger avec vous.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center mt-8 bg-white hover:bg-white/90 text-ink px-8 py-3 rounded-sm text-sm tracking-wide uppercase transition-colors"
-            >
-              Demande privée
-            </Link>
-          </div>
-        )}
+        {/* Conclusion + CTA (commun aux deux univers) */}
+        <div className="mt-16 md:mt-24 text-center max-w-2xl mx-auto">
+          <p className="text-ink/70 leading-relaxed">
+            Chaque projet est une rencontre entre votre univers et mon
+            expertise, pour créer une mise en beauté harmonieuse, adaptée à
+            chaque instant de votre vie.
+          </p>
+          <p className="text-ink/70 mt-4 italic">
+            Je serai ravie d&apos;échanger avec vous.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center mt-8 bg-white hover:bg-white/90 text-ink px-8 py-3 rounded-sm text-sm tracking-wide uppercase transition-colors"
+          >
+            Demande privée
+          </Link>
+        </div>
       </div>
     </div>
   );

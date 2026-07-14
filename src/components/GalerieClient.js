@@ -228,9 +228,9 @@ export default function GalerieClient() {
       category: "Mariages",
     },
     {
-      id: 5,
-      src: "/photo/mariée.jpeg",
-      alt: "Portrait de mariée",
+      id: 90,
+      src: "/photo/portfolio-nysa.jpg",
+      alt: "Couple de mariés dans un escalier",
       category: "Mariages",
     },
     {
@@ -240,22 +240,102 @@ export default function GalerieClient() {
       category: "Mariages",
     },
     {
+      id: 94,
+      src: "/photo/portfolio-chlo.jpg",
+      alt: "Portrait de mariée en robe de dentelle",
+      category: "Mariages",
+      position: "object-top",
+    },
+    {
       id: 16,
       src: "/photo/preparation-mariage8.jpeg",
       alt: "Préparation beauté mariage",
       category: "Mariages",
     },
     {
-      id: 30,
-      src: "/photo/maquillage-mariage.jpeg",
-      alt: "Maquillage créatif mariage",
+      id: 92,
+      src: "/photo/portfolio-1258.JPG",
+      alt: "Mariés enlacés devant une bâtisse en pierre",
       category: "Mariages",
+    },
+    {
+      id: 5,
+      src: "/photo/mariée.jpeg",
+      alt: "Portrait de mariée",
+      category: "Mariages",
+      position: "object-top",
+    },
+    {
+      id: 99,
+      src: "/photo/portfolio-7977.JPG",
+      alt: "Mariée en peignoir avant la préparation",
+      category: "Mariages",
+      position: "object-top",
     },
     {
       id: 40,
       src: "/photo/preparation-maquillage.jpeg",
       alt: "Préparation maquillage artistique",
       category: "Mariages",
+    },
+    {
+      id: 93,
+      src: "/photo/portfolio-lu.jpg",
+      alt: "Portrait de mariée au bouquet devant une fenêtre",
+      category: "Mariages",
+      position: "object-top",
+    },
+    {
+      id: 30,
+      src: "/photo/maquillage-mariage.jpeg",
+      alt: "Maquillage créatif mariage",
+      category: "Mariages",
+      position: "object-[center_20%]",
+    },
+    {
+      id: 91,
+      src: "/photo/portfolio-2560.jpeg",
+      alt: "Portrait de mariée sous une colonnade",
+      category: "Mariages",
+    },
+    {
+      id: 98,
+      src: "/photo/portfolio-8290.JPG",
+      alt: "Mariés enlacés devant une fontaine",
+      category: "Mariages",
+    },
+    {
+      id: 100,
+      src: "/photo/portfolio-9062.jpg",
+      alt: "Mariée souriante lors du lancer du bouquet",
+      category: "Mariages",
+    },
+    {
+      id: 95,
+      src: "/photo/portfolio-0352.JPG",
+      alt: "Mariés front contre front en extérieur",
+      category: "Mariages",
+      position: "object-top",
+    },
+    {
+      id: 97,
+      src: "/photo/portfolio-2554.jpeg",
+      alt: "Portrait de mariée sous son voile en dentelle",
+      category: "Mariages",
+      position: "object-top",
+    },
+    {
+      id: 96,
+      src: "/photo/portfolio-chlo1.jpg",
+      alt: "Marié portant sa mariée, photo noir et blanc",
+      category: "Mariages",
+    },
+    {
+      id: 101,
+      src: "/photo/portfolio-7983.JPG",
+      alt: "Mariée entourée de ses demoiselles d'honneur",
+      category: "Mariages",
+      position: "object-top",
     },
 
     // Shooting - corporate
@@ -547,7 +627,9 @@ export default function GalerieClient() {
                     alt={image.alt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className={`object-cover transition-transform duration-700 group-hover:scale-110 ${
+                      image.position || "object-center"
+                    }`}
                   />
 
                   {/* Filigrane subtil */}

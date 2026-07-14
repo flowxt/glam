@@ -4,6 +4,20 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
+// Prestataires recommandés, regroupés par univers
+const prestatairesGroups = [
+  ["nocialine38", "lesvoilesdalize", "leshowroomdelamariee"],
+  [
+    "elowphotograhies",
+    "anais.soldano",
+    "hannahcybulska",
+    "theclercs",
+    "takeinpic",
+    "jpmichelphotographe38",
+  ],
+  ["maj_events", "ereperedespepites", "atelier628_", "a.flower38"],
+];
+
 export default function ContactClient() {
   const [formData, setFormData] = useState({
     nom: "",
@@ -158,7 +172,7 @@ export default function ContactClient() {
             ref={formRef}
           >
             <Image
-              src="/photo/jennifer.jpeg"
+              src="/photo/contact-photo.png"
               alt="Maquillage professionnel à Saint-Égrève et Grenoble - Jennifer, maquilleuse et coiffeuse"
               fill
               className="object-cover "
@@ -488,6 +502,24 @@ export default function ContactClient() {
             confiance, choisis pour leur talent, leur professionnalisme et la
             qualité de leurs prestations.
           </p>
+
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-8 max-w-3xl mx-auto">
+            {prestatairesGroups.map((group, i) => (
+              <div key={i} className="flex flex-col gap-2">
+                {group.map((handle) => (
+                  <a
+                    key={handle}
+                    href={`https://www.instagram.com/${handle}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-ink/70 hover:text-ink transition-colors text-sm tracking-wide"
+                  >
+                    @{handle}
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Informations de contact */}
