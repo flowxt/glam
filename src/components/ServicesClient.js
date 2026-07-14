@@ -76,6 +76,7 @@ const univers = {
         image: "/photo/services-mariee-3.jpeg",
         imageWidth: 3808,
         imageHeight: 5712,
+        imageMaxWidth: "max-w-md",
         intro:
           "Apprenez à maîtriser les gestes essentiels grâce à un accompagnement sur mesure. Conseils personnalisés selon votre peau, votre morphologie et vos habitudes. Seule ou en groupe. Pinceaux fournis et produits professionnels mis à disposition.",
         blocks: [
@@ -95,6 +96,7 @@ const univers = {
         image: "/photo/services-mariee-4.JPG",
         imageWidth: 1371,
         imageHeight: 2048,
+        imageMaxWidth: "max-w-md",
         intro:
           "Une mise en beauté naturelle et lumineuse, pensée pour sublimer vos souvenirs et révéler votre authenticité.",
         blocks: [
@@ -114,6 +116,7 @@ const univers = {
         image: "/photo/services-pro-1.JPG",
         imageWidth: 3808,
         imageHeight: 5712,
+        imageMaxWidth: "max-w-md",
         intro: "",
         blocks: [
           {
@@ -132,6 +135,7 @@ const univers = {
         image: "/photo/services-pro-2.jpeg",
         imageWidth: 3808,
         imageHeight: 5712,
+        imageMaxWidth: "max-w-md",
         intro: "",
         blocks: [
           {
@@ -150,6 +154,7 @@ const univers = {
         image: "/photo/services-pro-3.JPG",
         imageWidth: 3808,
         imageHeight: 5712,
+        imageMaxWidth: "max-w-md",
         intro: "",
         blocks: [
           {
@@ -169,6 +174,7 @@ const univers = {
         image: "/photo/services-pro-4.png",
         imageWidth: 1023,
         imageHeight: 1537,
+        imageMaxWidth: "max-w-md",
         intro: "",
         blocks: [
           {
@@ -217,7 +223,9 @@ const ServiceSection = ({ section, reversed }) => {
           alt={section.title}
           width={section.imageWidth}
           height={section.imageHeight}
-          className="w-full max-w-xl h-auto rounded-sm"
+          className={`w-full h-auto rounded-sm ${
+            section.imageMaxWidth || "max-w-xl"
+          }`}
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </div>

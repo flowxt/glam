@@ -612,7 +612,7 @@ export default function GalerieClient() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
           >
             {filteredImages.map((image, index) => (
               <motion.div
@@ -635,13 +635,6 @@ export default function GalerieClient() {
                   {/* Filigrane subtil */}
                   <div className="absolute bottom-2 right-2 bg-black/20 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/60 font-light tracking-wide pointer-events-none">
                     © GlamBeauty
-                  </div>
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 w-full">
-                      <h3 className="text-white font-light">{image.alt}</h3>
-                      <p className="text-white/60 text-sm">{image.category}</p>
-                    </div>
                   </div>
                 </div>
               </motion.div>

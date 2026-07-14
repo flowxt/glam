@@ -15,7 +15,7 @@ const prestatairesGroups = [
     "takeinpic",
     "jpmichelphotographe38",
   ],
-  ["maj_events", "ereperedespepites", "atelier628_", "a.flower38"],
+  ["maj_events", "lereperedespepites", "atelier628_", "a.flower38"],
 ];
 
 export default function ContactClient() {
@@ -162,7 +162,7 @@ export default function ContactClient() {
       </div>
 
       <div className="container mx-auto px-6 md:px-10 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
           {/* Image */}
           <motion.div
             className="lg:col-span-2 relative aspect-[2/3] max-h-[700px] w-full overflow-hidden rounded-sm"
