@@ -15,23 +15,19 @@ export const metadata = {
   metadataBase: new URL("https://www.glambeauty-pro.fr"),
   title: {
     default:
-      "GlamBeauty | Maquilleuse, Coiffeuse et Prothésiste Ongulaire Professionnelle à Saint-Égrève",
+      "GlamBeauty | Maquilleuse et Coiffeuse Professionnelle à Saint-Égrève",
     template: "%s | GlamBeauty - Saint-Égrève",
   },
   description:
-    "Services professionnels de maquillage, coiffure et prothèse ongulaire à Saint-Égrève (38120). Maquilleuse et coiffeuse experte pour mariages, événements spéciaux. Onglerie avec nail art, gainage, vernis semi-permanent. Réservation en ligne disponible.",
+    "Services professionnels de maquillage et coiffure à Saint-Égrève (38120). Maquilleuse et coiffeuse experte pour mariages, shootings et événements spéciaux. Réservation en ligne disponible.",
   keywords: [
     "maquilleuse professionnelle Saint-Égrève",
     "coiffeuse mariage Grenoble",
-    "prothésiste ongulaire 38120",
     "maquillage mariage Isère",
     "coiffure mariée Saint-Égrève",
-    "onglerie Grenoble",
-    "nail art Saint-Égrève",
-    "vernis semi-permanent",
-    "gainage ongles",
-    "manucure russe",
     "maquilleuse Grenoble",
+    "coiffeuse Grenoble",
+    "maquillage shooting Rhône-Alpes",
     "beauté Saint-Égrève",
     "esthétique Isère",
     "GlamBeauty",
@@ -59,9 +55,9 @@ export const metadata = {
     url: "https://www.glambeauty-pro.fr",
     siteName: "GlamBeauty",
     title:
-      "GlamBeauty | Maquilleuse, Coiffeuse et Prothésiste Ongulaire à Saint-Égrève",
+      "GlamBeauty | Maquilleuse et Coiffeuse Professionnelle à Saint-Égrève",
     description:
-      "Services professionnels de maquillage, coiffure et prothèse ongulaire à Saint-Égrève. Maquilleuse experte pour mariages et événements. Onglerie avec nail art et soins des ongles.",
+      "Services professionnels de maquillage et coiffure à Saint-Égrève. Maquilleuse experte pour mariages, shootings et événements.",
     images: [
       {
         url: "/photo/maquillage-pro4.jpeg",
@@ -73,9 +69,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GlamBeauty | Maquilleuse, Coiffeuse et Prothésiste Ongulaire",
+    title: "GlamBeauty | Maquilleuse et Coiffeuse Professionnelle",
     description:
-      "Services professionnels de beauté à Saint-Égrève. Maquillage, coiffure, onglerie pour tous vos événements.",
+      "Services professionnels de beauté à Saint-Égrève. Maquillage et coiffure pour tous vos événements.",
     images: ["/photo/maquillage-pro4.jpeg"],
   },
   icons: {
@@ -133,7 +129,7 @@ export default function RootLayout({ children }) {
               "@type": "BeautySalon",
               name: "GlamBeauty",
               description:
-                "Services professionnels de maquillage, coiffure et prothèse ongulaire à Saint-Égrève",
+                "Services professionnels de maquillage et coiffure à Saint-Égrève",
               url: "https://www.glambeauty-pro.fr",
               telephone: "+33", // Ajoutez le vrai numéro quand vous l'aurez
               address: {
@@ -161,9 +157,9 @@ export default function RootLayout({ children }) {
               serviceType: [
                 "Maquillage professionnel",
                 "Coiffure",
-                "Prothèse ongulaire",
-                "Nail art",
                 "Maquillage mariage",
+                "Coiffure mariée",
+                "Maquillage shooting",
               ],
               founder: {
                 "@type": "Person",

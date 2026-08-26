@@ -3,12 +3,12 @@ import ContactClient from "@/components/ContactClient";
 export const metadata = {
   title: "Contact - Réservation Maquilleuse et Coiffeuse Professionnelle",
   description:
-    "Contactez Jennifer, maquilleuse et coiffeuse professionnelle à Saint-Égrève. Réservation en ligne pour maquillage mariage, coiffure, onglerie. Déplacement Grenoble et Rhône-Alpes.",
+    "Contactez Jennifer, maquilleuse et coiffeuse professionnelle à Saint-Égrève. Réservation en ligne pour maquillage mariage, coiffure et shootings. Déplacement Grenoble et Rhône-Alpes.",
   keywords: [
     "contact maquilleuse Saint-Égrève",
     "réservation maquillage mariage Grenoble",
     "contact coiffeuse Rhône-Alpes",
-    "rendez-vous onglerie Saint-Égrève",
+    "rendez-vous maquillage Saint-Égrève",
     "maquilleuse Grenoble contact",
     "Jennifer maquilleuse téléphone",
     "glambeautypro38@gmail.com",
@@ -17,7 +17,7 @@ export const metadata = {
   openGraph: {
     title: "Contact GlamBeauty - Maquilleuse et Coiffeuse Professionnelle",
     description:
-      "Prenez rendez-vous avec Jennifer, votre maquilleuse et coiffeuse professionnelle à Saint-Égrève. Services pour mariages, événements et onglerie.",
+      "Prenez rendez-vous avec Jennifer, votre maquilleuse et coiffeuse professionnelle à Saint-Égrève. Services pour mariages, shootings et événements.",
     url: "https://www.glambeauty-pro.fr/contact",
   },
   alternates: {

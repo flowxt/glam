@@ -3,7 +3,7 @@ import GalerieClient from "@/components/GalerieClient";
 export const metadata = {
   title: "Portfolio - Maquillage et Coiffure Professionnelle",
   description:
-    "Découvrez le portfolio de Jennifer, maquilleuse et coiffeuse professionnelle. Galerie photos de maquillages mariages, shootings, nail art et créations artistiques à Saint-Égrève et Grenoble.",
+    "Découvrez le portfolio de Jennifer, maquilleuse et coiffeuse professionnelle. Galerie photos de maquillages mariages, shootings et créations artistiques à Saint-Égrève et Grenoble.",
   keywords: [
     "galerie maquillage mariage",
     "portfolio coiffure Saint-Égrève",
@@ -17,7 +17,7 @@ export const metadata = {
   openGraph: {
     title: "Portfolio GlamBeauty - Maquillage et Coiffure",
     description:
-      "Explorez les créations de Jennifer : maquillages de mariées, coiffures élégantes, nail art et maquillages artistiques. Portfolio professionnel à Saint-Égrève.",
+      "Explorez les créations de Jennifer : maquillages de mariées, coiffures élégantes et maquillages artistiques. Portfolio professionnel à Saint-Égrève.",
     url: "https://www.glambeauty-pro.fr/galerie",
   },
   alternates: {
